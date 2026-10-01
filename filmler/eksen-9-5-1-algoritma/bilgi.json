@@ -1,0 +1,17 @@
+{
+  "ozet": "1736'da Königsberg'de yedi köprünün her birinden tam bir kez geçmek mümkün müydü? Film, problemi doğru temsile çevirmenin algoritmik çözümün ilk adımı olduğunu gösterir: harita gözümüzün önünde bulanıklaşır, kara parçaları düğümlere, köprüler kıvrık ayrıtlara dönüşür. Euler'in fikri dereceleri sayan kısa bir sözde koda iner; algoritma tabloyla test edilir (zarf ve papyon), çöp kamyonu rotasında kullanılır ve ikili aramayla 'algoritma = strateji' fikri 10 soruda gösterilir.",
+  "fikir": "Problemi doğru temsil et (harita → çizge); tek dereceli düğümleri sayan bir algoritma köprü sorusunu çözer.",
+  "sahneler": {
+    "Soğuk açılış: Königsberg, 1736": "Gece görünümlü prosedürel Königsberg haritası: 4 kara parçası, 7 köprü. Bir ışık izi her köprüden bir kez geçmeye çalışır; 6 köprü geçilir, B–D köprüsü kırmızı yanıp söner.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Sürpriz: haritadan çizgeye": "Önemli ve önemsiz bilgiler ayrılır; harita bulanıklaşır, kara parçaları noktalara büzülür, köprüler kıvrık ayrıtlara uzar. Düğüm ve ayrıt kavramları; aynı yürüyüş çizgede de takılır.",
+    "Euler’in fikri: derece": "Bir düğümden geçen her yol bir ayrıtla girip diğeriyle çıkar; ayrıtlar çift çift harcanır. Derece tanımı ve Königsberg'in dereceleri: A 5; B, C, D 3.",
+    "Algoritma: sözde kod": "Algoritma sözcüğünün Harizmi'den geldiği belirtilir. Mono yazılı sözde kod satır satır çalışır; değişken izleme (v, d, sayaç) ile dereceler sayılır, sayaç 4 olur ve çıktı İMKÂNSIZ damgasıyla verilir.",
+    "Algoritma testi: zarf ve papyon": "Girdi–tek düğüm–çıktı tablosu: Königsberg (4, imkânsız), zarf (2, yol), papyon (0, döngü). Zarf tek düğümden başlanarak, papyon başlangıca dönülerek kalem kaldırmadan çizilir.",
+    "Gerçek hayat: çöp kamyonu": "İki bloklu bir mahallede 7 sokak; iki tek dereceli kavşak olduğu için kamyon birinden başlayıp ötekinde bitirerek her sokaktan bir kez geçer.",
+    "Algoritma = strateji: ikili arama": "1 ile 1000 arasında tutulan 737 sayısı: tek tek sormak 737 soru, aralığı ikiye bölmek 10 soru; 2¹⁰ = 1024 ≥ 1000.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Algoritma Laboratuvarı'na karekod ve bağlantı."
+  }
+}
