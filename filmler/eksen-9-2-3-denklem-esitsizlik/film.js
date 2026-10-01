@@ -304,6 +304,10 @@
     E.panel(ctx, P.x, P.y, P.w, P.h, { alfa: ara(t, 0, 0.6), vurgu: 'turkuaz' });
     E.yazi(ctx, 'EŞİTSİZLİK = ALTTA KALMAK', P.x + 28, PY(34, 32), { boyut: 22, agirlik: 700, harfAra: 3, renk: 'turkuaz', hiza: 'left' });
     const fb = yd(32, 28);
+    const soru = pencere(t, 0.6, 1.2, 3.6, 4.1);
+    E.yazi(ctx, 'Hangi x’lerde A’nın doğrusu', cx, PY(150, 120), { boyut: yd(30, 28), agirlik: 600, alfa: soru });
+    E.yazi(ctx, 'B’nin altında kalıyor?', cx, PY(194, 160), { boyut: yd(30, 28), agirlik: 600, alfa: soru });
+    E.formul(ctx, '\\c{mercan}{A(x)} < \\c{gok}{B(x)}', cx, PY(270, 226), { boyut: yd(38, 34), alfa: soru * ara(t, 1.6, 2.2) });
     if (H) {
       E.formul(ctx, '100 + 20x < 220 + 5x', cx, PY(104, 0), { boyut: fb, alfa: ara(t, 4.2, 4.8), aciga: ara(t, 4.2, 5.4, 'lin') });
       E.formul(ctx, '15x < 120 \\Rightarrow x < 8', cx, PY(162, 0), { boyut: fb, alfa: ara(t, 5.6, 6.2) });
@@ -347,6 +351,8 @@
     E.yazi(ctx, 'ÖBÜR DOĞRU EKSENSE', P.x + 28, PY(34, 32), { boyut: 22, agirlik: 700, harfAra: 3, renk: 'gok', hiza: 'left' });
     E.formul(ctx, 'f(x) < g(x)', cx, PY(104, 86), { boyut: yd(40, 36), alfa: (1 - m) * ara(t, 0.4, 1.0), cakisabilir: true });
     E.formul(ctx, 'f(x) < \\c{limon}{0}', cx, PY(104, 86), { boyut: yd(40, 36), alfa: m, cakisabilir: true });
+    E.yazi(ctx, 'g dönüp x eksenine yatıyor', cx, PY(180, 146), { boyut: yd(28, 26), agirlik: 560, renk: 'gumus', alfa: pencere(t, 1.0, 1.6, 3.7, 4.2) });
+    E.formul(ctx, '\\t{kesişim: } x \\approx 4{,}67 \\to 3', cx, PY(240, 196), { boyut: yd(30, 26), renk: 'limon', alfa: pencere(t, 1.8, 2.4, 3.7, 4.2) });
     E.formul(ctx, '2x − 6 < 0 \\Rightarrow x < 3', cx, PY(180, 146), { boyut: yd(34, 30), alfa: ara(t, 4.2, 4.8), aciga: ara(t, 4.2, 5.4, 'lin') });
     E.formul(ctx, '\\kutu{turkuaz}{\\t{Ç} = (−\\infty, 3)}', cx, PY(258, 0), { boyut: 34, alfa: H ? ara(t, 6.2, 6.8) : 0 });
     // işaret tablosu
@@ -419,6 +425,7 @@
     const fb = yd(34, 30);
     if (H) {
       E.formul(ctx, '|x − 20| \\le 2', cx, PY(110, 0), { boyut: 42, alfa: ara(t, 3.0, 3.6), parilti: 0.2 });
+      E.yazi(ctx, '20’ye uzaklık en fazla 2', cx, PY(188, 0), { boyut: 28, agirlik: 560, renk: 'gumus', alfa: pencere(t, 3.6, 4.2, 6.0, 6.4) });
       E.formul(ctx, '−2 \\le x − 20 \\le 2', cx, PY(188, 0), { boyut: fb, alfa: ara(t, 6.4, 7.0) });
       E.formul(ctx, '\\c{limon}{18 \\le x \\le 22}', cx, PY(252, 0), { boyut: fb, alfa: ara(t, 7.0, 7.6) });
       E.formul(ctx, '|x − 20| = 2 \\Rightarrow x = 18 \\t{ veya } x = 22', cx, PY(330, 0), { boyut: 28, renk: 'gumus', alfa: ara(t, 8.4, 9.0) });
@@ -427,6 +434,7 @@
     } else {
       const f1 = 1 - ara(t, 8.0, 8.4);
       E.formul(ctx, '|x − 20| \\le 2', cx, PY(0, 92), { boyut: 40, alfa: f1 * ara(t, 3.0, 3.6), parilti: 0.2 });
+      E.yazi(ctx, '20’ye uzaklık en fazla 2', cx, PY(0, 160), { boyut: 26, agirlik: 560, renk: 'gumus', alfa: pencere(t, 3.6, 4.2, 6.0, 6.4) });
       E.formul(ctx, '−2 \\le x − 20 \\le 2', cx, PY(0, 160), { boyut: fb, alfa: f1 * ara(t, 6.4, 7.0) });
       E.formul(ctx, '\\c{limon}{18 \\le x \\le 22}', cx, PY(0, 222), { boyut: fb, alfa: f1 * ara(t, 7.0, 7.6) });
       E.formul(ctx, '|x − 20| = 2', cx, PY(0, 92), { boyut: fb, alfa: ara(t, 8.4, 9.0) });

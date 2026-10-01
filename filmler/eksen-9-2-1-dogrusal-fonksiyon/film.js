@@ -310,8 +310,8 @@
     const ins = kFaz ? ifade(1, k) : `f(${ifade(1, -r)}) = ${ifade(1, -r)}`;
     E.formul(ctx, 'g(x) = ' + ins, cx, y(276, 204), { boyut: yd(40, 34), renk: 'tebesir' });
     // notlar
-    const n1 = pencere(t, 1.6, 2.2, 3.9, 4.3), n2 = pencere(t, 4.8, 5.4, 6.4, 6.9);
-    const n3 = pencere(t, 8.0, 8.6, 10.4, 10.8), n4 = pencere(t, 11.4, 12.0, 13.2, 13.7);
+    const n1 = pencere(t, 1.2, 1.8, 4.1, 4.5), n2 = pencere(t, 4.5, 4.9, 6.7, 7.1);
+    const n3 = pencere(t, 7.1, 7.6, 10.6, 11.0), n4 = pencere(t, 11.0, 11.5, 13.2, 13.7);
     const ny = y(380, 262);
     E.yazi(ctx, 'k > 0  →  yukarı', cx, ny, { boyut: yd(34, 30), agirlik: 640, renk: 'turkuaz', alfa: n1 });
     E.yazi(ctx, 'k < 0  →  aşağı', cx, ny, { boyut: yd(34, 30), agirlik: 640, renk: 'turkuaz', alfa: n2 });
@@ -364,10 +364,10 @@
       E.formul(ctx, `\\c{mercan}{a = ${sy(a, 1)}}`, cx, y(196, 148), { boyut: yd(38, 34) });
       E.formul(ctx, 'g(x) = ' + ifade(a, 0), cx, y(276, 204), { boyut: yd(40, 34) });
       const ny = y(380, 262), nb = yd(32, 28);
-      E.yazi(ctx, 'a = 2: her adımda 2 kat yükselir', cx, ny, { boyut: nb, agirlik: 620, renk: 'limon', alfa: pencere(t, 1.9, 2.5, 3.8, 4.2), maxGen: P.w - 50 });
-      E.yazi(ctx, 'a küçüldükçe doğru yatar', cx, ny, { boyut: nb, agirlik: 620, renk: 'gumus', alfa: pencere(t, 4.4, 4.9, 5.9, 6.3), maxGen: P.w - 50 });
-      E.yazi(ctx, 'a = 0: sabit, bire bir değil', cx, ny, { boyut: nb, agirlik: 620, renk: 'limon', alfa: pencere(t, 6.4, 6.9, 7.6, 8.0), maxGen: P.w - 50 });
-      E.yazi(ctx, 'a < 0: yansır, artık azalan', cx, ny, { boyut: nb, agirlik: 620, renk: 'mercan', alfa: pencere(t, 8.4, 8.9, 10.2, 10.5), maxGen: P.w - 50 });
+      E.yazi(ctx, 'a = 2: her adımda 2 kat yükselir', cx, ny, { boyut: nb, agirlik: 620, renk: 'limon', alfa: pencere(t, 1.4, 2.0, 3.9, 4.3), maxGen: P.w - 50 });
+      E.yazi(ctx, 'a küçüldükçe doğru yatar', cx, ny, { boyut: nb, agirlik: 620, renk: 'gumus', alfa: pencere(t, 4.3, 4.7, 6.0, 6.4), maxGen: P.w - 50 });
+      E.yazi(ctx, 'a = 0: sabit, bire bir değil', cx, ny, { boyut: nb, agirlik: 620, renk: 'limon', alfa: pencere(t, 6.4, 6.8, 7.9, 8.3), maxGen: P.w - 50 });
+      E.yazi(ctx, 'a < 0: yansır, artık azalan', cx, ny, { boyut: nb, agirlik: 620, renk: 'mercan', alfa: pencere(t, 8.3, 8.7, 10.2, 10.5), maxGen: P.w - 50 });
       ctx.restore();
     }
     // Son hâl: yeni kimlik kartı
@@ -376,12 +376,12 @@
       ...P, alfa: ara(t, 10.5, 11.1), renk: 'mercan',
       baslik: 'g(x) = −2(x − 1) + 3 = −2x + 5', bBoyut: yd(27, 28),
       satirlar: [
-        { ad: H ? 'Tanım / görüntü kümesi' : 'Tanım / görüntü', deger: '\\R \\; / \\; \\R', alfa: sa(11.2) },
-        { ad: 'Sıfırı', deger: 'x = 2{,}5', alfa: sa(11.5), vurgu: sa(11.5) },
-        { ad: 'İşareti', deger: H ? 'x < 2{,}5: \\c{turkuaz}{+} \\quad x > 2{,}5: \\c{mercan}{−}' : '\\c{turkuaz}{+} \\; | \\; 2{,}5 \\; | \\; \\c{mercan}{−}', alfa: sa(11.8) },
-        { ad: 'Artanlık', deger: '\\t{azalan}', alfa: sa(12.1), vurgu: sa(12.1) },
-        { ad: H ? 'En büyük / en küçük' : 'Maks. / min.', deger: '\\t{yok}', alfa: sa(12.4) },
-        { ad: 'Bire bir', deger: '\\t{evet}', alfa: sa(12.6) },
+        { ad: H ? 'Tanım / görüntü kümesi' : 'Tanım / görüntü', deger: '\\R \\; / \\; \\R', alfa: sa(10.8) },
+        { ad: 'Sıfırı', deger: 'x = 2{,}5', alfa: sa(11.1), vurgu: sa(11.1) },
+        { ad: 'İşareti', deger: H ? 'x < 2{,}5: \\c{turkuaz}{+} \\quad x > 2{,}5: \\c{mercan}{−}' : '\\c{turkuaz}{+} \\; | \\; 2{,}5 \\; | \\; \\c{mercan}{−}', alfa: sa(11.4) },
+        { ad: 'Artanlık', deger: '\\t{azalan}', alfa: sa(11.7), vurgu: sa(11.7) },
+        { ad: H ? 'En büyük / en küçük' : 'Maks. / min.', deger: '\\t{yok}', alfa: sa(12.0) },
+        { ad: 'Bire bir', deger: '\\t{evet}', alfa: sa(12.3) },
       ],
     });
   };
@@ -600,7 +600,7 @@
       E.formul(ctx, k, kosX, y0 + (i - 1) * sat, { boyut: fb * 0.9, hiza: 'left', renk: 'gumus', alfa: al });
     });
     const ey = P.y + yd(330, 260);
-    E.yazi(ctx, '[0, 10] kapalı: en küçük −10, en büyük 40', P.x + P.w / 2, ey, { boyut: yd(27, 26), agirlik: 560, alfa: ara(t, 8.2, 8.8) * (1 - (H ? 0 : ara(t, 9.8, 10.2))) });
+    E.yazi(ctx, '[0, 10] kapalı: en küçük −10, en büyük 40', P.x + P.w / 2, ey, { boyut: yd(25, 25), agirlik: 560, alfa: ara(t, 8.2, 8.8) * (1 - (H ? 0 : ara(t, 9.8, 10.2))) });
     E.yazi(ctx, 'Uçlar açık olsaydı (0, 10): ikisi de yok', P.x + P.w / 2, H ? ey + 64 : ey, { boyut: yd(26, 25), agirlik: 560, renk: 'mercan', alfa: ara(t, 10.2, 10.8), maxGen: P.w - 40 });
     if (H) E.yazi(ctx, 'Her parça bir doğru: f(x) = x’in kılığı', P.x + P.w / 2, ey + 128, { boyut: 24, agirlik: 520, renk: 'gumus', alfa: ara(t, 11.0, 11.6) });
   };
