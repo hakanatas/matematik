@@ -1,0 +1,15 @@
+{
+  "ozet": "Gece yarısı bir aşı dolabı: \"2 °C ile 8 °C arasında saklayın.\" Sıcaklık tam 8 °C'ye çıkınca soru doğar: sınır içeride mi? Film aralıkları sayı doğrusuna düşen ışık hüzmeleri olarak gösterir: kapalı uç dolu ışık noktası, açık uç boş halka. Aynı ışın eşitsizlik, aralık ve küme gösterimiyle yazılır; günlük durumlara uygun sembol seçilir; birleşim, kesişim, fark ve tümleme ışığın davranışı olarak canlanır. Sürpriz: |x − 5| ≤ 3 bir projektördür ve açılıştaki aşı dolabının aralığını verir; aynı fikir vida üretimindeki toleransta da çalışır.",
+  "fikir": "Aralık sayı doğrusuna düşen bir ışık hüzmesidir; küme işlemleri ışığın davranışıdır, mutlak değer bir projektördür.",
+  "sahneler": {
+    "Soğuk açılış: aşı dolabı": "Aşı dolabının ekranı ve termometre; [2, 8] aralığı ışıkla yanar, sıcaklık tam 8 °C'ye çıkar: sınırda olmak da içeride olmaktır.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Tek ışın, üç yazılış": "Aynı ışın eşitsizlik (2 ≤ x ≤ 8), aralık ([2, 8]) ve küme ({x ∈ ℝ | 2 ≤ x ≤ 8}) olarak yazılır; uçlar açılıp kapanınca üç yazılış birlikte değişir; (−∞, 8] ve sonsuzun yanındaki açık parantez.",
+    "Hayattan aralıklar": "Geçme notu [50, 100], ehliyet yaşı [18, ∞), dondurucu sıcaklığı (−∞, −18]: probleme uygun sembolün seçilmesi.",
+    "Işığın işlemleri": "A = [−2, 4) ve B = (1, 6] ışınlarıyla A ∪ B = [−2, 6], A ∩ B = (1, 4), A \\ B = [−2, 1], B \\ A = [4, 6] ve evrensel küme ℝ iken A′ = (−∞, −2) ∪ [4, ∞); her uç tek tek gerekçelendirilir.",
+    "Sürpriz: projektör ve mutlak değer": "|x − 5| ≤ 3 merkezi 5, yarıçapı 3 olan bir projektördür ve [2, 8] aralığını, yani aşı dolabını verir; kesin eşitsizlikte (2, 8). Vida toleransı |d − 20| ≤ 0,05 → [19,95; 20,05]; ışığın dışına düşen vidalar hatalıdır.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Sayılar Laboratuvarı'na karekod ve bağlantı."
+  }
+}

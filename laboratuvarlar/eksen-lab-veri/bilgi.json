@@ -1,0 +1,10 @@
+{
+  "ad": "Veri Laboratuvarı",
+  "ozet": "Noktaları sürükleyerek bir veri dağılımını şekillendir; nokta grafiği, histogram ve kutu grafiği ile ortalama, ortanca, tepe değer, açıklık, çeyrekler açıklığı ve standart sapma anında güncellensin. Aynı ortalamalı iki dağılımı karşılaştır, kesik eksenin nasıl yanılttığını gör.",
+  "deneyler": [
+    { "ad": "Dağılım tezgâhı", "aciklama": "Günlük ekran süresi verisi: noktaları sürükle, veri ekle, aykırı değer koy; histogram sınıf genişliğini değiştir." },
+    { "ad": "Aynı ortalama", "aciklama": "İki otobüs hattının ortalaması 10 dakika; B'nin yayılımını değiştirince ortalama aynı kalır, standart sapma ve kutu grafiği değişir." },
+    { "ad": "Yanıltıcı grafik", "aciklama": "Dikey eksenin başlangıç değerini kaydır: aynı veri, bambaşka bir görüntü. Görünen ve gerçek oran yan yana." }
+  ],
+  "sinif": "Öğrencilerin kendi topladıkları veriyi (ör. sınıfın ekran süresi) tezgâha girip özetleri yorumlamalarını isteyin. Çeyrekler, ortanca dışarıda bırakılarak alt ve üst yarıların ortancası olarak hesaplanır; standart sapma örneklem (n − 1) formülüyle bulunur."
+}

@@ -1,0 +1,16 @@
+{
+  "ozet": "Gün batımında bir minarenin boyunu ona tırmanmadan bulmak mümkün mü? Film, benzer üçgenleri dokunamadığımız uzunlukları ölçen bir araç olarak gösterir: gölge yöntemiyle 34 m'lik minare, aynayla 9 m'lik ağaç ve kazıklarla 15 m'lik nehir genişliği. Ekranın üstünde ilerleyen problem çözme şeridi (verilen → çizim → strateji → çözüm → kontrol) her ölçümü bir saha çalışmasına dönüştürür; kontrol, kısa yol, yanlış strateji ve hangi yöntemin hangi probleme uyduğu da tartışılır.",
+  "fikir": "Ulaşılamayan bir uzunluğu ölçmek için ona benzer, ölçebildiğin küçük bir üçgen kur; oran gerisini taşır.",
+  "sahneler": {
+    "Soğuk açılış: gün batımında minare": "Prosedürel şehir silueti ve gün batımı; kamera minarenin tepesinden geri çekilir. Güneş huzmeleri paralel düşer; minare, direkler ve öğrencinin gölgeleri aynı açıyla uzar. h = ?",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Gölge yöntemi": "Kamera öğrencinin küçük üçgeninden (1,7 m; 2,5 m) kulenin büyük üçgenine (50 m) geri çekilir. Aynı ışın aynı açıyı verir (Açı–Açı); h/50 = 1,7/2,5 ⇒ h = 34 m. Tales'in piramit ölçümüne değinilir.",
+    "Kontrol: bir saat sonra": "Güneş alçalır: öğrencinin gölgesi 3,4 m, kulenin 68 m; oran tablosunda sonuç yine 34 m. Kısa yol (gölge = 2 × boy) ve saatleri karıştıran yanlış strateji (25 m ✗).",
+    "Ayna yöntemi": "Yerdeki aynada ağacın tepesi görülür; geliş açısı = yansıma açısı. Göz 1,5 m, göz–ayna 2 m, ayna–ağaç 12 m ⇒ h = 9 m. Küçük üçgen yansıyıp 6 kat büyüyerek büyük üçgene oturur.",
+    "Sürpriz: nehrin genişliği": "Yan görünüş kuşbakışı bir haritaya dönüşür. Kıyıda 6 m ve 4 m yürünür, dik dönülüp 10 m'de ağaç ile kazık hizalanır. Küçük üçgen kazık çevresinde 180° döner ve 1,5 kat büyüyerek büyük üçgenle çakışır: x/10 = 6/4 ⇒ x = 15 m; kontrol 15/6 = 10/4 = 2,5.",
+    "Hangi strateji?": "Gölge, ayna ve kazık yöntemlerinin hangi koşullarda kullanılabileceği; ortak fikir: benzer üçgen kur, oranı taşı, kontrol et.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Dönüşüm ve Benzerlik Laboratuvarı'na karekod ve bağlantı."
+  }
+}

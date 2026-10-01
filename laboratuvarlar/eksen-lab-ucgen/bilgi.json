@@ -1,0 +1,10 @@
+{
+  "ad": "Üçgen Laboratuvarı",
+  "ozet": "Üçgenin köşelerini sürükleyip iç ve dış açıları, kenar–açı sırasını ve paralel ispatını gör; üç çubukla üçgen eşitsizliğini dene; küre üzerinde iç açıları toplamı 180°'yi aşan üçgenler kur.",
+  "deneyler": [
+    { "ad": "Açılar ve kenarlar", "aciklama": "Köşeleri sürükle: iç açılar her zaman 180°; dış açılar ve 360°; en büyük açının karşısında en uzun kenar. Paralel ispatı, A ve B açılarını C'nin yanına taşır." },
+    { "ad": "Üçgen eşitsizliği", "aciklama": "Üç çubuğun uzunluğunu değiştir: |a − b| < c < a + b sağlanmadıkça uçlar buluşmaz." },
+    { "ad": "Küre üzerinde üçgen (3B)", "aciklama": "Kutup ve iki ekvator noktasıyla kurulan küresel üçgende açılar toplamı 270°'ye kadar çıkar; üçgen küçüldükçe 180°'ye yaklaşır." }
+  ],
+  "sinif": "Önce öğrencilere \"Toplam 180'i hiç aşar mı?\" diye sorun ve düzlemde denetin; sonra küre sekmesine geçin. Üçgen eşitsizliği için sınıfta gerçek kalem ya da çubuklarla aynı deneyi yaptırabilirsiniz."
+}

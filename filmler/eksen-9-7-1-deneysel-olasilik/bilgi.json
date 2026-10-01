@@ -1,0 +1,15 @@
+{
+  "ozet": "İki zar 10 kez atılınca toplamların sütunları karmakarışıktır; 10 000 atışta ışık parçacıklarından kusursuz bir üçgen doğar. Film, deneysel olasılığı bu \"gürültünün sönmesi\" üzerinden anlatır: 25 atışlık bir sınıf deneyi çeteleye, sıklık ve göreli sıklık tablosuna işlenir; toplam 7'nin göreli sıklığı 25, 50, 100, 150, 200 atıştan simülasyonla 500, 1000, 1500 atışa izlenir. 41 simülasyonun eğrileri daralan bir huni oluşturur (Büyük Sayılar Yasası). Sonda bu huni, bir oyundaki zarın adil olup olmadığına karar vermek için kullanılır.",
+  "fikir": "Deneme sayısı arttıkça göreli sıklıkların zikzakları söner ve bir değere yerleşir: az denemede gürültü, çok denemede şekil.",
+  "sahneler": {
+    "Soğuk açılış: 10 000 atış": "İki zar atılır, her atış bir ışık parçacığına dönüşüp toplamının sütununa yağar. 10 atışta sütunlar karmakarışık, 100 atışta bir şekil seziliyor, 10 000 atışta sütun tepeleri kusursuz bir üçgen çizer.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Kayıt: çetele, sıklık, göreli sıklık": "Bir grubun 25 atışı tek tek çeteleye işlenir; sıklık sütunu ve sıklık dağılımı oluşur; sıklıklar 25'e bölünerek göreli sıklıklar bulunur, şekil aynı kalır ve toplam 1 olur. Toplam 7 için deneysel olasılık 6/25 = 0,24.",
+    "Toplam 7’nin izi": "Toplam 7'nin göreli sıklığı deneme sayısına karşı çizilir: 25, 50, 100, 150, 200 (sınıf grupları) ve 500, 1000, 1500 (simülasyon). Eksen geri çekilir; zikzaklar küçülür ve eğri 0,17 civarına yerleşir.",
+    "Huni: gürültü söner": "Deney 41 kez 2000'er atışla tekrarlanır; eğriler daralan bir huni oluşturur (25 atışta 0–0,36, 2000 atışta 0,15–0,18). Büyük Sayılar Yasası sözel olarak verilir.",
+    "Yargı: zar adil mi?": "Bir oyundaki zarın 6 gelme göreli sıklığı, 40 adil zar simülasyonunun hunisiyle karşılaştırılır: 30 atışta 0,30 huninin içinde (karar için erken), 600 atışta 0,31 huninin çok dışında (muhtemelen hileli).",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Olasılık Laboratuvarı'na karekod ve bağlantı."
+  }
+}

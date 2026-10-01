@@ -1,0 +1,10 @@
+{
+  "ad": "Olasılık Laboratuvarı",
+  "ozet": "Zar, para ve çark deneylerini tek dokunuşla on binlerce kez tekrarla; göreli sıklıkların teorik olasılığa yaklaşmasını izle. İki zarın 36 hücrelik örnek uzayında olayları seç, birleşim formülünü gör; üç paranın ağaç şemasında olayları ışıklandır.",
+  "deneyler": [
+    { "ad": "Deney makinesi", "aciklama": "İki zar toplamı, üç para ya da tek zar: +10, +100, +1000, +10 000 tekrar veya sürekli akış. Sütunlar teorik değerlere yerleşir; alttaki eğri göreli sıklığın deneme sayısıyla nasıl kararlı hâle geldiğini gösterir." },
+    { "ad": "Örnek uzay", "aciklama": "6×6 ızgarada A ve B olaylarını seç; P(A), P(B), P(A ∩ B) ve P(A ∪ B) = P(A) + P(B) − P(A ∩ B); ayrık olup olmadıkları." },
+    { "ad": "Ağaç şeması", "aciklama": "Üç para atışının 8 çıktısı; tam/en az/en çok k tura olayının dallarını ve olasılığını gör." }
+  ],
+  "sinif": "Sınıfta önce gerçek zarla 25–50 atış yapıp sonuçları toplayın, ardından makineyle 10 000'e çıkarın. Her grubun farklı bir \"Sıfırla\" ile kendi deneyini yapması, dağılımların başta neden farklı olduğunu tartışmak için iyi bir başlangıçtır."
+}

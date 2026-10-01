@@ -1,0 +1,10 @@
+{
+  "ad": "Dönüşüm ve Benzerlik Laboratuvarı",
+  "ozet": "Bir motifi yansıt, ötele, döndür ve neyin değişip neyin değişmediğini ölç; iki aynanın bir öteleme ya da dönme ürettiğini gör, kaleydoskopla kilim rozeti kur; Tales paraleli ve dik üçgende yükseklikle benzer üçgenlerin oranlarını oku.",
+  "deneyler": [
+    { "ad": "Dönüşüm atölyesi", "aciklama": "Ayna doğrusunu, öteleme okunu ya da dönme merkezini sürükle; görüntünün eşliği, çevresi, alanı ve yönü (saat yönü) anında ölçülür." },
+    { "ad": "İki ayna", "aciklama": "Paralel aynalar 2d'lik öteleme, kesişen aynalar 2θ'lık dönme üretir; kaleydoskop modunda 360°'yi bölen açılarla rozetler." },
+    { "ad": "Benzer üçgenler", "aciklama": "Köşeleri sürükle, paraleli kaydır: AD/AB = AE/AC = DE/BC. Dik üçgende yükseklik modu Öklid bağıntılarını ve Pisagor'u sayısal olarak doğrular." }
+  ],
+  "sinif": "Dönüşüm atölyesinde \"Yansımada değişen tek şey ne?\" diye sordurun. Kaleydoskopla öğrencilerin kendi kilim rozetlerini tasarlayıp ekran görüntüsünü paylaşmasını isteyebilirsiniz."
+}

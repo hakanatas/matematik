@@ -1,0 +1,10 @@
+{
+  "ad": "Algoritma Laboratuvarı",
+  "ozet": "Çizge çizip her ayrıttan bir kez geçen yolu bir algoritmayla ara (Königsberg köprüleri dahil); 1–1000 arası tuttuğun sayıyı en fazla 10 soruda bulan ikili aramayı oyna; artık yıl kuralını mantık kapılarıyla kur ve tek bağlaç hatasının sonucunu gör.",
+  "deneyler": [
+    { "ad": "Çizge ve Euler yolu", "aciklama": "Hazır çizgeleri (Königsberg, zarf, ev, yıldız) incele ya da kendi çizgeni çiz; dereceleri sayan algoritma yolun varlığına karar verir, varsa yolu ışıkla izler." },
+    { "ad": "İkili arama", "aciklama": "Bilgisayar ortadaki sayıyı sorar; her cevapta aday aralığı yarıya iner. 2¹⁰ = 1024 olduğundan en fazla 10 soru yeter." },
+    { "ad": "Mantık kapıları", "aciklama": "(4'e bölünür ∧ 100'e bölünmez) ∨ 400'e bölünür devresinde bağlaçları değiştir ve yılları dene." }
+  ],
+  "sinif": "Königsberg ile başlayın, sonra öğrencilerden okul çevresinin sokak çizgesini çizmelerini isteyin (çöp kamyonu rotası). İkili aramayı çiftler hâlinde oynatıp soru sayısını karşılaştırın."
+}

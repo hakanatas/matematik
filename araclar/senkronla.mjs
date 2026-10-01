@@ -61,6 +61,14 @@ for (const tema of M.temalar) {
     const uc = /THREE\./.test(labKod);
     ortakDosyalar(ld, { uc, film: false });
     const bilgi = existsSync(join(ld, 'bilgi.json')) ? JSON.parse(readFileSync(join(ld, 'bilgi.json'), 'utf8')) : {};
+    kopya(join(ORTAK, 'lab', 'lab.js'), join(ld, 'motor', 'lab-kit.js'));
+    kopya(join(ORTAK, 'lab', 'lab.css'), join(ld, 'motor', 'lab.css'));
+    const veri = { no: tema.no, ad: tema.ad, lab: tema.lab, labAd: bilgi.ad || '', filmler: tema.ciktilar.map((c) => ({ kod: c.kod, ad: c.filmAdi, url: `https://hakanatas.github.io/${c.film}/` })) };
+    yaz(join(ld, 'veri.js'), `/* Otomatik üretildi (araclar/senkronla.mjs) */\nwindow.EKSEN_TEMA = ${JSON.stringify(veri, null, 1)};\n`);
+    const html = readFileSync(join(ORTAK, 'sablon-lab.html'), 'utf8')
+      .replaceAll('{{AD}}', bilgi.ad || 'Laboratuvar').replaceAll('{{ACIKLAMA}}', (bilgi.ozet || '').replace(/"/g, '&quot;'))
+      .replace('{{EK_BETIKLER}}', uc ? '<script src="vendor/three.min.js"></script>\n' : '');
+    yaz(join(ld, 'index.html'), html);
     yaz(join(ld, 'README.md'), readmeLab({ tema, bilgi, uc }));
     sayi++;
   }

@@ -1,0 +1,17 @@
+{
+  "name": "eksen-9-sinif-matematik",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Eksen — 9. Sınıf Matematik Filmleri ve Laboratuvarları (üretim deposu)",
+  "license": "CC-BY-NC-4.0",
+  "author": "Hakan Ataş",
+  "scripts": {
+    "senkronla": "node araclar/senkronla.mjs",
+    "uret": "./uret.sh",
+    "yayinla": "./yayinla.sh"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "ozet": "İki otobüs hattının ortalama bekleme süresi aynı: 10 dakika. Ama biri sıkışık, öteki dağınık. Film istatistiksel araştırma döngüsünü (soru, plan, veri, analiz, yorum) kısaca kurar, sonra 29 öğrencinin ekran süresi verisini nokta grafiğinden histograma, histogramdan kutu grafiğine dönüştürür. Ortalama, ortanca, tepe değer, açıklık, çeyrekler açıklığı ve standart sapma ekranda veriden hesaplanır. Sürpriz: 600 dakikalık tek bir değer terazinin dengesini bozar; ortalama 150'den 165'e kayar, ortanca 150'de kalır. Sonunda otobüs kararı yayılıma ve belirsizlik diline dayanarak verilir.",
+  "fikir": "Ortalama hikâyenin yalnızca merkezidir; dağılımın şekli ve yayılımı kararı değiştirir.",
+  "sahneler": {
+    "Soğuk açılış: iki hat, aynı ortalama": "Bekleme süreleri yağmur gibi düşüp iki nokta grafiği oluşturur: A hattı 7–13 dakika arasında sıkışık, B hattı 1–25 arasında dağınık. İkisinin de ortalaması 10 dakika: hangisine binersin?",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Araştırma döngüsü": "Soru → plan (evren, örneklem, rastgele seçim) → veri (doğal, ölçüm, örneklem değişkenliği) → analiz → yorum döngüsü; örnek araştırma sorusu: 9. sınıflar günde kaç dakika ekran başında?",
+    "Nokta → histogram → kutu": "29 öğrencinin verisi nokta grafiği olarak düşer, tepe değer parlar; noktalar sütunlara akarak histograma dönüşür ve sınıf genişliği 50 → 100 → 20 → 50 değişince şekil değişir; ardından noktalar çeyrek gruplarına ayrılıp kutu grafiğine sıkışır. Çeyrekler açıklığı, açıklık ve ortalama ± standart sapma bandı veriden hesaplanarak gösterilir.",
+    "Sürpriz: uç değer": "Sayı doğrusu bir terazi kolu, ortalama ise denge üçgenidir. Kadraj genişler, 600 dakikalık bir değer düşer, kol devrilir; denge noktası 150'den 165'e kayar, ortanca 150'de kalır.",
+    "Karar: hangi hat?": "İki hattın noktaları kutu grafiklerine dönüşür; ortalama, ortanca, çeyrekler açıklığı, standart sapma ve 15 dakikadan uzun bekleme sayısı karşılaştırılır. Düzenli olmak isteyen için A hattı; sonuç belirsizlik diliyle ifade edilir.",
+    "Aklında kalsın": "Dört maddelik özet: merkez ve yayılım, çeyrekler açıklığı, uç değerin etkisi, soruya uygun grafik.",
+    "Laboratuvar": "Veri Laboratuvarı'na karekod ve bağlantı."
+  }
+}

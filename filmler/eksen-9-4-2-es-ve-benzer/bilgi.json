@@ -1,0 +1,16 @@
+{
+  "ozet": "Bir kenarı belli bir üçgenden sonsuz sayıda vardır; ikinci kenar verilince üçgen menteşe gibi açılıp kapanır. Film, bir üçgeni \"kilitlemek\" için hangi bilgilerin yettiğini sorar: üç kenar (KKK), iki kenar ve aradaki açı (KAK), bir kenar ve iki uç açısı (AKA) tek üçgene kilitler; bu üçgenler dönüşümlerle üst üste getirilebilir, yani eştir. Açı kenarların arasında değilse (KKA) pergel yayı doğruyu iki noktada keser ve iki farklı üçgen çıkar. Üç açının eşitliği ise yalnızca şekli kilitler: AA, KKK ve KAK orantıları benzerlik verir; benzerlik oranı 1 olduğunda benzerlik eşliğe dönüşür.",
+  "fikir": "Her yeni bilgi olası üçgenlerin hayalet ailesini daraltır: eşlik tek üçgene, benzerlik tek şekle kilitler.",
+  "sahneler": {
+    "Soğuk açılış: hayalet üçgenler": "Tek kenar verilince sonsuz hayalet üçgen titreşir; ikinci kenarla tepe noktası bir çembere oturur ve üçgen menteşe gibi açılıp kapanır. \"Kaç bilgi yeter?\"",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "KKK: üç çubuk, tek üçgen": "6, 5 ve 4 birimlik çubuklar uçlarında döner; pergel yayları tek noktada kesişir (alttaki kesişim aynı üçgenin yansıması). Yansımış ve dönmüş bir kopya öteleme, dönme ve yansımayla üst üste gelir: △ABC ≅ △DEF.",
+    "KAK ve AKA": "İki kenar ve aradaki açı 50°'de kilitlenince üçüncü kenar (≈ 4,6) kendiliğinden belirlenir. Bir kenar ve 40°, 65°'lik uç açılarından çıkan ışınlar tek noktada kesişir; üçüncü açı 75°.",
+    "Tuzak: KKA ve AAA": "30°, 6 ve 4 verildiğinde pergel yayı doğruyu |AB₁| ≈ 2,55 ve |AB₂| ≈ 7,84 noktalarında keser: iki farklı üçgen. 40°-60°-80° açılı üç farklı boyutta üçgen: AAA eşlik değil, yalnızca şekli kilitler.",
+    "Benzerlik: şekli kilitlemek": "AA: 40° ve 60° sabitken üçgen ailesi A'dan büyüyen kopyalardır. KKK∼: 3-4-5 ve 6-8-10, oran k = 2. KAK∼: 3, 2 ve 50° ile 6, 4 ve 50°; k = 1'e küçülünce üçgenler eş olur.",
+    "Fotoğraf ve süsleme": "Telefonda iki parmakla yakınlaştırma açıları korur (benzerlik, k = 1,8); tek bir üçgenin kenar orta noktası etrafında 180° döndürülmüş kopyalarıyla eş üçgenlerden süsleme.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Dönüşüm ve Benzerlik Laboratuvarı'na karekod ve bağlantı."
+  }
+}

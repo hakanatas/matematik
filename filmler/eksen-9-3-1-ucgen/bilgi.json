@@ -1,0 +1,16 @@
+{
+  "ozet": "Kuzey Kutbu'ndan ekvatora inip ekvator boyunca dünyanın çeyreğini yürüyen ve kutba dönen biri üç dik açılı bir üçgen çizer: 270°! Film bu soruyu saklayıp düzleme döner: üçgenin açıları bir paralelin üstünde yan yana dizilince tam bir doğru açısı olur. Dış açı, dış açılar toplamı, kenar–açı ilişkisi ve üçgen eşitsizliği farklı doğrulama ve ispatlarla gösterilir. Sonda 3B kürede küçük bir üçgen büyüdükçe açılar toplamı 180'den 270'e çıkar: 180, paralellerin olduğu düzlemin imzasıdır.",
+  "fikir": "Üç açı bir paralelin üstünde yan yana dizilince doğru açısı olur; 180, düzlemin imzasıdır.",
+  "sahneler": {
+    "Soğuk açılış: kürede üç dik açı": "3B dönen kürede kutuptan ekvatora, ekvator boyunca çeyrek tur ve kutba geri dönen bir yürüyüş; üç köşede 90°, toplam 270°?",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "İç açılar: tek paralel": "Köşeleri oynayan üçgende ölçüm hep 180° verir (doğrulama); ölçmenin ispat olmadığı vurgulanır. C'den AB'ye tek paralel çizilir, α ve β kamaları yarım tur dönerek C'nin yanına taşınır (iç ters açılar), üç açı bir doğru açısı oluşturur.",
+    "Dış açı ve dönen ok": "BC uzatılır; β ötelenerek, α yarım tur dönerek dış açıya sığar: γ' = α + β = 180° − γ. Sonra çevrede yürüyen ok her köşede dış açı kadar döner; üçgen noktaya büzülünce dönüşler tam tur olur: 360°.",
+    "Büyük kenar, büyük açı": "Kenarları 4 ve 3 olan menteşede açı 35°'den 140°'ye açılırken karşı kenar a = √(25 − 24 cos α) uzar. Kenarları 4, 6, 8 olan üçgende açılar 29°, 47°, 104°: en uzun kenarın karşısında en büyük açı.",
+    "Üçgen eşitsizliği": "3, 4 ve 8 birimlik çubuklar kapanmaz (1 birim eksik); taban 6 olunca pergel yayları kesişir ve üçgen kurulur. |b − c| < a < b + c, b = 4, c = 3 için 1 < a < 7. Köprü kafes kirişinde üçgenin şekil kilidi.",
+    "Sürpriz: kürede 270°": "3B kürede eşkenar küresel üçgen büyür: toplam 180,4°'den 270°'ye çıkar; son hâli kutup–ekvator üçgenidir. Kürede paralel yoktur; 180 düzlemin imzasıdır. Nasirüddin Tusi'nin paralellik postulatı çalışmalarına değinilir.",
+    "Aklında kalsın": "Beş maddelik özet: iç açılar, dış açı, dış açılar toplamı, kenar–açı ilişkisi, üçgen eşitsizliği.",
+    "Laboratuvar": "Üçgen Laboratuvarı'na karekod ve bağlantı."
+  }
+}

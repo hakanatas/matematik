@@ -1,0 +1,10 @@
+{
+  "ad": "Sayılar Laboratuvarı",
+  "ozet": "Üslerin ve köklerin merdivenini kendin kur, aralıkları sayı doğrusunda birleştirip kesiştir, sayı doğrusuna mikroskopla yaklaşıp rasyonellerin ve irrasyonellerin yerini gör.",
+  "deneyler": [
+    { "ad": "Üs merdiveni", "aciklama": "Tabanı ve iki adımı (tam, yarım, üçte bir, çeyrek) kaydır: aᵐ · aⁿ = aᵐ⁺ⁿ merdivende art arda adımdır; kesirli adım köktür." },
+    { "ad": "Aralık tezgâhı", "aciklama": "A ve B aralıklarının uçlarını sürükle, uçlara dokunarak açık/kapalı yap; ∪, ∩, \\, tümleme sonucunu aralık ve eşitsizlik olarak oku. |x − m| < r modunda uzaklıkla aralığı gör." },
+    { "ad": "Sayı doğrusu mikroskobu", "aciklama": "√2, π, 1/3 ya da 1/2'ye on milyon kata kadar yakınlaş: kesirler hep sıklaşır, √2 ile π hiçbir kesirle çakışmaz." }
+  ],
+  "sinif": "Tahtada yansıtın ya da öğrencilerin telefonlarında açtırın. \"İki yarım adım neden bir tam adım eder?\", \"A \\ B'de 1 neden dahil?\", \"Kaç kez yakınlaşırsak √2'ye bir kesir oturur?\" gibi sorularla başlayın."
+}

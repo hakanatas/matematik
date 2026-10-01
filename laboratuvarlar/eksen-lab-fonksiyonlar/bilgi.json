@@ -1,0 +1,10 @@
+{
+  "ad": "Fonksiyon Laboratuvarı",
+  "ozet": "f(x) = x doğrusunu a, r ve k ile dönüştür; mutlak değeri kaydırıcıyla katla; iki doğrunun kesişimini ve eşitsizliklerin çözüm kümesini x ekseninde yanarken gör.",
+  "deneyler": [
+    { "ad": "Doğru dönüştürücü", "aciklama": "g(x) = a·f(x − r) + k: a, r, k kaydırıcılarıyla referans doğruyu dönüştür; sıfır, işaret bölgeleri, artanlık, bire birlik, tanım ve görüntü kümesi, kapalı/açık aralıkta maksimum–minimum anında hesaplanır." },
+    { "ad": "Mutlak değer katlayıcı", "aciklama": "m(x) = ±|ax + b| + c: h(x)'in x ekseni altındaki parçası katlama kaydırıcısıyla yukarı döner; tepe, simetri ekseni, görüntü kümesi, sıfırlar ve parçalı gösterim." },
+    { "ad": "Kesişim ve eşitsizlik", "aciklama": "f(x) ile g(x) ya da |f(x)| ile k arasında =, <, ≤, >, ≥ seç; kesişim noktaları ve çözüm kümesi aralık gösterimiyle." }
+  ],
+  "sinif": "Öğrencilere önce tahmin ettirin (\"r'yi 2 yaparsak doğru nereye gider?\"), sonra kaydırıcıyla doğrulatın. Taksi ücreti, mobil hat tarifesi ve termostat örnekleri filmlerle aynıdır."
+}

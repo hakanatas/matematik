@@ -1,0 +1,16 @@
+{
+  "ozet": "1900 yılı 4'e bölündüğü hâlde artık yıl değildi: takvim algoritması onu kapıdan geçirmedi. Film, algoritmaların içindeki mantık bağlaçlarını ışık devrelerindeki kapılar olarak gösterir: VE iki ışık birden ister, VEYA biri yeter der, YA DA tam birini ister, İSE ise bir söz verir. Artık yıl kuralı devre, sözde kod ve sembolik ifade olarak aynı anda çalışır; tek bir bağlaç değişince 1900, 2023 ve 2100 bile artık yıl olur. Son bölümde niceleyiciler döngü olarak görünür: \"her\" ilk ✗'te, \"bazı\" ilk ✓'te durur.",
+  "fikir": "Mantık bağlaçları algoritmanın kapılarıdır; niceleyiciler döngünün nerede duracağını belirler.",
+  "sahneler": {
+    "Soğuk açılış: 29 Şubat 1900": "Kamera Şubat 1900 takviminin 29. gününden geri çekilir; yıl ışık parçacıkları olarak artık yıl devresine akar. 4'e bölünme kapısını geçer, 100'e bölünme koşulunun değil halkasına takılır; 29 Şubat kırmızıyla silinir.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Üç kapı: VE, VEYA, YA DA": "p ve q girişleri dört durumu sırayla dener; ∧, ∨ ve ⊻ kapılarından ışık parçacıkları geçer, doğruluk tablosu ışık ızgarası olarak dolar. Kapsayıcı veya ile dışlayıcı ya da (çay ya da kahve) karşılaştırılır.",
+    "İSE: bir söz": "\"Yağmur yağarsa yol ıslaktır\" sözü bir kapı olur. Dört durum sınanır; yalnızca yağmur yağıp yol kuru kaldığında söz bozulur (1 ⇒ 0 = 0).",
+    "Artık yıl devresi": "(p ∧ ¬q) ∨ r devresine 2024, 2023, 1900, 2000 ve 2100 girer; ışığın söndüğü yer görünür. Devre, sözde kod ve sembolik ifade aynı kararı üç dilde verir.",
+    "Sürpriz: tek bağlaç": "Sözde koddaki \"ve\" \"veya\"ya dönüşür, kapı biçim değiştirir: 1900, 2023 ve 2100 artık yıl çıkar. Aynı hata bir şifre kuralında \"abc1\"in kabul edilmesine yol açar.",
+    "Niceleyiciler: döngünün durduğu yer": "Akış şemasıyla iki döngü: \"Her öğrenci kaydını tamamladı mı?\" ilk ✗'te durur (∀), \"Stokta olmayan ürün var mı?\" ilk ✓'te durur (∃). Sonunda ¬(∀x P(x)) ≡ ∃x ¬P(x).",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Algoritma Laboratuvarı'na karekod ve bağlantı."
+  }
+}
