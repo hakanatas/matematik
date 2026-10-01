@@ -235,7 +235,7 @@
     E.etiket(ctx, '260', d.px(0) + 8, ky - 24, { boyut: 24, renk: 'limon', hiza: 'left', alfa: ara(t, 1.6, 2.2) });
     E.nokta(ctx, kx, ky, 10, { renk: 'limon', parilti: 1.5 });
     E.isik(ctx, kx, ky, 160, 'limon', 0.25 + 0.2 * Math.sin(t * 3));
-    E.etiket(ctx, '(8, 260)', kx + 18, ky + 34, { boyut: 26, renk: 'limon', hiza: 'left', alfa: ara(t, 2.0, 2.6) });
+    E.etiket(ctx, '(8, 260)', kx - 18, ky - 36, { boyut: 26, renk: 'limon', hiza: 'right', alfa: ara(t, 2.0, 2.6) });
     // doğrulama anında iki nokta parlar
     const dg = E.nabiz(t, 9.0, 1.2) + E.nabiz(t, 10.4, 1.2);
     if (dg > 0) E.isik(ctx, kx, ky, 120, 'turkuaz', 0.5 * dg);

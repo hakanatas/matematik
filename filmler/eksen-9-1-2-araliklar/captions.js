@@ -26,8 +26,8 @@ window.ALTYAZI = [
   { bas: 68.9, son: 71.9, tr: 'A′ = (−∞, −2) ∪ [4, ∞). Işığın negatifi.', en: 'A′ = (−∞, −2) ∪ [4, ∞). The negative of the light.', not: '−2 A’da olduğu için A′’de yok; 4 A’da olmadığı için A′’de var.' },
 
   { bas: 72.1, son: 75.2, tr: 'Şimdi bir projektör: merkezi 5’te, ışığı iki yana 3 birim.', en: 'Now a spotlight: centred at 5, shining 3 units each way.', not: 'Ses tonunu yükseltin; filmin sürpriz bölümü başlıyor.' },
-  { bas: 75.3, son: 78.0, tr: '|x − 5| ≤ 3: 5’e uzaklığı en fazla 3 olan sayılar.', en: '|x − 5| ≤ 3: the numbers at most 3 away from 5.', not: 'Mutlak değeri "uzaklık" olarak okuyun.' },
-  { bas: 78.1, son: 80.5, tr: 'Tanıdık mı? Aşı dolabının aralığı: [2, 8].', en: 'Look familiar? It is the vaccine fridge range: [2, 8].', not: '"Vay be" anı. Açılışa geri dönün, kısa bir es verin.' },
+  { bas: 75.3, son: 77.9, tr: '|x − 5| ≤ 3: 5’e uzaklığı en fazla 3 olan sayılar.', en: '|x − 5| ≤ 3: the numbers at most 3 away from 5.', not: 'Mutlak değeri "uzaklık" olarak okuyun.' },
+  { bas: 78.0, son: 80.5, tr: 'Tanıdık mı? Aşı dolabının aralığı: [2, 8].', en: 'Look familiar? It is the vaccine fridge range: [2, 8].', not: '"Vay be" anı. Açılışa geri dönün, kısa bir es verin.' },
   { bas: 80.6, son: 83.1, tr: 'Eşitsizlik kesin olursa uçlar söner: (2, 8).', en: 'Make the inequality strict and the ends go dark: (2, 8).', not: '< ile ≤ arasındaki farkı uçlardan gösterin.' },
   { bas: 83.2, son: 86.6, tr: 'Fabrikada da aynı ışık: vida çapı 20 mm, tolerans 0,05 mm.', en: 'A factory uses the same light: a 20 mm screw, 0.05 mm tolerance.', not: 'Ekran yakınlaşıyor; ölçeğin yüzde bir milimetreye indiğini söyleyin.' },
   { bas: 86.7, son: 89.3, tr: '|d − 20| ≤ 0,05 demek, d ∈ [19,95; 20,05] demek.', en: '|d − 20| ≤ 0.05 means d ∈ [19.95, 20.05].', not: 'Türkçede ondalık virgül olduğu için aralıkta noktalı virgül kullanıldığını belirtin.' },
