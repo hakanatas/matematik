@@ -130,7 +130,7 @@
    */
   const yerlesim = () => {
     const ic = E.L.icerik, H = E.yatay;
-    if (H) return { H, ic, kart: { x: ic.x, y: ic.y, w: 404, h: ic.h }, V: { x: ic.x + 430, y: ic.y, w: ic.w - 430, h: ic.h } };
+    if (H) return { H, ic, kart: { x: ic.x, y: ic.y, w: 420, h: ic.h }, V: { x: ic.x + 446, y: ic.y, w: ic.w - 446, h: ic.h } };
     return { H, ic, kart: { x: ic.x, y: ic.y, w: ic.w, h: 160 }, V: { x: ic.x, y: ic.y + 178, w: ic.w, h: 420 }, alt: { x: ic.x, y: ic.y + 616, w: ic.w, h: ic.h - 616 } };
   };
   const iddia = (c) => (ctx, s) => {
@@ -165,7 +165,12 @@
     if (H) {
       E.yazi(ctx, 'İDDİA ' + c.no, kart.x, kart.y + 20, { boyut: 22, agirlik: 760, harfAra: 5, renk: 'turkuaz', hiza: 'left', alfa: ka });
       E.yazi(ctx, c.iddia, kart.x, kart.y + 48, { boyut: 31, agirlik: 720, hiza: 'left', taban: 'top', maxGen: kart.w - 20, alfa: ka, yaz: ara(t, 0.2, 1.6, 'lin'), satirAra: 1.18 });
-      let yy = kart.y + 206;
+      ctx.save(); ctx.font = E.fontStr({ boyut: 31, agirlik: 720 });
+      const qn = E.sar(ctx, c.iddia, kart.w - 20).length;
+      ctx.font = E.fontStr({ boyut: 22, agirlik: 480 });
+      const dn = c.adimlar.map((a) => E.sar(ctx, a.detay, kart.w - 56).length);
+      ctx.restore();
+      let yy = kart.y + 48 + qn * 31 * 1.18 + 40;
       c.adimlar.forEach((a, j) => {
         const on = t >= a.t ? 1 : 0;
         const aa = ara(t, a.t, a.t + 0.6);
@@ -174,10 +179,11 @@
         E.panel(ctx, kart.x, yy - 17, 34, 34, { r: 17, renk: on ? renk : 'lacivert', dolguAlfa: on ? 0.22 : 0.6, kenar: on ? renk : 'sis', kalinlik: 2, alfa: ka });
         E.yazi(ctx, String(j + 1), kart.x + 17, yy + 1, { boyut: 22, agirlik: 760, renk: on ? renk : 'gumus', alfa: ka });
         E.yazi(ctx, a.baslik, kart.x + 48, yy, { boyut: 25, agirlik: 720, hiza: 'left', renk: etkin ? 'tebesir' : on ? 'gumus' : 'cizgi', alfa: ka });
-        E.yazi(ctx, a.detay, kart.x + 48, yy + 22, { boyut: 22, agirlik: 480, hiza: 'left', taban: 'top', maxGen: kart.w - 56, renk: 'gumus', alfa: aa, satirAra: 1.2 });
-        yy += a.yuk || 84;
+        const dy = j === 2 ? 40 : 22;
+        E.yazi(ctx, a.detay, kart.x + 48, yy + dy, { boyut: 22, agirlik: 480, hiza: 'left', taban: 'top', maxGen: kart.w - 56, renk: 'gumus', alfa: aa, satirAra: 1.2 });
+        if (j === 2) muhur(ctx, kart.x + 262, yy + 2, c.karar.kabul, ara(t, c.karar.t, c.karar.t + 0.7));
+        yy += dy + dn[j] * 26.4 + 30;
       });
-      muhur(ctx, kart.x + kart.w / 2 - 6, kart.y + kart.h - 28, c.karar.kabul, ara(t, c.karar.t, c.karar.t + 0.7));
     } else {
       E.yazi(ctx, 'İDDİA ' + c.no, kart.x, kart.y + 16, { boyut: 22, agirlik: 760, harfAra: 5, renk: 'turkuaz', hiza: 'left', alfa: ka });
       E.yazi(ctx, c.iddia, kart.x, kart.y + 42, { boyut: 30, agirlik: 720, hiza: 'left', taban: 'top', maxGen: kart.w, alfa: ka, yaz: ara(t, 0.2, 1.6, 'lin'), satirAra: 1.16 });
@@ -282,7 +288,7 @@
     // ekran uzayı etiketler
     const [lx] = K.p(axX, 0);
     for (let v = 0; v <= 56; v++) {
-      const on = v % 10 === 0;
+      const on = v % 10 === 0 && v <= 40;
       const a = (v >= 48 ? 1 : ac) * (on ? Math.max(birimA, onA) : birimA);
       if (a < 0.02) continue;
       const [, y] = K.p(axX, -v * KB);
@@ -344,9 +350,9 @@
     no: 1,
     iddia: '“Mahallemizde hız ihlalleri patladı!”',
     adimlar: [
-      { baslik: 'Temellendir', t: 0.8, detay: 'Dayanak: radarın ölçtüğü ortalama hız. Mart ' + sy(M_ORT) + ', Nisan ' + sy(N_ORT) + ' km/sa.' },
-      { baslik: 'Hata / yanlılık', t: 4.6, detay: 'Grafik yalnızca iki ortalamayı ve 48–52 aralığını gösteriyor. Kamerayı geri çek: her araç.' },
-      { baslik: 'Karar', t: 10.6, detay: 'Fark ' + sy(ARTIS) + ' km/sa (≈ %' + Math.round(YUZDE) + '). Hızlar zaten ' + H_MIN + '–' + H_MAX + ' arasında değişiyor.', yuk: 84 },
+      { baslik: 'Temellendir', t: 0.8, detay: 'Radarın ortalama hızı: Mart ' + sy(M_ORT) + ', Nisan ' + sy(N_ORT) + ' km/sa.' },
+      { baslik: 'Hata / yanlılık', t: 4.6, detay: 'Grafik yalnızca iki ortalamayı, 48–52 aralığında gösteriyor.' },
+      { baslik: 'Karar', t: 10.6, detay: 'Fark ' + sy(ARTIS) + ' km/sa (≈ %' + Math.round(YUZDE) + '); hızlar ' + H_MIN + '–' + H_MAX + ' arasında değişiyor.' },
     ],
     karar: { t: 11.6, kabul: false },
     keys: (V) => {
@@ -372,9 +378,8 @@
       for (let v = 25; v <= 75; v++) {
         if (v % adim) continue;
         const [x] = K.p(v * RK, 0);
-        kYazi(ctx, K, String(v), x, ay + 28, { boyut: 22, agirlik: 540, renk: 'gumus' });
+        kYazi(ctx, K, String(v), x, ay + 62, { boyut: 22, agirlik: 540, renk: 'gumus' });
       }
-      kYazi(ctx, K, 'km/sa', V.x + V.w - 16, ay + 28, { boyut: 22, agirlik: 600, hiza: 'right', renk: 'gumus', alfa: ara(t, 7.6, 8.4) });
       // tüm araçlar (ekran uzayında sabit boyut): Mart üstte, Nisan altta
       const da = ara(t, 6.6, 8.2);
       const r = E.yatay ? 6 : 5.5, sp = E.yatay ? 13.5 : 12.5;
@@ -419,9 +424,9 @@
     no: 2,
     iddia: '“Bu şirkette çalışırsan ortalama ' + binlik(MAAS_ORT) + ' TL kazanırsın.”',
     adimlar: [
-      { baslik: 'Temellendir', t: 0.8, detay: 'Dayanak: ' + MAAS.length + ' çalışanın maaş ortalaması = ' + binlik(MAAS_ORT) + ' TL.' },
-      { baslik: 'Hata / yanlılık', t: 4.6, detay: '9 kişi ' + binlik(MAAS[0]) + ' TL, 1 yönetici ' + binlik(MAAS[9]) + ' TL. Tek uç değer ortalamayı şişiriyor.' },
-      { baslik: 'Karar', t: 11.0, detay: 'Tipik maaşı ortanca anlatır: ' + binlik(MAAS_MED) + ' TL. ' + MAAS.length + ' kişiden ' + ALTINDA + '’u ortalamanın altında.' },
+      { baslik: 'Temellendir', t: 0.8, detay: MAAS.length + ' çalışanın maaş ortalaması: ' + binlik(MAAS_ORT) + ' TL.' },
+      { baslik: 'Hata / yanlılık', t: 4.6, detay: '9 kişi ' + binlik(MAAS[0]) + ' TL, yönetici ' + binlik(MAAS[9]) + ' TL: uç değer.' },
+      { baslik: 'Karar', t: 11.0, detay: 'Tipik maaş ortancadır: ' + binlik(MAAS_MED) + ' TL. ' + MAAS.length + ' kişiden ' + ALTINDA + '’u altta.' },
     ],
     karar: { t: 12.0, kabul: false },
     keys: (V) => {
@@ -495,9 +500,9 @@
     no: 3,
     iddia: '“Öğrencilerin %' + Math.round(ORAN) + '’ı okulun 10:00’da başlamasını istiyor.”',
     adimlar: [
-      { baslik: 'Temellendir', t: 0.8, detay: 'Dayanak: ' + KATILAN + ' kişilik anket, ' + EVET + ' kişi “evet” dedi.' },
-      { baslik: 'Hata / yanlılık', t: 4.8, detay: 'Anket gece 23:00’te bir oyun sunucusunda yapılmış. Örneklem okulu temsil etmiyor.' },
-      { baslik: 'Karar', t: 11.0, detay: 'Yanlı örneklem: sonuç bütün okula genellenemez. Kurayla seçilmiş bir örneklem gerekir.' },
+      { baslik: 'Temellendir', t: 0.8, detay: KATILAN + ' kişilik anket; ' + EVET + ' kişi “evet” dedi.' },
+      { baslik: 'Hata / yanlılık', t: 4.8, detay: 'Anket gece 23:00’te bir oyun sunucusunda: yanlı örneklem.' },
+      { baslik: 'Karar', t: 11.0, detay: 'Sonuç okula genellenemez; kurayla örneklem gerekir.' },
     ],
     karar: { t: 12.0, kabul: false },
     keys: (V) => {
@@ -578,9 +583,9 @@
     no: 4,
     iddia: '“Okulumuzda 9. sınıflar gecede tipik olarak ' + sy(U_MED) + ' saat uyuyor.”',
     adimlar: [
-      { baslik: 'Temellendir', t: 0.8, detay: 'Dayanak: kurayla seçilen ' + UYKU.length + ' öğrencinin bir haftalık uyku kaydı.' },
-      { baslik: 'Hata / yanlılık', t: 4.6, detay: 'Eksen sıfırdan başlıyor, örneklem rastgele, uç değer yok. Ortalama ' + sy(U_ORT) + ', ortanca ' + sy(U_MED) + '.' },
-      { baslik: 'Karar', t: 9.8, detay: 'Dağılım ve özetler iddiayla tutarlı: örneklemimize göre muhtemelen doğru.' },
+      { baslik: 'Temellendir', t: 0.8, detay: 'Kurayla seçilen ' + UYKU.length + ' öğrencinin bir haftalık uyku kaydı.' },
+      { baslik: 'Hata / yanlılık', t: 4.6, detay: 'Eksen tam, örneklem rastgele, uç değer yok.' },
+      { baslik: 'Karar', t: 9.8, detay: 'Ortalama ' + sy(U_ORT) + ', ortanca ' + sy(U_MED) + ': özetler iddiayla tutarlı.' },
     ],
     karar: { t: 10.8, kabul: true },
     keys: (V) => {
@@ -605,7 +610,6 @@
         const [x] = K.p(v * UK, 0);
         kYazi(ctx, K, sy(v), x, ay + 28, { boyut: 22, agirlik: 540, renk: 'gumus' });
       }
-      kYazi(ctx, K, 'saat', V.x + V.w - 16, ay + 28, { boyut: 22, agirlik: 600, hiza: 'right', renk: 'gumus', alfa: ara(t, 7.4, 8.2) });
       // nokta grafiği (ekran uzayında)
       const da = ara(t, 6.4, 8.0);
       const r = H ? 7.5 : 6.5, sp = H ? 16.5 : 14;
