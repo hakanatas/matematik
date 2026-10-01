@@ -1,0 +1,16 @@
+{
+  "ozet": "3 − 5 işleminin sonucu doğal sayılar halkasından fırlar ve halka genişler: tam sayılar doğar. Film her sayı kümesini bir ışık halkası olarak gösterir; bir işlemin sonucu halkanın dışına kaçtıkça yeni halka doğar: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ. Kapalılık tablosu ✓/✗ ile dolar; ℤ'de 2 ile 3 arası boşken ℚ'de sonsuz yakınlaştırmada araya hep yeni kesirler girer ve bu doğrudan ispatla gösterilir. Sürpriz: rasyoneller her yerde olsa da √2'nin yerinde bir delik vardır; gerçek sayılar doğruyu tamamlar. Son olarak tek bir karşıt örneğin (√2 · √2 = 2) bir önermeyi nasıl çürüttüğü görülür.",
+  "fikir": "Her sayı kümesi bir ışık halkasıdır; sonuç halkadan kaçınca yeni halka doğar. Kapalılık, kaçamamaktır.",
+  "sahneler": {
+    "Soğuk açılış: 3 − 5": "Doğal sayılar halkasında 3 − 5 işleminin sonucu halkayı kırıp dışarı fırlar (−2); halka genişler ve tam sayılar doğar.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Halkalar doğuyor": "1 : 2 tam sayılardan kaçar, rasyonel sayılar doğar (a/b, b ≠ 0); birim karenin köşegeni √2 rasyonellerden kaçar, gerçek sayılar doğar; ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ.",
+    "Kapalılık: kaçamamak": "Küme × işlem tablosu (+, −, ·, :) ✓/✗ ile dolar; her ✗ için karşıt örnek (3 − 5, 1 : 2); sıfıra bölme hariç; ∀a, b ∈ ℝ için a · b ∈ ℝ genellemesi.",
+    "Arada olma ve doğrudan ispat": "ℤ'de 2 ile 3 arasında tam sayı yoktur; ℚ'de sonsuz yakınlaştırmada araya hep yeni kesirler girer. a < b ⇒ a < (a + b)/2 < b doğrudan ispatı.",
+    "Sürpriz: doğrudaki delik": "√2'ye yakınlaştıkça 1,4; 1,41; 1,414… gibi rasyonel yaklaşımlar görünür ama √2'nin yerine hiçbir kesir düşmez; gerçek sayılar deliği doldurur ve doğru kesintisiz olur.",
+    "Tek karşıt örnek": "\"İki irrasyonel sayının çarpımı irrasyoneldir\" önermesi √2 · √2 = 2 karşıt örneğiyle çürür; doğrudan ispat ile aksine örnek yönteminin karşılaştırılması.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Sayılar Laboratuvarı'na karekod ve bağlantı."
+  }
+}

@@ -224,7 +224,12 @@
     if (tk > 0) E.cizgi(ctx, [[d.x, o0[1]], [d.x + d.w * ara(t, RT[0], RT[0] + 0.9), o0[1]]], { renk: 'turkuaz', kalinlik: 5, parilti: 1.3, alfa: tk });
     if (gk > 0) E.cizgi(ctx, [[o0[0], d.y + d.h], [o0[0], d.y + d.h - d.h * ara(t, RT[1], RT[1] + 0.9)]], { renk: 'turkuaz', kalinlik: 5, parilti: 1.3, alfa: gk });
     // doğru
-    dogru(ctx, d, (x) => x, { renk: 'turkuaz', kalinlik: 4.5, parilti: 1, p: lp, bas: true });
+    // doğru orijinden iki yöne doğar
+    const m = Math.max(d.xmax, d.ymax) * lp;
+    dogru(ctx, d, (x) => x, { renk: 'turkuaz', kalinlik: 4.5, parilti: 1, x0: -m, x1: m });
+    const mm = Math.min(m, d.xmax, d.ymax);
+    if (lp > 0 && lp < 1) for (const sg of [-1, 1]) E.isik(ctx, d.px(sg * mm), d.py(sg * mm), 80, 'turkuaz', 0.8 * (m > mm + 0.3 ? 0 : 1));
+    if (lp > 0) E.isik(ctx, o0[0], o0[1], 160, 'turkuaz', 0.35 * E.nabiz(t, 0.7, 1.4));
     if (isA > 0) dogru(ctx, d, (x) => x, { renk: 'mercan', kalinlik: 4.5, parilti: 1, x1: 0, alfa: isA });
     E.yazi(ctx, '+', d.px(4.4), d.py(1.8), { boyut: 44, agirlik: 700, renk: 'turkuaz', alfa: isA });
     E.yazi(ctx, '−', d.px(-4.4), d.py(-1.8), { boyut: 44, agirlik: 700, renk: 'mercan', alfa: isA });
@@ -406,7 +411,7 @@
         E.nokta(ctx, px, oy, 7, { renk: rk, parilti: 0.8 });
         E.nokta(ctx, px, py, 8, { renk: rk, parilti: 1.2 });
         E.formul(ctx, `x_{${ad}}`, px, oy + (h(x) >= 0 ? 26 : -26), { boyut: 28, renk: rk });
-        E.formul(ctx, `h(x_{${ad}})`, ox - 14, py - (x < 0 ? 18 : 0), { boyut: 26, renk: rk, hiza: 'right', alfa: ara(t, 4.6, 5.2) });
+        E.etiket(ctx, `h(x_{${ad}})`, ox - 16, py - (x < 0 ? 26 : 0), { boyut: 26, formul: true, renk: rk, hiza: 'right', alfa: ara(t, 4.6, 5.2), plakaAlfa: 0.8 });
       }
       ctx.restore();
     }
@@ -499,7 +504,7 @@
     // birleşme flaşı
     const fl = E.nabiz(t, 6.75, 1.0);
     if (fl > 0) { E.isik(ctx, d.px(1.5), d.py(0), 420, 'limon', 0.35 * fl); E.isikSupur(ctx, ara(t, 6.8, 7.9, 'lin'), { renk: 'limon', guc: 0.3 }); }
-    E.etiket(ctx, 'y = 2x − 3', d.px(3.2), d.py(-1.6), { boyut: 30, formul: true, renk: 'limon', alfa: ara(t, 7.0, 7.6), plakaAlfa: 0.8 });
+    E.etiket(ctx, 'y = 2x − 3', d.px(1.6), d.py(-1.6), { boyut: 30, formul: true, hiza: 'left', renk: 'limon', alfa: ara(t, 7.0, 7.6), plakaAlfa: 0.8 });
     ctx.restore();
     // Panel
     const P = PANEL(), cx = P.x + P.w / 2;

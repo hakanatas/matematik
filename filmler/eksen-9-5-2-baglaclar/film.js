@@ -317,8 +317,8 @@
   const acilis = (ctx, s) => {
     const t = s.t, L = E.L, ic = L.icerik;
     const H = E.yatay;
-    const tw = H ? 330 : 420, tx = H ? ic.x + 6 : L.cx - tw / 2, ty = H ? ic.y + 60 : ic.y + 10;
-    const k = H ? { x: ic.x + 452, y: ic.y + 110, w: 700, h: 340 } : { x: ic.x, y: ic.y + 470, w: 640, h: 320 };
+    const tw = H ? 378 : 340, tx = H ? ic.x + 4 : L.cx - tw / 2, ty = H ? ic.y + 16 : ic.y;
+    const k = H ? { x: ic.x + 448, y: ic.y + 40, w: 704, h: 430 } : { x: ic.x, y: ic.y + 494, w: 640, h: 290 };
     // kamera: 29 hücresinden geri çekil
     const hc = tw / 7, ust = yd(118, 128);
     const c29 = [tx + hc * 3.5, ty + ust + hc * 0.75 + hc * 4.5];
@@ -333,7 +333,7 @@
     devre(ctx, k, { yil: 1900, faz, t, alfa: ara(t, 3.0, 3.8), insa: ara(t, 3.0, 4.0, 'io2'), giris: T.yil });
     // hüküm
     const hk = ara(t, 8.8, 9.4, 'cik3');
-    const vx = H ? tx + tw / 2 : L.cx, vy = H ? ty + T.h + 50 : k.y - 46;
+    const vx = H ? tx + tw / 2 : L.cx, vy = H ? ty + T.h + 46 : ty + T.h + 32;
     E.yazi(ctx, '29 Şubat 1900 yok.', vx, vy, { boyut: H ? 30 : 30, agirlik: 700, renk: 'mercan', alfa: hk, parilti: 0.4 });
     E.isik(ctx, k.x + k.w / 2, k.y + k.h / 2, 420, 'mercan', 0.16 * E.nabiz(t, 8.7, 1.4));
   };
@@ -497,9 +497,9 @@
     const t = s.t, L = E.L, ic = L.icerik;
     const H = E.yatay;
     const sz = H ? 54 : 48;
-    const g = H ? [ic.x + 400, ic.y + 270] : [ic.x + 360, ic.y + 228];
-    const pS = H ? [ic.x + 90, ic.y + 180] : [ic.x + 90, ic.y + 130];
-    const qS = H ? [ic.x + 90, ic.y + 370] : [ic.x + 90, ic.y + 318];
+    const g = H ? [ic.x + 400, ic.y + 250] : [ic.x + 360, ic.y + 196];
+    const pS = H ? [ic.x + 90, ic.y + 160] : [ic.x + 90, ic.y + 108];
+    const qS = H ? [ic.x + 90, ic.y + 350] : [ic.x + 90, ic.y + 286];
     const insa = ara(t, 0.1, 1.2, 'io2');
     const RT = 1.2, RD = 2.2;
     let r = -1, u = 0;
@@ -536,14 +536,14 @@
       E.yazi(ctx, qv ? '1' : '0', qS[0] + 70, qS[1] - 26, { boyut: 26, agirlik: 700, renk: qv ? 'gok' : 'gumus', alfa: ara(u, 0, 0.25) });
     }
     // durum cümlesi
-    const dx = H ? ic.x + 300 : L.cx, dy = H ? ic.y + 500 : ic.y + 432;
+    const dx = H ? ic.x + 300 : L.cx, dy = H ? ic.y + 452 : ic.y + 380;
     if (r >= 0) E.yazi(ctx, IS_SATIR[r], dx, dy, { boyut: H ? 30 : 28, agirlik: 640, renk: r === 1 ? 'mercan' : 'tebesir', alfa: ara(u, 1.2, 1.45) * (1 - ara(u, 2.05, 2.2)) });
     const son = ara(t, 10.3, 10.9);
     E.formul(ctx, '\\kutu{mercan}{1 \\Rightarrow 0 \\;=\\; 0}', dx, dy, { boyut: H ? 36 : 34, alfa: son, parilti: 0.3 * son, parRenk: 'mercan' });
     E.yazi(ctx, 'İSE’nin yanlış olduğu tek durum', dx, dy + (H ? 56 : 52), { boyut: H ? 26 : 24, agirlik: 560, renk: 'gumus', alfa: ara(t, 10.6, 11.2) });
     // tablo
-    const cw = H ? 150 : 150, hh = H ? 70 : 56, rh = H ? 78 : 60;
-    const x0 = H ? ic.x + 690 : L.cx - cw * 1.5, y0 = H ? ic.y + 40 : ic.y + 528;
+    const cw = H ? 150 : 150, hh = H ? 70 : 56, rh = H ? 78 : 58;
+    const x0 = H ? ic.x + 690 : L.cx - cw * 1.5, y0 = H ? ic.y + 40 : ic.y + 476;
     const ta = ara(t, 0.6, 1.4);
     tablo(ctx, x0, y0, cw, hh, rh, ['p', 'q', 'p \\Rightarrow q'], [null, null, 'limon'], (rr, c) => {
       const yaz = t < RT ? 0 : rr < Math.floor((t - RT) / RD) || t >= RT + 4 * RD ? 1 : rr === Math.floor((t - RT) / RD) ? ara(t - RT - rr * RD, c < 2 ? 0.05 : 1.2, c < 2 ? 0.3 : 1.45) : 0;
@@ -565,7 +565,7 @@
     const ic = E.L.icerik, H = E.yatay;
     return H
       ? { k: { x: ic.x, y: ic.y + 100, w: 700, h: 340 }, yilY: ic.y + 40, logY: ic.y + 536, kod: { x: ic.x + 742, y: ic.y + 8, w: 410 }, sem: { x: ic.x + 947, y: ic.y + 420 }, logDx: 140 }
-      : { k: { x: ic.x, y: ic.y + 86, w: 640, h: 320 }, yilY: ic.y + 30, logY: ic.y + 444, kod: { x: ic.x, y: ic.y + 486, w: 640 }, sem: { x: E.L.cx, y: ic.y + 760 }, logDx: 128 };
+      : { k: { x: ic.x, y: ic.y + 76, w: 640, h: 290 }, yilY: ic.y + 30, logY: ic.y + 398, kod: { x: ic.x, y: ic.y + 430, w: 640 }, sem: { x: E.L.cx, y: ic.y + 750 }, logDx: 128 };
   };
   const yilLog = (ctx, Y, ly, liste, t, o) => {
     const ic = E.L.icerik;
@@ -599,7 +599,7 @@
     // sözde kod
     const kodA = ara(t, 0.5, 1.4);
     kodPaneli(ctx, Y.kod.x, Y.kod.y, Y.kod.w, artikKod(0), {
-      boyut: H ? 24 : 23, satirH: H ? 42 : 36, alfa: kodA, yaz: ara(t, 0.6, 2.2, 'lin'), vurguRenk: uc > 0.5 ? 'limon' : 'gok',
+      boyut: H ? 24 : 23, satirH: H ? 42 : 34, alfa: kodA, yaz: ara(t, 0.6, 2.2, 'lin'), vurguRenk: uc > 0.5 ? 'limon' : 'gok',
       aktif: (i) => {
         if (uc > 0.5) return 0.6;
         if (i <= 1) return ara(faz, 0.2, 0.4) * (1 - ara(faz, 1.4, 1.6));
@@ -649,7 +649,7 @@
       const r = devre(ctx, Y.k, { yil, faz, t, alfa: devA, bozuk: bz, uyari: true, giris: [Y.k.x + (H ? 120 : 112), Y.yilY + 18] });
       yilLog(ctx, Y, Y.logY, SURPRIZ, t, { sonuc: (y) => (y % 4 === 0 || y % 100 !== 0) || y % 400 === 0, uyari: true, alfa: devA });
       kodPaneli(ctx, Y.kod.x, Y.kod.y, Y.kod.w, artikKod(bz), {
-        boyut: H ? 24 : 23, satirH: H ? 42 : 36, alfa: devA, vurguRenk: 'mercan',
+        boyut: H ? 24 : 23, satirH: H ? 42 : 34, alfa: devA, vurguRenk: 'mercan',
         aktif: (i) => (i === 0 ? E.nabiz(t, 1.2, 2.0) : i === 3 && faz >= 2.6 && r.g2 ? 1 : 0),
       });
       if (H) E.yazi(ctx, 'SEMBOLİK', Y.sem.x, Y.sem.y - 52, { boyut: 22, agirlik: 700, harfAra: 4, renk: 'gumus', alfa: devA });
@@ -661,11 +661,11 @@
     const sA = ara(t, 11.0, 11.6);
     if (sA > 0.002) {
       const sz = H ? 52 : 46;
-      const g = H ? [ic.x + 700, ic.y + 300] : [ic.x + 420, ic.y + 380];
-      const ys = H ? [ic.y + 180, ic.y + 300, ic.y + 420] : [ic.y + 250, ic.y + 380, ic.y + 510];
+      const g = H ? [ic.x + 700, ic.y + 300] : [ic.x + 420, ic.y + 470];
+      const ys = H ? [ic.y + 180, ic.y + 300, ic.y + 420] : [ic.y + 300, ic.y + 470, ic.y + 640];
       const cw = H ? 330 : 300, cx0 = H ? ic.x + 180 : ic.x;
-      E.yazi(ctx, 'şifre:', H ? cx0 : ic.x, H ? ic.y + 70 : ic.y + 40, { boyut: H ? 34 : 32, agirlik: 520, hiza: 'left', renk: 'gumus', alfa: sA });
-      E.yazi(ctx, 'abc1', H ? cx0 + 110 : ic.x + 104, H ? ic.y + 70 : ic.y + 40, { boyut: H ? 44 : 42, agirlik: 700, hiza: 'left', font: 'mono', alfa: sA, parilti: 0.3 });
+      E.yazi(ctx, 'şifre:', H ? cx0 : ic.x, H ? ic.y + 70 : ic.y + 110, { boyut: H ? 34 : 32, agirlik: 520, hiza: 'left', renk: 'gumus', alfa: sA });
+      E.yazi(ctx, 'abc1', H ? cx0 + 110 : ic.x + 104, H ? ic.y + 70 : ic.y + 110, { boyut: H ? 44 : 42, agirlik: 700, hiza: 'left', font: 'mono', alfa: sA, parilti: 0.3 });
       const morf = ara(t, 13.0, 13.8, 'io3');
       const f1 = ara(t, 11.6, 12.4, 'lin'), f2 = ara(t, 12.4, 12.8, 'lin');
       const g2 = ara(t, 13.9, 14.5, 'lin');
@@ -850,13 +850,17 @@
     { tr: 'Tek bağlaç değişirse karar değişir.', formul: '(p \\and \\neg q) \\or r' },
   ], { aralik: 1.6 });
   // Yerel çözüm: motorun bitiş kartı, iki satıra sarılan laboratuvar adını hesaba katmıyor
-  // ("Algoritma Laboratuvarı" yatayda 520 px'e sığmıyor). Açıklamayı biz, bir satır aşağıda çiziyoruz.
+  // ("Algoritma Laboratuvarı" yatayda 50 px'te 520 px'e sığmıyor ve üstteki/alttaki yazıya biniyor).
+  // Adı ve açıklamayı burada, adı tek satıra sığdırarak çiziyoruz.
   const bitis = (ctx, s) => {
-    E.bitisKarti(ctx, s, Object.assign({}, meta, { labAciklama: '' }));
+    E.bitisKarti(ctx, s, Object.assign({}, meta, { labAd: '', labAciklama: '' }));
     const L = E.L, ic = L.icerik, t = s.t;
     const qy = E.yd(L.cy - 110 - 40, ic.y + 330);
-    const sar = E.yatay && E.yaziOlc(ctx, meta.labAd, { boyut: 50, agirlik: 760 }) > 520;
-    E.yazi(ctx, meta.labAciklama, E.yd(L.cx - 400, L.cx), E.yd(qy + (sar ? 190 : 158), ic.y + 210), { boyut: 26, agirlik: 460, renk: 'gumus', hiza: E.yd('left', 'center'), alfa: E.ara(t, 0.5, 1.4, 'cik3'), maxGen: E.yd(500, 600) });
+    const tx = E.yd(L.cx - 400, L.cx), hz = E.yd('left', 'center');
+    const a1 = E.ara(t, 0, 0.9, 'cik3'), a2 = E.ara(t, 0.5, 1.4, 'cik3');
+    const boy = E.sigdir(ctx, meta.labAd, { boyut: E.yd(50, 46), agirlik: 760 }, E.yd(520, 600), 36);
+    E.yazi(ctx, meta.labAd, tx, E.yd(qy + 82, ic.y + 120), { boyut: boy, agirlik: 760, hiza: hz, alfa: a1 });
+    E.yazi(ctx, meta.labAciklama, tx, E.yd(qy + 158, ic.y + 210), { boyut: 26, agirlik: 460, renk: 'gumus', hiza: hz, alfa: a2, maxGen: E.yd(500, 600) });
   };
 
   /* ---------- Film ---------- */

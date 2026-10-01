@@ -226,7 +226,7 @@
     // Başlık sütunu
     const sx = H ? 784 : L.cx, sh = H ? 'left' : 'center';
     const s0 = H ? ic.y + 40 : ic.y + 486;
-    baslik(ctx, sx, s0, '\\c{turkuaz}{\\t{K}}\\c{mercan}{\\t{K}}\\c{menekse}{\\t{K}}', 'kenar · kenar · kenar', { hiza: sh, alfa: ara(t, 0.2, 0.9) * (H ? 1 : 1 - ara(t, 11.6, 12.0) + ara(t, 15.4, 15.9)), boyut: 50 });
+    baslik(ctx, sx, s0, '\\c{turkuaz}{\\t{K}}\\c{mercan}{\\t{K}}\\c{menekse}{\\t{K}}', 'kenar · kenar · kenar', { hiza: sh, alfa: (H ? ara(t, 0.2, 0.9) : ara(t, 3.0, 3.6)) * (H ? 1 : 1 - ara(t, 11.6, 12.0) + ara(t, 15.4, 15.9)), boyut: 50 });
     const m1 = ara(t, 8.8, 9.5) * (H ? 1 : 1 - ara(t, 11.8, 12.3) + ara(t, 15.4, 15.9));
     E.yazi(ctx, 'Üç çubuk → tek üçgen', sx, s0 + (H ? 120 : 112), { boyut: H ? 34 : 32, agirlik: 640, hiza: sh, alfa: m1, renk: 'limon', parilti: 0.2 });
     E.yazi(ctx, 'Alttaki kesişim: aynı üçgenin yansıması', sx, s0 + (H ? 176 : 168), { boyut: 26, agirlik: 500, renk: 'gumus', hiza: sh, alfa: ara(t, 9.8, 10.5) * (1 - ara(t, 11.4, 11.9)), maxGen: H ? 400 : 620 });
@@ -512,8 +512,8 @@
     const b1 = 1 - ara(t, 6.2, 6.8);
     if (b1 > 0) {
       ctx.save(); ctx.globalAlpha *= b1;
-      const sc = H ? 60 : 52;
-      const g = harita(H ? ic.x + 40 : ic.x + 36, H ? ic.y + 440 : ic.y + 384, sc);
+      const sc = H ? 72 : 52;
+      const g = harita(H ? ic.x + 30 : ic.x + 36, H ? ic.y + 470 : ic.y + 384, sc);
       const ra = ara(t, 0.2, 1.2);
       E.cizgi(ctx, [g([0, 0]), g([7.6, 0])], { renk: 'cizgi', kalinlik: 2, p: ra });
       E.cizgi(ctx, [g([0, 0]), g(kutup(6.6, 40 * D))], { renk: 'cizgi', kalinlik: 2, p: ra });
