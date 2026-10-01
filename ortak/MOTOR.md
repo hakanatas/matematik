@@ -59,7 +59,7 @@ Sahneler 0.2–0.3 sn örtüşerek çapraz geçer (`giris`/`cikis` varsayılan 0
 | `E.nabiz(t, t0, d)` | t0'da başlayan 0→1→0 darbe |
 | `E.rng(tohum)`, `E.hash(i, s)`, `E.gurultu(x, s)` | tohumlu rastgelelik |
 | `E.yazi(ctx, metin, x, y, {boyut, agirlik, renk, hiza, maxGen, alfa, parilti, yaz:0..1, font:'sans'|'mono', harfAra})` | yazı (satır sarma, daktilo) |
-| `E.formul(ctx, 'tex', x, y, {boyut, renk, hiza, alfa, aciga:0..1, parilti})` | mini TeX: `^{}`, `_{}`, `\frac{}{}`, `\sqrt{}`, `\sqrt[n]{}`, `\c{renk}{..}`, `\t{düz metin}`, `\kutu{renk}{..}`, `\ustcizgi{}`, `\,` `\;` `\quad`, `\cdot \le \ge \ne \in \notin \cup \cap \subset \subseteq \forall \exists \R \N \Z \Q \pi \infty \Rightarrow \iff \and \or \xor \neg \pm \approx \angle \triangle \cong \sim \emptyset \setminus`. Ondalık virgül: `3{,}14`. Tek harfler otomatik italik. |
+| `E.formul(ctx, 'tex', x, y, {boyut, renk, hiza, alfa, aciga:0..1, parilti})` | mini TeX: `^{}`, `_{}`, `\frac{}{}`, `\sqrt{}`, `\sqrt[n]{}`, `\c{renk}{..}`, `\t{düz metin}`, `\kutu{renk}{..}`, `\ustcizgi{}`, `\,` `\;` `\quad`, `\cdot \le \ge \ne \in \notin \cup \cap \subset \subseteq \forall \exists \R \N \Z \Q \pi \infty \Rightarrow \iff \and \or \xor \neg \pm \approx \angle \triangle \cong \sim \emptyset \setminus \gamma \circ \parallel \perp \equiv \{ \}`, `\vec{v}`. Ondalık virgül: `3{,}14`. Tek harfler otomatik italik. |
 | `E.yaziOlc`, `E.formulOlc`, `E.sigdir` | ölçüm / sığdırma |
 | `E.cizgi(ctx, [[x,y],...], {renk, kalinlik, parilti, p:0..1, kesik:[a,b], kapali, ok})` | ışıklı çizgi, çizilerek belirme |
 | `E.ok`, `E.cokgen(ctx, pts, {renk, alfa, kenar})`, `E.nokta(ctx, x, y, r, {renk, bos, parilti})` | ok, dolgu, nokta |
