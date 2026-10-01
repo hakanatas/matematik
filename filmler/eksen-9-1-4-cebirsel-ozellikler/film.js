@@ -366,7 +366,7 @@
     kutu(ctx, sx, sy, a, k, 'turkuaz', { alfa: ilk });
     // alt-sol parça (k × b) — döner ve sağa kayar
     const c0 = [sx + k / 2, sy + k + b / 2], c1 = [sx + a + b / 2, sy + k / 2];
-    const yay = Math.sin(tas * Math.PI) * -60; // kavisli yol
+    const yay = Math.sin(tas * Math.PI) * 70; // kavisli yol
     const pcx = lerp(c0[0], c1[0], tas), pcy = lerp(c0[1], c1[1], tas) + yay;
     kutuDon(ctx, pcx, pcy, k, b, -Math.PI / 2 * tas, tas > 0.98 ? 'turkuaz' : 'gok', { alfa: ilk });
     }
