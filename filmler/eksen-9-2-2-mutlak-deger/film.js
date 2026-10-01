@@ -15,7 +15,7 @@
     ad: 'Katlanan Doğru',
     adEn: 'The Folded Line',
     labAd: 'Fonksiyon Laboratuvarı',
-    labAciklama: 'Bir doğruyu x ekseni boyunca katla; tepe, simetri ekseni ve sıfırların nasıl değiştiğini gör.',
+    labAciklama: 'Bir doğruyu x ekseni boyunca katla; tepeyi, simetriyi ve sıfırları izle.',
     labUrl: 'https://hakanatas.github.io/eksen-lab-fonksiyonlar/',
   };
 
@@ -454,7 +454,7 @@
     E.panel(ctx, P.x, P.y, P.w, P.h, { alfa: ara(t, 0, 0.6), vurgu: 'turkuaz' });
     const y = (h2, v) => P.y + yd(h2, v);
     E.yazi(ctx, 'KAYDIR VE PARÇALI YAZ', P.x + 28, y(34, 32), { boyut: 22, agirlik: 700, harfAra: 4, renk: 'turkuaz', hiza: 'left' });
-    E.formul(ctx, 'm(x) = |2x − 4| \\c{limon}{− 1}', cx, y(102, 78), { boyut: yd(36, 32), alfa: ara(t, 0.4, 1.0) });
+    E.formul(ctx, 'm(x) = |2x − 4| − \\c{limon}{1}', cx, y(102, 78), { boyut: yd(36, 32), alfa: ara(t, 0.4, 1.0) });
     const bA = ara(t, 4.0, 4.6, 'cik3');
     const yc = y(214, 158), sat = yd(34, 26), fb = yd(30, 27), bx0 = P.x + yd(50, 60);
     E.formul(ctx, 'm(x) =', bx0, yc, { boyut: fb, hiza: 'left', alfa: bA });

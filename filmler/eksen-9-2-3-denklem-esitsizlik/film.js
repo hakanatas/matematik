@@ -179,19 +179,19 @@
     const d = tarifeDuzlem();
     const ga = ara(t, 0.2, 1.0);
     tarifeEksen(ctx, d, ga, ara(t, 0.2, 1.4));
-    const x = kf(t, [[1.4, 0], [6.0, 8, 'io2'], [7.0, 8], [8.8, 12.8, 'io2']]);
+    const x = kf(t, [[1.4, 0], [6.5, 8, 'io2'], [7.4, 8], [9.2, 12.8, 'io2']]);
     if (x > 0.001) {
       E.cizgi(ctx, [d.p(0, A(0)), d.p(x, A(x))], { renk: 'mercan', kalinlik: 4.5, parilti: 1 });
       E.cizgi(ctx, [d.p(0, B(0)), d.p(x, B(x))], { renk: 'gok', kalinlik: 4.5, parilti: 1 });
       if (x < 12.79) for (const [f, rk] of [[A, 'mercan'], [B, 'gok']]) { E.isik(ctx, d.px(x), d.py(f(x)), 70, rk, 0.7); E.nokta(ctx, d.px(x), d.py(f(x)), 7, { renk: 'tebesir', parilti: 0.8 }); }
     }
-    const fl = E.nabiz(t, 5.9, 1.2);
-    if (t > 5.9) {
-      E.nokta(ctx, d.px(8), d.py(260), 10, { renk: 'limon', parilti: 1.6, alfa: ara(t, 5.9, 6.2) });
+    const fl = E.nabiz(t, 6.4, 1.2);
+    if (t > 6.4) {
+      E.nokta(ctx, d.px(8), d.py(260), 10, { renk: 'limon', parilti: 1.6, alfa: ara(t, 6.4, 6.7) });
       E.isik(ctx, d.px(8), d.py(260), 300, 'limon', 0.5 * fl);
-      const ha = ara(t, 6.0, 6.4) * (1 - ara(t, 9.6, 10.2));
-      const r = 14 + 120 * ara(t, 5.9, 7.0, 'cik3');
-      ctx.save(); ctx.globalAlpha *= (1 - ara(t, 5.9, 7.0)) * 0.9; ctx.strokeStyle = E.R('limon'); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(d.px(8), d.py(260), r, 0, E.TAU); ctx.stroke(); ctx.restore();
+      const ha = ara(t, 6.5, 6.9) * (1 - ara(t, 9.6, 10.2));
+      const r = 14 + 120 * ara(t, 6.4, 7.5, 'cik3');
+      ctx.save(); ctx.globalAlpha *= (1 - ara(t, 6.4, 7.5)) * 0.9; ctx.strokeStyle = E.R('limon'); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(d.px(8), d.py(260), r, 0, E.TAU); ctx.stroke(); ctx.restore();
       E.etiket(ctx, 'KESİŞİM ANI', d.px(8) - 20, d.py(260) - 52, { boyut: 26, agirlik: 760, renk: 'limon', hiza: 'right', alfa: ha, harfAra: 3 });
     }
     const xe = Math.min(x, 12.8), yon = x < 8 ? 1 : -1, yak = clamp((Math.abs(x - 8) - 0.3) / 0.8);

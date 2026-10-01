@@ -1,0 +1,15 @@
+{
+  "ozet": "3-4-5 dik üçgeninin dik kenarlarındaki 9 ve 16 birim kare, hipotenüs üzerindeki 25'lik kareyi tam doldurur; peki her dik üçgende mi? Film önce Tales teoremini ispatlar: paralel üç doğru iki keseni orantılı parçalara ayırır (3 / 4,5 = 2,5 / 3,75); kesen A'dan geçecek şekilde paralel kaydırılınca benzer üçgenler ve paralelkenarlar ispatı tamamlar. Ardından hipotenüse indirilen yüksekliğin doğurduğu benzer üçgenlerden Öklid bağıntıları (h² = p·k, c² = p·a, b² = k·a) çıkar. Sürpriz anda dik kenar kareleri kesme ve kaydırmayla, alanları hiç değişmeden hipotenüs karesinin p×a ve k×a dikdörtgenlerine dönüşür: a² = b² + c². Son olarak açı 90°'den saptığında geniş açıda a² > b² + c², dar açıda a² < b² + c² olduğu görülür.",
+  "fikir": "Alan kaybolmaz: dik kenar kareleri kesilip kaydırılarak hipotenüs karesini tam doldurur; benzerlik de aynı sonucu cebirle verir.",
+  "sahneler": {
+    "Soğuk açılış: 9 + 16 = 25": "3-4-5 dik üçgeninin dik kenar karelerindeki birim kareler tek tek hipotenüs karesine akar ve onu tam doldurur. \"Her dik üçgende mi?\"",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Tales: paraleller ve orantı": "d₁ ∥ d₂ ∥ d₃ iki keseni |AB| = 3, |BC| = 4,5 ve |DE| = 2,5, |EF| = 3,75 parçalarına ayırır; kesen dönse de oran 2/3 kalır. İspat: kesen A'dan geçecek şekilde paralel kaydırılır; △ABE' ∼ △ACF' ve paralelkenarlardan |AE'| = |DE|, |E'F'| = |EF|.",
+    "Öklid: üç bağıntı": "A dik açılı ABC'de AH yüksekliği; benzer üçgen çiftlerinden h² = p·k (5,76 = 1,8·3,2), c² = p·a (9 = 1,8·5), b² = k·a (16 = 3,2·5).",
+    "Pisagor: kaybolmayan alan": "c² karesi kenarı boyunca kesilip paralelkenara, sonra dikey kesmeyle 1,8×5 dikdörtgenine dönüşür ve hipotenüs karesine kayar; b² aynı yolla 3,2×5 dikdörtgeni olur. Alan her adımda aynıdır: a² = b² + c²; cebirle c² + b² = a(p + k) = a².",
+    "Dar ve geniş açı": "Kenarları 3 ve 4 olan üçgende açı 115°'ye açılınca a² ≈ 35,1 > 25, 65°'ye kapanınca a² ≈ 14,9 < 25; eşitlik yalnızca 90°'de.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Dönüşüm ve Benzerlik Laboratuvarı'na karekod ve bağlantı."
+  }
+}
