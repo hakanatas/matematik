@@ -122,14 +122,14 @@
       g.fillStyle = E.rgba('turkuaz', 0.1 + r() * 0.12); g.beginPath(); g.arc(x, y, 3 + r() * 5, 0, TAU); g.fill();
     }
     // su
-    for (const k of ['bati', 'kuzey', 'guney', 'bag']) {
-      const o = ORNEK[k];
-      const yol = () => { g.beginPath(); o.forEach((q, j) => (j ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]))); };
-      g.lineCap = 'round'; g.lineJoin = 'round';
-      yol(); g.strokeStyle = E.karistir('gece', 'gok', 0.18); g.lineWidth = KOL[k].w + 6; g.stroke();
-      yol(); g.strokeStyle = E.karistir('derin', 'gok', 0.35); g.lineWidth = KOL[k].w; g.stroke();
-      yol(); g.strokeStyle = E.karistir('derin', 'gok', 0.5); g.lineWidth = KOL[k].w * 0.35; g.stroke();
-    }
+    const katman = [[6, E.karistir('gece', 'gok', 0.18), 1], [0, E.karistir('derin', 'gok', 0.35), 1], [0, E.karistir('derin', 'gok', 0.5), 0.35]];
+    g.lineCap = 'round'; g.lineJoin = 'round';
+    for (const [ek, renk, olc] of katman)
+      for (const k of ['bati', 'kuzey', 'guney', 'bag']) {
+        const o = ORNEK[k];
+        g.beginPath(); o.forEach((q, j) => (j ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])));
+        g.strokeStyle = renk; g.lineWidth = KOL[k].w * olc + ek; g.stroke();
+      }
     // kenar kararması
     g.globalCompositeOperation = 'destination-in';
     const mg = g.createRadialGradient(500, 300, 220, 500, 300, 620);
@@ -273,7 +273,7 @@
       acilis: H ? { k: 0.95, x0: E.L.cx - 475, y0: ic.y + 0 } : { k: 0.7, x0: 10, y0: ic.y + 170 },
       donusum: H ? { k: 0.86, x0: ic.x - 10, y0: ic.y + 30 } : { k: 0.68, x0: 20, y0: ic.y + 30 },
       euler: H ? { k: 0.64, x0: ic.x - 10, y0: ic.y + 60 } : { k: 0.66, x0: 26, y0: ic.y + 6 },
-      algo: H ? { k: 0.56, x0: ic.x - 20, y0: ic.y + 150 } : { k: 0.5, x0: 112, y0: ic.y + 100 },
+      algo: H ? { k: 0.56, x0: ic.x - 20, y0: ic.y + 150 } : { k: 0.46, x0: 111, y0: ic.y + 92 },
     };
     return tablo[ad];
   };
@@ -356,9 +356,9 @@
     // terimler: düğüm ve ayrıt
     const tA = ara(t, 9.8, 10.4) * (1 - ara(t, 15.4, 16.0));
     if (tA > 0) {
-      const [ax, ay] = P(G.dug.D);
-      E.ok(ctx, ax + E.yd(80, 70), ay + E.yd(70, 70), ax + 26, ay + 18, { renk: 'tebesir', kalinlik: 2, alfa: tA, okBoy: 10 });
-      E.yazi(ctx, 'düğüm', ax + E.yd(86, 74), ay + E.yd(84, 84), { boyut: E.yd(30, 28), agirlik: 700, renk: 'tebesir', hiza: 'left', alfa: tA });
+      const [ax, ay] = P(G.dug.C);
+      E.ok(ctx, ax + 90, ay + 4, ax + 28, ay, { renk: 'tebesir', kalinlik: 2, alfa: tA, okBoy: 10 });
+      E.yazi(ctx, 'düğüm', ax + 98, ay + 4, { boyut: E.yd(30, 28), agirlik: 700, renk: 'tebesir', hiza: 'left', alfa: tA });
       const [ex, ey] = P(ayritNokta(G, 5, 0.5));
       E.ok(ctx, ex + E.yd(60, 50), ey - E.yd(52, 46), ex + 6, ey - 6, { renk: 'limon', kalinlik: 2, alfa: tA, okBoy: 10 });
       E.yazi(ctx, 'ayrıt', ex + E.yd(66, 56), ey - E.yd(64, 58), { boyut: E.yd(30, 28), agirlik: 700, renk: 'limon', hiza: 'left', alfa: tA });
@@ -427,10 +427,10 @@
     if (t > 4.8 && t < 8.0) { const [x, y] = P(G.dug.D); E.isik(ctx, x, y, 90, 'mercan', 0.4 * (0.6 + 0.4 * Math.sin(t * 7))); }
     // etiketler: gir / çık
     const [dx, dy] = P(G.dug.D);
-    const eA = ara(t, 1.6, 2.1) * (1 - ara(t, 7.6, 8.1));
+    const eA = ara(t, 1.6, 2.1) * (1 - ara(t, 4.2, 4.6));
     const [gx, gy] = P(ayritNokta(G, 6, 0.75)), [cx, cy] = P(ayritNokta(G, 5, 0.75));
     rozet(ctx, gx + 30, gy + 26, 'gir', { renk: 'turkuaz', alfa: eA });
-    rozet(ctx, cx + 30, cy - 26, 'çık', { renk: 'turkuaz', alfa: ara(t, 2.8, 3.2) * (1 - ara(t, 7.6, 8.1)) });
+    rozet(ctx, cx + 30, cy - 26, 'çık', { renk: 'turkuaz', alfa: ara(t, 2.8, 3.2) * (1 - ara(t, 4.2, 4.6)) });
     rozet(ctx, dx, dy + E.yd(52, 50), 'takıldın', { renk: 'mercan', alfa: ara(t, 4.8, 5.3) * (1 - ara(t, 7.6, 8.1)) });
     // dereceler
     const derA = (k) => ara(t, 8.2 + 'ABCD'.indexOf(k) * 0.4, 8.7 + 'ABCD'.indexOf(k) * 0.4);
@@ -524,12 +524,12 @@
     // izleme (değişkenler)
     const wA = ara(t, 7.2, 7.6);
     if (wA > 0) {
-      const wx = H ? ic.x + 300 : L.cx, wy = H ? ic.y1 - 20 : T.y0 + 600 * T.k + 24;
+      const wx = H ? ic.x + 300 : L.cx, wy = H ? ic.y1 - 20 : T.y0 + 600 * T.k + 22;
       const v = dur.v || '–', d = dur.v ? String(dur.d) : '–';
       E.yazi(ctx, `v = ${v}   d = ${d}   sayaç = ${dur.sayac ?? 0}`, wx, wy, { boyut: 24, agirlik: 600, font: 'mono', renk: 'tebesir', alfa: wA });
     }
     // kod paneli
-    const kp = H ? { x: 680, y: ic.y + 6, w: ic.x1 - 680, sat: 46, b: 24 } : { x: ic.x, y: ic.y + 460, w: ic.w, sat: 38, b: 23 };
+    const kp = H ? { x: 680, y: ic.y + 6, w: ic.x1 - 680, sat: 46, b: 24 } : { x: ic.x, y: ic.y + 404, w: ic.w, sat: 34, b: 23 };
     const pA = ara(t, 3.6, 4.2);
     const ph = 64 + KOD.length * kp.sat + 14;
     E.panel(ctx, kp.x, kp.y, kp.w, ph, { alfa: pA, vurgu: 'turkuaz', dolguAlfa: 0.85 });
@@ -560,7 +560,7 @@
       const cx = H ? ic.x + 280 : L.cx, cy = H ? ic.y + 380 : T.y0 + 300 * T.k;
       ctx.save(); ctx.translate(cx, cy); ctx.rotate(-0.12); ctx.scale(lerp(1.6, 1, dA), lerp(1.6, 1, dA));
       E.panel(ctx, -170, -40, 340, 80, { r: 12, renk: 'gece', dolguAlfa: 0.85, kenar: 'mercan', kalinlik: 3, alfa: dA });
-      E.yazi(ctx, 'İMKÂNSIZ', 0, 2, { boyut: 46, agirlik: 800, renk: 'mercan', harfAra: 6, alfa: dA, parilti: 0.5, parRenk: 'mercan' });
+      E.yazi(ctx, 'İMKÂNSIZ', 0, 2, { boyut: 46, agirlik: 800, renk: 'mercan', harfAra: 6, alfa: dA, parilti: 0.5, parRenk: 'mercan', cakisabilir: true });
       ctx.restore();
     }
   };
@@ -650,7 +650,7 @@
   const SOKAK_YOL = ['TM', 'TL', 'BL', 'BM', 'TM', 'TR', 'BR', 'BM'];
   const kamyonSahne = (ctx, s) => {
     const t = s.t, H = E.yatay, L = E.L, ic = L.icerik;
-    const g = H ? { x0: ic.x + 150, y0: ic.y + 70, dx: 420, dy: 380 } : { x0: ic.x + 50, y0: ic.y + 120, dx: 270, dy: 560 };
+    const g = H ? { x0: ic.x + 150, y0: ic.y + 112, dx: 420, dy: 336 } : { x0: ic.x + 50, y0: ic.y + 160, dx: 270, dy: 540 };
     const p = (k) => [g.x0 + KAV[k][0] * g.dx, g.y0 + KAV[k][1] * g.dy];
     const a0 = ara(t, 0.0, 0.8);
     // bloklar ve binalar
@@ -682,7 +682,7 @@
       const [x, y] = p(k);
       E.nokta(ctx, x, y, 9, { renk: tek ? 'mercan' : 'gumus', parilti: tek ? 1 : 0.2, alfa: a0 });
       const dA = ara(t, 1.0, 1.6);
-      const dx = KAV[k][0] === 2 ? -38 : 38, dy = KAV[k][1] === 0 ? -34 : 34;
+      const dx = KAV[k][0] === 2 ? -40 : 44, dy = KAV[k][1] === 0 ? -34 : 34;
       rozet(ctx, x + dx, y + dy, String(KAV_DER[k]), { renk: tek ? 'mercan' : 'gumus', kenar: tek ? 'mercan' : null, alfa: dA, boyut: 24 });
     }
     // kamyon
@@ -703,8 +703,8 @@
     const sA = ara(t, 9.0, 9.6);
     E.yazi(ctx, '7 sokak · 0 tekrar', kol.x, H ? ic.y1 - 14 : ic.y1 - 30, { boyut: E.yd(34, 34), agirlik: 760, renk: 'limon', alfa: sA, parilti: 0.4, parRenk: 'limon' });
     const [sx, sy] = p('TM'), [ex, ey] = p('BM');
-    rozet(ctx, sx, sy - E.yd(40, 40), 'başla', { renk: 'limon', alfa: ara(t, 2.2, 2.6) });
-    rozet(ctx, ex, ey + E.yd(40, 40), 'bitir', { renk: 'limon', alfa: ara(t, 8.8, 9.2) });
+    rozet(ctx, sx - 64, sy - 40, 'başla', { renk: 'limon', alfa: ara(t, 2.2, 2.6) });
+    rozet(ctx, ex - 64, ey + E.yd(40, -40), 'bitir', { renk: 'limon', alfa: ara(t, 8.8, 9.2) });
   };
 
   /* ======================= 8. İkili arama ======================= */
@@ -741,7 +741,7 @@
     D.ciz(ctx, { adim: 100, etiketAdim: 500, boyut: 22, alfa: a0, etiketFn: (v) => (v === 0 ? '1' : String(v)) });
     if (nA > 0) {
       E.nokta(ctx, D.px(nS), y1, 7, { renk: 'mercan', parilti: 1, alfa: nA });
-      E.yazi(ctx, `Tek tek: ${nS}. soru`, D.px(Math.min(nS, 820)), y1 - 40, { boyut: 26, agirlik: 700, renk: 'mercan', alfa: nA, font: 'mono' });
+      E.yazi(ctx, `Tek tek: ${nS}. soru`, clamp(D.px(nS), x0 + 150, x1 - 150), y1 - 40, { boyut: 26, agirlik: 700, renk: 'mercan', alfa: nA, font: 'mono' });
     }
     if (k >= 0) D.aralik(ctx, clo - 0.5, chi + 0.5, { renk: 'turkuaz', kalinlik: 10, uc: false, alfa: ara(t, 4.4, 4.8) });
     // yakın plan doğrusu: geçerli aralık
@@ -788,10 +788,37 @@
   /* ======================= Özet ve bitiş ======================= */
   const ozet = (ctx, s) => E.ozetKarti(ctx, s, [
     { tr: 'Önce temsil et: harita → çizge.' },
-    { tr: 'Derece: düğüme değen ayrıt sayısı.', formul: 'A: 5,\\; B: 3,\\; C: 3,\\; D: 3' },
+    { tr: 'Derece: değen ayrıt sayısı.', formul: 'A: 5,\\; B: 3,\\; C: 3,\\; D: 3' },
     { tr: 'Tek dereceli düğümleri say.', formul: '0 \\Rightarrow \\t{döngü}, \\; 2 \\Rightarrow \\t{yol}' },
     { tr: 'Algoritmayı adım adım yaz, testle kontrol et.' },
   ], { aralik: 1.6 });
+
+  /** Bitiş kartı (yerel): uzun laboratuvar adı iki satıra sığsın, açıklama altına otursun.
+      Motorun E.bitisKarti'sinde labAd sarıldığında açıklamayla çakışıyor (bkz. rapor). */
+  let qrOnbellek = null;
+  const bitis = (ctx, s) => {
+    const L = E.L, t = s.t, ic = L.icerik, H = E.yatay;
+    const a1 = ara(t, 0, 0.9, 'cik3'), a2 = ara(t, 0.5, 1.4, 'cik3'), a3 = ara(t, 1.0, 1.9, 'cik3');
+    const qrBoy = H ? 220 : 280;
+    const qx = H ? L.cx + 190 : L.cx - qrBoy / 2, qy = H ? L.cy - qrBoy / 2 - 40 : ic.y + 320;
+    const tx = H ? L.cx - 440 : L.cx, hz = H ? 'left' : 'center';
+    const yb = H ? qy - 6 : ic.y + 30;
+    E.yazi(ctx, 'ŞİMDİ SEN DENE', tx, yb, { boyut: 26, agirlik: 700, harfAra: 6, renk: 'turkuaz', hiza: hz, alfa: a1 });
+    const r = E.yazi(ctx, meta.labAd, tx, yb + 30, { boyut: H ? 44 : 46, agirlik: 760, hiza: hz, alfa: a1, maxGen: H ? 560 : 620, satirAra: 1.05, taban: 'top' });
+    E.yazi(ctx, meta.labAciklama, tx, yb + 30 + r.h + 20, { boyut: 26, agirlik: 460, renk: 'gumus', hiza: hz, alfa: a2, maxGen: H ? 540 : 600, taban: 'top' });
+    if (window.qrcode && meta.labUrl) {
+      if (!qrOnbellek) { const q = window.qrcode(0, 'M'); q.addData(meta.labUrl); q.make(); qrOnbellek = q; }
+      const q = qrOnbellek, n = q.getModuleCount(), m = qrBoy / (n + 4);
+      ctx.save(); ctx.globalAlpha *= a2;
+      E.panel(ctx, qx, qy, qrBoy, qrBoy, { r: 16, renk: 'tebesir', dolguAlfa: 1, kenar: null });
+      ctx.fillStyle = E.P.gece;
+      for (let rr = 0; rr < n; rr++) for (let c = 0; c < n; c++) if (q.isDark(rr, c)) ctx.fillRect(qx + (c + 2) * m, qy + (rr + 2) * m, m + 0.4, m + 0.4);
+      ctx.restore();
+      E.isik(ctx, qx + qrBoy / 2, qy + qrBoy / 2, qrBoy, 'turkuaz', 0.12 * a2);
+    }
+    E.yazi(ctx, meta.labUrl.replace('https://', ''), H ? qx + qrBoy / 2 : L.cx, qy + qrBoy + 34, { boyut: 22, agirlik: 520, renk: 'gumus', alfa: a2 });
+    E.yazi(ctx, 'Eksen · Hakan Ataş · CC BY-NC 4.0', L.cx, ic.y1 - (H ? 6 : 10), { boyut: 22, agirlik: 520, renk: 'gumus', alfa: a3, harfAra: 1 });
+  };
 
   /* ======================= Film ======================= */
   E.film({
@@ -808,7 +835,7 @@
       { ad: 'Gerçek hayat: çöp kamyonu', bas: 76.2, son: 86.5, ciz: kamyonSahne },
       { ad: 'Algoritma = strateji: ikili arama', bas: 86.2, son: 100.5, ciz: ikiliSahne },
       { ad: 'Aklında kalsın', bas: 100.2, son: 110.5, ciz: ozet },
-      { ad: 'Laboratuvar', bas: 110.3, son: 116.5, cikis: 0.8, ciz: (c, s) => E.bitisKarti(c, s, meta) },
+      { ad: 'Laboratuvar', bas: 110.3, son: 116.5, cikis: 0.8, ciz: bitis },
     ],
     zemin: (t) => ({ kx: 0, ky: -t * 5 }),
   });

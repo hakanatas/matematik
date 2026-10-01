@@ -251,7 +251,7 @@
     // ana üçgen
     const ta = ara(t, 0.1, 1.2);
     ucgen(ctx, [PA, PB, PC].map(g), { renk: 'tebesir', kalinlik: 3, parilti: 0.8, p: ta, dolgu: 0.05, dolguRenk: 'gok' });
-    koseEt(ctx, g(PA), G, 'A', { alfa: ta, d: t > 15.9 ? 0 : 28 });
+    koseEt(ctx, g(PA), G, 'A', { alfa: t > 15.9 ? 0 : ta });
     if (t > 15.9) E.formul(ctx, 'A', g(PA)[0] + 30, g(PA)[1], { boyut: 28, renk: 'gumus', alfa: ta });
     koseEt(ctx, g(PB), G, 'B', { alfa: ta }); koseEt(ctx, g(PC), G, 'C', { alfa: ta });
     const aa = ara(t, 0.9, 1.5);
@@ -428,17 +428,18 @@
     const son = (boy) => 1 - clamp((boy - (H ? 560 : 520)) / 420);
     const T0 = SARMAL.liste[0].T.map(g);
     ucgen(ctx, T0, { renk: 'tebesir', kalinlik: 2.5, parilti: 0.6, dolgu: 0.04, dolguRenk: 'gok', alfa: son(uzak(T0[1], T0[2])) });
-    const yol = [g(SARMAL.liste[0].T[0])];
+    const yol = [];
     SARMAL.liste.forEach((st, n) => {
       const a = clamp(nd - n);
       if (a <= 0) return;
       const P = st.at.map(g);
       const boy = Math.max(uzak(P[1], P[2]), uzak(P[0], P[1]), uzak(P[0], P[2]));
-      yol.push(ara2(g(st.T[0]), g(st.F), a));
+      const p0 = g(st.T[0]), p1 = ara2(p0, g(st.F), a);
+      yol.push([p0, p1, son(uzak(p0, g(st.F)) * 1.4)]);
       if (boy < 1.2) return;
       ucgen(ctx, P, { renk: 'tebesir', dolgu: 0.34, dolguRenk: RENKLER[n % 4], kalinlik: 1.2, parilti: 0.2, alfa: a * 0.9 * son(boy) });
     });
-    E.cizgi(ctx, yol, { renk: 'limon', kalinlik: 3, parilti: 1.2 });
+    for (const [p0, p1, al] of yol) if (al > 0.01 && uzak(p0, p1) > 0.5) E.cizgi(ctx, [p0, p1], { renk: 'limon', kalinlik: 3, parilti: 1.2, alfa: al });
     E.isik(ctx, merk[0], merk[1], 120, 'limon', 0.25 + 0.1 * Math.sin(t * 3));
     ctx.restore();
     // gösterge
@@ -447,7 +448,7 @@
     const px = H ? ic.x1 - 10 : ic.x + 10, hz = H ? 'right' : 'left';
     const py = H ? ic.y + 30 : ic.y + 10;
     const ia = ara(t, 1.2, 1.8) * (1 - ara(t, s.d - 0.8, s.d));
-    E.panel(ctx, H ? px - 350 : px - 14, py - 26, H ? 364 : ic.w - 8, H ? 360 : 222, { alfa: ia * 0.92, dolguAlfa: 0.8, vurgu: 'limon' });
+    E.panel(ctx, H ? px - 350 : px - 14, py - 26, H ? 364 : ic.w - 8, H ? 360 : 222, { alfa: ia, dolguAlfa: 0.94, vurgu: 'limon' });
     E.yazi(ctx, 'ADIM', px, py, { boyut: 22, agirlik: 700, harfAra: 5, renk: 'turkuaz', hiza: hz, alfa: ia });
     E.yazi(ctx, String(adim), px, py + 52, { boyut: 60, agirlik: 760, hiza: hz, alfa: ia });
     E.yazi(ctx, 'BOYUT', px, py + 118, { boyut: 22, agirlik: 700, harfAra: 5, renk: 'turkuaz', hiza: hz, alfa: ia });
@@ -484,10 +485,8 @@
     E.formul(ctx, '8\\t{ m}', g([4, 0])[0], g([4, 0])[1] + 34, { boyut: 28, renk: 'tebesir', alfa: oa });
     const ba = ara(t, 4.0, 4.8);
     kiris(Dp, Ep, 'limon', ba, 7);
-    E.cizgi(ctx, [g(Ep), g([8.5, yk])], { renk: 'gok', kalinlik: 1.5, kesik: [3, 5], alfa: ba * 0.7 });
-    E.cizgi(ctx, [g([8.5, 0]), g([8.5, yk])], { renk: 'gok', kalinlik: 2.5, alfa: ba });
-    for (const yy of [0, yk]) E.cizgi(ctx, [g([8.38, yy]), g([8.62, yy])], { renk: 'gok', kalinlik: 2.5, alfa: ba });
-    E.formul(ctx, '1{,}2\\t{ m}', g([8.5, yk / 2])[0] + 14, g([8.5, yk / 2])[1], { boyut: 24, hiza: 'left', renk: 'gok', alfa: ba });
+    E.cizgi(ctx, [g([Ep[0], 0]), g(Ep)], { renk: 'gok', kalinlik: 2.5, kesik: [5, 4], alfa: ba });
+    E.formul(ctx, '1{,}2\\t{ m}', g([Ep[0], 0.34])[0] + 10, g([Ep[0], 0.34])[1], { boyut: 24, hiza: 'left', renk: 'gok', alfa: ba });
     const xa = ara(t, 4.6, 5.2);
     E.formul(ctx, t < 10.4 ? 'x' : 'x = 4{,}8\\t{ m}', g([5.4, yk])[0], g([5.4, yk])[1] + 30, { boyut: 30, renk: 'limon', alfa: xa });
     // küçük üçgen

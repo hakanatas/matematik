@@ -13,7 +13,7 @@ window.ALTYAZI = [
   { bas: 28.1, son: 31.4, tr: 'Yüksekliği 1’e indir: alan a’nın kendisi. 1 etkisiz elemandır.', en: 'Shrink the height to 1: the area is a itself. 1 is the identity.', not: '"Birim eleman" ve "etkisiz eleman" aynı şeydir; ikisini de söyleyin.' },
   { bas: 31.5, son: 34.4, tr: 'Yüksekliği 0 yap: alan çöker. 0 yutan elemandır.', en: 'Make the height 0: the area collapses. 0 is the absorbing element.', not: 'Çöküş anında kısa bir es.' },
   { bas: 34.5, son: 37.4, tr: 'Sıfırdan farklı her a için a · b = 1 olacak bir b vardır.', en: 'For every nonzero a, there is a b with a · b = 1.', not: '∀ ve ∃ sembollerini okuyun: "her" ve "vardır".' },
-  { bas: 37.5, son: 40.6, tr: '4 ince şerit, tek bir birim kare: 4 · 1/4 = 1.', en: 'Four thin strips make one unit square: 4 · 1/4 = 1.', not: 'Şeritlerin üst üste dizilmesini izletin; ters eleman 1/a.' },
+  { bas: 37.5, son: 40.4, tr: '4 ince şerit, tek bir birim kare: 4 · 1/4 = 1.', en: 'Four thin strips make one unit square: 4 · 1/4 = 1.', not: 'Şeritlerin üst üste dizilmesini izletin; ters eleman 1/a.' },
 
   { bas: 40.5, son: 43.0, tr: 'Dikdörtgeni ikiye böl: a(b + c).', en: 'Split the rectangle in two: a(b + c).', not: 'Kesim çizgisine dikkat çekin.' },
   { bas: 43.1, son: 45.8, tr: 'Parçaların toplamı: ab + ac. Dağılma özelliği.', en: 'The parts add up: ab + ac. The distributive property.', not: 'Aynı alanın iki yazılışı: bir çarpım, bir toplam.' },
@@ -36,10 +36,10 @@ window.ALTYAZI = [
   { bas: 85.7, son: 88.4, tr: 'Parçaları tek bir dikdörtgene diz.', en: 'Arrange the pieces into a single rectangle.', not: 'Önce öğrencilere sorun: nasıl dizilir?' },
   { bas: 88.5, son: 91.8, tr: 'Kenarlar x + 2 ve x + 3. Çarpanlara ayırmak budur.', en: 'The sides are x + 2 and x + 3. That is factorising.', not: 'Çarpanlara ayırmanın dağılmanın tersi olduğunu söyleyin.' },
   { bas: 91.9, son: 94.6, tr: 'Alan sıfırsa, kenarlardan en az biri sıfırdır.', en: 'If the area is zero, at least one side is zero.', not: '"veya" bağlacının "en az biri" demek olduğunu vurgulayın.' },
-  { bas: 94.7, son: 97.0, tr: 'Çarpım sıfır değilse, iki çarpan da sıfırdan farklıdır.', en: 'If the product is not zero, both factors are nonzero.', not: '"ve" bağlacına dikkat: değil alınca "veya", "ve" olur.' },
-  { bas: 97.1, son: 99.7, tr: 'Semboller: ∀ her, ∃ bazı, ∧ ve, ∨ veya, ⇔ ancak ve ancak.', en: 'Symbols: ∀ for all, ∃ some, ∧ and, ∨ or, ⇔ if and only if.', not: 'Sembolleri sınıfla birlikte okuyun.' },
+  { bas: 94.7, son: 97.2, tr: 'Çarpım sıfır değilse, iki çarpan da sıfırdan farklıdır.', en: 'If the product is not zero, both factors are nonzero.', not: '"ve" bağlacına dikkat: değil alınca "veya", "ve" olur.' },
+  { bas: 97.3, son: 99.8, tr: 'Semboller: ∀ her, ∃ bazı, ∧ ve, ∨ veya, ⇔ ancak ve ancak.', en: 'Symbols: ∀ for all, ∃ some, ∧ and, ∨ or, ⇔ if and only if.', not: 'Sembolleri sınıfla birlikte okuyun.' },
 
-  { bas: 99.8, son: 104.6, tr: 'Aklında kalsın: işlem özellikleri, alanın korunmasıdır.', en: 'Remember: the rules of arithmetic are conservation of area.', not: 'Özet maddelerini sırayla okuyun.' },
+  { bas: 99.9, son: 104.6, tr: 'Aklında kalsın: işlem özellikleri, alanın korunmasıdır.', en: 'Remember: the rules of arithmetic are conservation of area.', not: 'Özet maddelerini sırayla okuyun.' },
   { bas: 104.7, son: 109.4, tr: 'Döndür, böl, kes, kaydır: alan aynı, yazılış farklı.', en: 'Rotate, split, cut, slide: same area, different spelling.', not: 'Son cümlede kısa bir es verin.' },
   { bas: 110.2, son: 115.7, tr: 'Şimdi sıra sende: laboratuvarda kendi dikdörtgenlerini kes ve kaydır.', en: 'Your turn: cut and slide your own rectangles in the lab.', not: 'Karekodu okutmaları için birkaç saniye bekleyin.' },
 ];

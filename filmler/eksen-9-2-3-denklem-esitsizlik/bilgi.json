@@ -1,0 +1,16 @@
+{
+  "ozet": "İki mobil hat tarifesi (A: 100 TL + GB başına 20 TL, B: 220 TL + GB başına 5 TL) iki ışık doğrusu olarak yarışır ve 8 GB'ta, 260 TL'de kesişir. Film denklemi iki doğrunun buluştuğu an, eşitsizliği bir doğrunun diğerinin altında kaldığı aralık olarak gösterir: denklem grafikten, cebirle ve yerine koyarak üç yoldan çözülür; eşitsizliğin çözüm kümesi bağlamın kısıtıyla [0, 8) olur. Öbür doğru x eksenine dönüşünce f(x) < 0 sorusu ortaya çıkar (2x − 6 < 0 ⇒ x < 3). Termostat örneğinde |x − 20| ≤ 2 bir bant çizer: [18, 22]. Sürpriz: arz ve talep doğruları; fiyat salınarak kesişime, denge fiyatı 60'a oturur.",
+  "fikir": "Denklem iki doğrunun buluştuğu andır; eşitsizlik bir doğrunun diğerinin altında kaldığı aralıktır.",
+  "sahneler": {
+    "Soğuk açılış: iki tarife": "İki hat tarifesi kartlarda canlı fiyatlarla, grafikte iki ışık doğrusu olarak yarışır; 8 GB'ta ikisi de 260 TL — kesişim anı; 'UCUZ' etiketi yer değiştirir.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Denklem: buluşma anı": "Üç strateji: grafikten okuma (8, 260); cebirle 100 + 20x = 220 + 5x ⇒ 15x = 120 ⇒ x = 8; yerine koyarak doğrulama (A ve B 260 TL). f(x) = g(x) ⇔ kesişim.",
+    "Eşitsizlik: altta kalan aralık": "Bir tarama çizgisi A'nın B'nin altında kaldığı bölgeyi boyar; 100 + 20x < 220 + 5x ⇒ x < 8, GB ≥ 0 kısıtıyla çözüm [0, 8) x ekseninde yanar; karar: 8 GB'tan azsa A, fazlaysa B.",
+    "Öbür doğru eksen olunca": "g(x) = 0,5x + 1 dönerek x eksenine dönüşür, kesişim noktası x = 3'e kayar: f(x) < 0 özel durumu, 2x − 6 < 0 ⇒ x < 3, işaret tablosu ve (−∞, 3).",
+    "Mutlak değer: termostat bandı": "20 °C ± 2 termostat: |x − 20| V'si y = 2 bandının altında kalmalı; V, y = 2'yi 18 ve 22'de keser; −2 ≤ x − 20 ≤ 2 ⇒ çözüm [18, 22].",
+    "Sürpriz: piyasa dengesi": "Talep p = 100 − 2q, arz p = 20 + 2q. Fiyat 80'de arz fazlası 20; fiyat salınarak (talep fazlası, arz fazlası) söner ve kesişime oturur: q = 20, p = 60 — denge fiyatı kesişim anıdır.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Fonksiyon Laboratuvarı'na karekod ve bağlantı."
+  }
+}

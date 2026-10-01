@@ -3,8 +3,8 @@
 window.ALTYAZI = [
   { bas: 0.4, son: 3.3, tr: 'Kuzey Kutbu’ndan yola çık, dümdüz güneye, ekvatora in.', en: 'Start at the North Pole and walk straight south to the equator.', not: 'Sakin, gizemli bir tonla başlayın; ışık noktası kutuptan inerken konuşun.' },
   { bas: 3.4, son: 6.3, tr: 'Sola dön. Ekvator boyunca dünyanın çeyreği kadar yürü.', en: 'Turn left. Walk a quarter of the way around the equator.', not: '"Dön" sözcüğünde kısa bir es; ilk 90° etiketi beliriyor.' },
-  { bas: 6.4, son: 8.8, tr: 'Bir kez daha dön ve kutba geri çık.', en: 'Turn once more and climb back to the pole.', not: 'Ritmi koruyun; üçüncü kenar kapanırken sesi hafifçe yükseltin.' },
-  { bas: 8.9, son: 11.6, tr: 'Üç dik açı: 90 + 90 + 90 = 270. Nasıl yani?', en: 'Three right angles: 90 + 90 + 90 = 270. How is that possible?', not: 'Soru işaretinde durun. Sınıfa sorun: "Üçgenin açıları 180 değil miydi?"' },
+  { bas: 6.4, son: 8.9, tr: 'Bir kez daha dön ve kutba geri çık.', en: 'Turn once more and climb back to the pole.', not: 'Ritmi koruyun; üçüncü kenar kapanırken sesi hafifçe yükseltin.' },
+  { bas: 9.0, son: 11.6, tr: 'Üç dik açı: 90 + 90 + 90 = 270. Nasıl yani?', en: 'Three right angles: 90 + 90 + 90 = 270. How is that possible?', not: 'Soru işaretinde durun. Sınıfa sorun: "Üçgenin açıları 180 değil miydi?"' },
   { bas: 11.7, son: 14.4, tr: 'Bunu sona saklayalım. Önce düzleme bakalım.', en: 'Let’s save that for the end. First, the flat plane.', not: 'Merak uyandırın; cevabı vermeyin.' },
 
   { bas: 19.8, son: 23.4, tr: 'Ortaokuldan biliyorsun: üçgenin iç açıları toplamı 180°.', en: 'You know it from middle school: a triangle’s angles add up to 180°.', not: 'Bildik bir bilgiyle başlayın; sınıfın onayını alın.' },

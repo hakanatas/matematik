@@ -103,8 +103,8 @@
   /* ---------- 4. Döndür: değişme ve birleşme ---------- */
   const degisme = (ctx, s) => {
     const t = s.t, L = E.L, ic = L.icerik, H = E.yatay;
-    const u = H ? 56 : 52;
-    const cx = H ? ic.x + 320 : L.cx, cy = H ? ic.cy - 10 : ic.y + 230;
+    const u = H ? 56 : 64;
+    const cx = H ? ic.x + 320 : L.cx, cy = H ? ic.cy - 10 : ic.y + 240;
     const don = ara(t, 2.0, 3.4, 'io3');
     const ra = 1 - ara(t, 5.2, 5.8);
     const w = 5 * u, h = 3 * u;
@@ -135,7 +135,7 @@
     const ba = ara(t, 5.6, 6.2);
     if (ba > 0) {
       const parca = [[2, 'turkuaz', 'a'], [3, 'mercan', 'b'], [4, 'menekse', 'c']];
-      const top = 9 * u * (H ? 1 : 0.68);
+      const top = 9 * u * (H ? 1 : 0.9);
       const uu = top / 9;
       let x = cx - top / 2;
       const by = cy;
@@ -171,8 +171,8 @@
   /* ---------- 5. Bir, sıfır, ters ---------- */
   const ozelEleman = (ctx, s) => {
     const t = s.t, L = E.L, ic = L.icerik, H = E.yatay;
-    const u = H ? 86 : 84;
-    const cx = H ? ic.x + 320 : L.cx, cy = H ? ic.cy + 20 : ic.y + 240;
+    const u = H ? 86 : 100;
+    const cx = H ? ic.x + 320 : L.cx, cy = H ? ic.cy + 20 : ic.y + 270;
     const W4 = 4 * u;
     // yükseklik (birim cinsinden)
     let hb = kf(t, [[0, 3], [0.4, 3], [1.6, 1, 'io3'], [4.0, 1], [5.0, 0, 'gir3'], [6.8, 0], [7.6, 0.25, 'cik3']]);
@@ -233,9 +233,9 @@
     // Bölüm A: a(b + c)
     const A = ara(t, 0.1, 0.7) * (1 - ara(t, 5.4, 6.0));
     if (A > 0.002) {
-      const u = H ? 60 : 58;
+      const u = H ? 60 : 72;
       const ah = 3 * u, bw = 4 * u, cw = 2 * u;
-      const x0 = (H ? ic.x + 320 : L.cx) - (bw + cw) / 2, y = (H ? ic.cy - 10 : ic.y + 230) - ah / 2;
+      const x0 = (H ? ic.x + 320 : L.cx) - (bw + cw) / 2, y = (H ? ic.cy - 10 : ic.y + 240) - ah / 2;
       const ayr = ara(t, 2.2, 3.0, 'io3');
       ctx.save(); ctx.globalAlpha *= A;
       if (ayr <= 0) kutu(ctx, x0, y, bw + cw, ah, 'tebesir', { dolgu: 0.5 });
@@ -259,8 +259,8 @@
     // Bölüm B: 7 · 98
     const B = ara(t, 5.8, 6.5);
     if (B > 0.002) {
-      const rw = H ? 520 : 560, rh = H ? 150 : 140;
-      const x0 = (H ? ic.x + 320 : L.cx) - rw / 2, y = (H ? ic.cy - 30 : ic.y + 200) - rh / 2;
+      const rw = H ? 520 : 520, rh = H ? 150 : 190;
+      const x0 = (H ? ic.x + 320 : L.cx) - rw / 2, y = (H ? ic.cy - 30 : ic.y + 230) - rh / 2;
       const kes = ara(t, 7.4, 8.2, 'io3');
       const sw = rw * 0.08;
       ctx.save(); ctx.globalAlpha *= B;
@@ -285,8 +285,8 @@
     const t = s.t, L = E.L, ic = L.icerik, H = E.yatay;
     const fx = H ? 930 : L.cx;
     const y0 = H ? ic.y + 110 : ic.y + 520;
-    const a = H ? 210 : 200, b = H ? 110 : 104;
-    const cx = H ? ic.x + 320 : L.cx, cy = H ? ic.cy : ic.y + 240;
+    const a = H ? 210 : 250, b = H ? 110 : 130;
+    const cx = H ? ic.x + 320 : L.cx, cy = H ? ic.cy : ic.y + 260;
     // (a + b)²
     const A = ara(t, 0.1, 0.7) * (1 - ara(t, 5.8, 6.4));
     if (A > 0.002) {
@@ -350,7 +350,7 @@
   /* ---------- 8. Sürpriz: kes, kaydır — a² − b² ---------- */
   const kesKaydir = (ctx, s) => {
     const t = s.t, L = E.L, ic = L.icerik, H = E.yatay;
-    const a = H ? 300 : 300, b = H ? 120 : 120, k = a - b;
+    const a = H ? 300 : 330, b = H ? 120 : 140, k = a - b;
     const sx = H ? ic.x + 80 : L.cx - (a + b) / 2, sy = H ? ic.y + 90 : ic.y + 70;
     const cik = ara(t, 2.0, 3.2, 'io3');
     const kes = ara(t, 3.4, 4.4, 'lin');
@@ -366,7 +366,7 @@
     kutu(ctx, sx, sy, a, k, 'turkuaz', { alfa: ilk });
     // alt-sol parça (k × b) — döner ve sağa kayar
     const c0 = [sx + k / 2, sy + k + b / 2], c1 = [sx + a + b / 2, sy + k / 2];
-    const yay = Math.sin(tas * Math.PI) * 70; // kavisli yol
+    const yay = Math.sin(tas * Math.PI) * (H ? 70 : -20); // kavisli yol
     const pcx = lerp(c0[0], c1[0], tas), pcy = lerp(c0[1], c1[1], tas) + yay;
     kutuDon(ctx, pcx, pcy, k, b, -Math.PI / 2 * tas, tas > 0.98 ? 'turkuaz' : 'gok', { alfa: ilk });
     }
@@ -397,7 +397,7 @@
     E.formul(ctx, numara > 0.5 ? '51 · 49' : '(a + b)(a − b)', sx + (a + b) / 2, sy + k / 2, { boyut: 38, renk: 'tebesir', alfa: ara(t, 7.6, 8.2) });
     // formüller
     const fx = H ? 940 : L.cx;
-    const y0 = H ? ic.y + 80 : ic.y + 420;
+    const y0 = H ? ic.y + 80 : ic.y + 450;
     const sat = H ? 74 : 66;
     E.formul(ctx, 'a^{2} − b^{2}', fx, y0, { boyut: H ? 50 : 46, alfa: ara(t, 2.6, 3.2) * (1 - ara(t, 7.8, 8.2)) });
     const kA = ara(t, 8.0, 8.6, 'cik3');
@@ -417,13 +417,13 @@
   })();
   const carpan = (ctx, s) => {
     const t = s.t, L = E.L, ic = L.icerik, H = E.yatay;
-    const X = H ? 150 : 150, U = H ? 50 : 48;
+    const X = H ? 150 : 180, U = H ? 50 : 58;
     const A = 1 - ara(t, 9.2, 9.8);
     const fx = H ? 930 : L.cx;
     const y0 = H ? ic.y + 100 : ic.y + 520;
     if (A > 0.002) {
       const RW = X + 3 * U, RH = X + 2 * U;
-      const rx = (H ? ic.x + 320 : L.cx) - RW / 2, ry = (H ? ic.cy + 10 : ic.y + 250) - RH / 2;
+      const rx = (H ? ic.x + 320 : L.cx) - RW / 2, ry = (H ? ic.cy + 10 : ic.y + 260) - RH / 2;
       const yer = ara(t, 2.0, 5.2, 'io3');
       // dağınık alan
       const dx0 = H ? ic.x + 40 : ic.x + 20, dw = H ? 560 : 600, dy0 = H ? ic.y + 30 : ic.y + 20, dh = H ? 440 : 440;
@@ -455,11 +455,11 @@
     // Sıfır çarpımı
     const B = ara(t, 9.6, 10.2);
     if (B > 0.002) {
-      const u = H ? 60 : 58;
+      const u = H ? 60 : 72;
       const aW = 5 * u;
       const bh = kf(t, [[10.4, 3], [12.0, 0, 'gir3'], [13.2, 0], [14.2, 3, 'io3']]);
       const bw = kf(t, [[13.2, 5], [14.2, 5], [15.4, 0, 'gir3']]);
-      const cx = H ? ic.x + 320 : L.cx, yAlt = H ? ic.cy + 100 : ic.y + 330;
+      const cx = H ? ic.x + 320 : L.cx, yAlt = H ? ic.cy + 100 : ic.y + 380;
       const x0 = cx - aW / 2;
       ctx.save(); ctx.globalAlpha *= B;
       kutu(ctx, x0, yAlt - bh * u, bw * u, bh * u, 'turkuaz', { hucre: u });

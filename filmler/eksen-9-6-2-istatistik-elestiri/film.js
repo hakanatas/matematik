@@ -115,10 +115,10 @@
     const metin = kabul ? 'KABUL EDİLDİ' : 'ÇÜRÜTÜLDÜ';
     ctx.save();
     ctx.translate(x, y); ctx.rotate(E.der(-5)); ctx.scale(s, s);
-    const w = E.yaziOlc(ctx, metin, { boyut: 30, agirlik: 800, harfAra: 4 }) + 40, h = 52;
+    const w = E.yaziOlc(ctx, metin, { boyut: 28, agirlik: 800, harfAra: 3 }) + 36, h = 50;
     ctx.globalAlpha *= clamp(p * 1.6);
     E.panel(ctx, -w / 2, -h / 2, w, h, { r: 10, renk, dolguAlfa: 0.14, kenar: renk, kenarAlfa: 1, kalinlik: 3 });
-    E.yazi(ctx, metin, 0, 1, { boyut: 30, agirlik: 800, harfAra: 4, renk, parilti: 0.5 });
+    E.yazi(ctx, metin, 0, 1, { boyut: 28, agirlik: 800, harfAra: 3, renk, parilti: 0.5 });
     ctx.restore();
     E.isik(ctx, x, y, 200, renk, 0.35 * E.nabiz(p, 0.05, 0.6));
   };
@@ -181,7 +181,7 @@
         E.yazi(ctx, a.baslik, kart.x + 48, yy, { boyut: 25, agirlik: 720, hiza: 'left', renk: etkin ? 'tebesir' : on ? 'gumus' : 'cizgi', alfa: ka });
         const dy = j === 2 ? 40 : 22;
         E.yazi(ctx, a.detay, kart.x + 48, yy + dy, { boyut: 22, agirlik: 480, hiza: 'left', taban: 'top', maxGen: kart.w - 56, renk: 'gumus', alfa: aa, satirAra: 1.2 });
-        if (j === 2) muhur(ctx, kart.x + 262, yy + 2, c.karar.kabul, ara(t, c.karar.t, c.karar.t + 0.7));
+        if (j === 2) muhur(ctx, kart.x + 272, yy + 2, c.karar.kabul, ara(t, c.karar.t, c.karar.t + 0.7));
         yy += dy + dn[j] * 26.4 + 30;
       });
     } else {
@@ -203,9 +203,9 @@
         const aa = ara(t, a.t + 0.1, a.t + 0.6) * (sonraki ? 1 - ara(t, sonraki.t - 0.3, sonraki.t) : 1);
         if (aa <= 0.01) return;
         if (j < 2) E.yazi(ctx, a.detay, A.x + 4, A.y + 66, { boyut: 24, agirlik: 500, hiza: 'left', taban: 'top', maxGen: A.w - 8, renk: 'gumus', alfa: aa, satirAra: 1.2 });
-        else E.yazi(ctx, a.detay, A.x + 4, A.y + 66, { boyut: 22, agirlik: 500, hiza: 'left', taban: 'top', maxGen: A.w - 252, renk: 'gumus', alfa: aa, satirAra: 1.2 });
+        else E.yazi(ctx, a.detay, A.x + 4, A.y + 66, { boyut: 22, agirlik: 500, hiza: 'left', taban: 'top', maxGen: A.w - 316, renk: 'gumus', alfa: aa, satirAra: 1.2 });
       });
-      muhur(ctx, A.x + A.w - 116, A.y + 104, c.karar.kabul, ara(t, c.karar.t, c.karar.t + 0.7));
+      muhur(ctx, A.x + A.w - 150, A.y + 100, c.karar.kabul, ara(t, c.karar.t, c.karar.t + 0.7));
     }
   };
 

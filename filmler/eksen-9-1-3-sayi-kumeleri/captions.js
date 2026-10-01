@@ -29,12 +29,12 @@ window.ALTYAZI = [
   { bas: 76.0, son: 80.2, tr: 'Gerçek sayılar bu delikleri doldurur. Doğru kesintisiz olur.', en: 'The real numbers fill these holes. The line becomes unbroken.', not: 'Işık doğruyu doldururken sesi açın.' },
 
   { bas: 80.7, son: 83.9, tr: 'Bir önerme: iki irrasyonel sayının çarpımı irrasyoneldir.', en: 'A claim: the product of two irrational numbers is irrational.', not: 'Önce sınıfa sorun: doğru mu?' },
-  { bas: 84.0, son: 86.4, tr: '√2 · √3, π · π… tutuyor gibi. Ama √2 · √2 = 2.', en: '√2 · √3, π · π… it seems to hold. But √2 · √2 = 2.', not: 'Çatlama anında durun.' },
-  { bas: 86.5, son: 89.0, tr: 'Tek bir karşıt örnek yeter. Önerme çürüdü.', en: 'One counterexample is enough. The claim collapses.', not: 'Birkaç örneğin doğrulaması ispat değildir; vurgulayın.' },
-  { bas: 89.1, son: 92.6, tr: 'Doğrudan ispat her durumu kapsar.', en: 'A direct proof covers every case.', not: 'İki yöntemi karşılaştırın: hangisi ne zaman kullanışlı?' },
+  { bas: 84.0, son: 86.5, tr: '√2 · √3, π · π… tutuyor gibi. Ama √2 · √2 = 2.', en: '√2 · √3, π · π… it seems to hold. But √2 · √2 = 2.', not: 'Çatlama anında durun.' },
+  { bas: 86.6, son: 89.1, tr: 'Tek bir karşıt örnek yeter. Önerme çürüdü.', en: 'One counterexample is enough. The claim collapses.', not: 'Birkaç örneğin doğrulaması ispat değildir; vurgulayın.' },
+  { bas: 89.2, son: 92.6, tr: 'Doğrudan ispat her durumu kapsar.', en: 'A direct proof covers every case.', not: 'İki yöntemi karşılaştırın: hangisi ne zaman kullanışlı?' },
   { bas: 92.7, son: 96.2, tr: 'Çürütmek içinse tek bir aksine örnek yeterlidir.', en: 'To disprove, a single counterexample is enough.', not: 'Öğrencilerden kendi karşıt örneklerini isteyin.' },
 
   { bas: 97.0, son: 101.6, tr: 'Aklında kalsın: kümeler iç içe halkalar; kapalılık, kaçamamaktır.', en: 'Remember: the sets are nested rings; closure means no escape.', not: 'Özet maddelerini sırayla okuyun.' },
   { bas: 101.7, son: 106.4, tr: 'Rasyoneller sık ama delikli; gerçek sayılar doğruyu tamamlar.', en: 'Rationals are dense but full of holes; the reals complete the line.', not: 'Son cümlede kısa bir es verin.' },
-  { bas: 107.2, son: 112.8, tr: 'Şimdi sıra sende: sayı doğrusu mikroskobuyla aralara dal.', en: 'Your turn: dive between numbers with the number-line microscope.', not: 'Karekodu okutmaları için birkaç saniye bekleyin.' },
+  { bas: 107.2, son: 112.7, tr: 'Şimdi sıra sende: sayı doğrusu mikroskobuyla aralara dal.', en: 'Your turn: dive between numbers with the number-line microscope.', not: 'Karekodu okutmaları için birkaç saniye bekleyin.' },
 ];
