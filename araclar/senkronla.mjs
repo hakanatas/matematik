@@ -6,7 +6,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { readmeFilm, readmeLab } from './readme.mjs';
+import { readmeFilm, readmeLab, readmeHub } from './readme.mjs';
 
 const KOK = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ORTAK = join(KOK, 'ortak');
@@ -81,6 +81,10 @@ if (existsSync(join(KOK, 'hub', 'index.html')) && 'eksen-filmleri'.includes(suzg
   kopya(join(ORTAK, 'LICENSE-cc-by-nc.txt'), join(d, 'LICENSE'));
   kopya(join(KOK, 'PROMPT.md'), join(d, 'PROMPT.md'));
   kopya(join(KOK, 'mufredat', '9-sinif.json'), join(d, 'mufredat.json'));
+  const sureler = existsSync(join(d, 'sureler.json')) ? readFileSync(join(d, 'sureler.json'), 'utf8') : '{}';
+  yaz(join(d, 'veri.js'), `/* Otomatik üretildi (araclar/senkronla.mjs) */\nwindow.EKSEN_MUFREDAT = ${JSON.stringify(M)};\nwindow.EKSEN_SURELER = ${sureler.trim()};\n`);
+  yaz(join(d, '.gitignore'), '.DS_Store\n');
+  yaz(join(d, 'README.md'), readmeHub(M));
   sayi++;
 }
 console.log(`✔ ${sayi} klasör senkronlandı`);

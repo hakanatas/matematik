@@ -14,6 +14,7 @@ KOK="$(pwd)"
 SAHIP="${EKSEN_SAHIP:-hakanatas}"
 CALISMA="${EKSEN_YAYIN_KLASORU:-$HOME/eksen-yayin}"
 SUZGEC="${1:-}"
+GIT_TABAN="${EKSEN_GIT_TABAN:-https://github.com}"
 
 renk() { printf "\033[%sm%s\033[0m\n" "$1" "$2"; }
 baslik() { echo; renk "1;36" "━━ $1"; }
@@ -50,11 +51,11 @@ while IFS=$'\t' read -r -u 3 klasor depo tur aciklama surumBaslik; do
 
   # 2) Yerel yayın kopyası
   if [[ ! -d "$hedef/.git" ]]; then
-    if git ls-remote --exit-code "https://github.com/$SAHIP/$depo.git" HEAD >/dev/null 2>&1; then
-      git clone -q "https://github.com/$SAHIP/$depo.git" "$hedef"
+    if git ls-remote --exit-code "$GIT_TABAN/$SAHIP/$depo.git" HEAD >/dev/null 2>&1; then
+      git clone -q "$GIT_TABAN/$SAHIP/$depo.git" "$hedef"
     else
       mkdir -p "$hedef"; git -C "$hedef" init -q -b main
-      git -C "$hedef" remote add origin "https://github.com/$SAHIP/$depo.git"
+      git -C "$hedef" remote add origin "$GIT_TABAN/$SAHIP/$depo.git"
     fi
   fi
   rsync -a --delete --exclude .git --exclude node_modules --exclude dist --exclude onizleme --exclude .DS_Store "$KOK/$klasor/" "$hedef/"

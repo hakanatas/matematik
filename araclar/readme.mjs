@@ -124,3 +124,21 @@ Tek HTML sayfası ve saf JavaScript; dış bağlantı gerektirmez (fontlar sayfa
 ${lisans(`${bilgi.ad || 'Eksen Laboratuvarı'}`, url).replace('{{UC}}', uc ? '; three.js (MIT)' : '')}`;
   return md;
 }
+
+export function readmeHub(M) {
+  const url = `${PAGES}/eksen-filmleri/`;
+  let md = `# Eksen · 9. Sınıf Matematik Filmleri
+
+▶ **Seriyi aç:** ${url}
+
+Türkiye Yüzyılı Maarif Modeli ortaöğretim matematik öğretim programının 9. sınıf öğrenme çıktılarının her biri için kısa, sinematik bir film (JavaScript ile prosedürel üretilmiş, 16:9 ve 9:16, TR/EN altyazılı) ve her tema için etkileşimli bir laboratuvar. Ortaokul serisi: [Nokta'nın Filmleri](${PAGES}/nokta-filmleri).
+
+`;
+  for (const t of M.temalar) {
+    md += `## ${t.no}. Tema: ${t.ad}\n\n🧪 [Laboratuvar](${PAGES}/${t.lab}/)\n\n| Kod | Film | Öğrenme çıktısı |\n|---|---|---|\n`;
+    for (const c of t.ciktilar) md += `| ${c.kod} | [${c.filmAdi}](${PAGES}/${c.film}/) · [depo](${GH}/${c.film}) | ${c.baslik} |\n`;
+    md += '\n';
+  }
+  md += lisans('Eksen: 9. Sınıf Matematik Filmleri', url).replace('{{UC}}', '');
+  return md;
+}
