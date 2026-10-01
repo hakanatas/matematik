@@ -4,7 +4,7 @@
 //  - Filmi 0,25 sn aralıkla tarar; taşan yazı, üst üste binen yazı, 20 px altı yazıyı raporlar
 //    (altyazılar en kalabalık durum olan TR+EN ile denetlenir)
 // Kullanım: node araclar/onizleme.mjs [--yerlesim h|v|hepsi] [--adim 0.25] [--kare] [--zamanlar 3,10.5,40]
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readdir, unlink } from 'node:fs/promises';
 import { join } from 'node:path';
 import { FILM_KOK, tarayiciBaslat, sunucuBaslat } from './ortak.mjs';
 
@@ -18,6 +18,8 @@ const { sunucu, url } = await sunucuBaslat();
 const tarayici = await tarayiciBaslat();
 const DIR = join(FILM_KOK, 'onizleme');
 await mkdir(DIR, { recursive: true });
+// Tam koşuda eski kareleri temizle (temas yaprakları karışmasın)
+if (!zamanlar) for (const f of await readdir(DIR)) if (/^[hv]-.*\.png$/.test(f)) await unlink(join(DIR, f));
 let toplamSorun = 0;
 const rapor = [];
 try {

@@ -65,6 +65,8 @@
   /** Bir 3B noktanın ekrandaki (mantıksal piksel) yeri — 3B nesnelere 2B etiket koymak için */
   uc.ekranda = (v, kamera, o = {}) => {
     const x = o.x ?? 0, y = o.y ?? 0, w = o.w ?? E.W, h = o.h ?? E.H;
+    if (kamera.isPerspectiveCamera) { const a = w / h; if (Math.abs(kamera.aspect - a) > 1e-6) { kamera.aspect = a; kamera.updateProjectionMatrix(); } }
+    kamera.updateMatrixWorld();
     const p = v.clone().project(kamera);
     return [x + (p.x * 0.5 + 0.5) * w, y + (-p.y * 0.5 + 0.5) * h, p.z];
   };

@@ -89,7 +89,7 @@
     IMLER.concat([[AY, 'Ay', '384 400 km']]).forEach(([m, ad, d], i) => {
       const y = taban - m * ppm;
       if (y < ic.y - 40 || y > taban - 4) return;
-      const a = clamp((taban - y - 10) / 70) * clamp((y - ic.y + 40) / 60) * ara(t, 3.6, 4.4);
+      const a = clamp((taban - y - 10) / 70) * clamp((y - ic.y - 30) / 50) * ara(t, 3.6, 4.4);
       if (a <= 0.01) return;
       const ay = ad === 'Ay';
       E.cizgi(ctx, [[ic.x + 20, y], [ic.x1 - 20, y]], { renk: ay ? 'limon' : 'cizgi', kalinlik: ay ? 2 : 1.5, kesik: [10, 10], alfa: a * 0.9 });

@@ -102,7 +102,7 @@
     g.clearRect(0, 0, W, H);
     const gr = g.createRadialGradient(W / 2, H * 0.4, 0, W / 2, H / 2, Math.max(W, H) * 0.7);
     gr.addColorStop(0, '#13203d'); gr.addColorStop(1, '#080C17'); g.fillStyle = gr; g.fillRect(0, 0, W, H);
-    const y = H * 0.62, p = Math.min(1, t / 2.2), yar = W * 0.42 * (1 - Math.pow(1 - p, 3));
+    const y = H - 26, p = Math.min(1, t / 2.2), yar = W * 0.42 * (1 - Math.pow(1 - p, 3));
     g.save(); g.globalCompositeOperation = 'lighter';
     g.strokeStyle = 'rgba(60,230,207,.25)'; g.lineWidth = 9; g.beginPath(); g.moveTo(W / 2 - yar, y); g.lineTo(W / 2 + yar, y); g.stroke();
     g.strokeStyle = 'rgba(60,230,207,.95)'; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - yar, y); g.lineTo(W / 2 + yar, y); g.stroke();

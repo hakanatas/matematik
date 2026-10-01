@@ -20,8 +20,8 @@ for (const tema of M.temalar) for (const c of tema.ciktilar) {
   await s.goto(url + 'index.html?export=1&yerlesim=h&dil=yok');
   await s.evaluate(() => window.EKSEN_HAZIR);
   const meta = await s.evaluate(() => ({ sure: window.FILM_META.sure, sahneler: window.FILM_META.sahneler, poster: window.E.F.poster }));
-  const bas = meta.sahneler.find((x) => x.ad === 'Başlık');
-  const t = meta.poster ?? (bas ? bas.bas + 2.6 : 15);
+  const sur = meta.sahneler.find((x) => /sürpriz/i.test(x.ad)) || meta.sahneler[3] || meta.sahneler[0];
+  const t = meta.poster ?? (sur.bas + (sur.son - sur.bas) * 0.62);
   await s.evaluate((t) => window.renderFrame(t), t);
   const jpg = await s.locator('canvas').screenshot({ type: 'jpeg', quality: 86 });
   writeFileSync(join(d, 'poster.jpg'), jpg);

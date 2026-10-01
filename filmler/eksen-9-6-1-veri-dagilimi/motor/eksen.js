@@ -281,6 +281,7 @@
           i++;
           let ad = '';
           while (i < src.length && /[a-zA-Z]/.test(src[i])) ad += src[i++];
+          if (!ad && (src[i] === '{' || src[i] === '}')) { dugumler.push({ tur: 'k', s: src[i++] }); continue; }
           if (!ad) { const s = src[i++]; dugumler.push({ tur: 'bosluk', w: s === ',' ? 0.18 : s === ';' ? 0.32 : s === '!' ? -0.12 : 0.25 }); continue; }
           if (ad === 'quad' || ad === 'qquad') { dugumler.push({ tur: 'bosluk', w: ad === 'quad' ? 1 : 2 }); continue; }
           if (ad === 'frac') { const a = tekArg(), b = tekArg(); dugumler.push({ tur: 'kesir', a, b }); continue; }
@@ -293,7 +294,7 @@
           if (ad === 't') { dugumler.push({ tur: 'metin', s: hamArg() }); continue; }
           if (ad === 'b') { dugumler.push({ tur: 'kalin', ic: tekArg() }); continue; }
           if (ad === 'kutu') { const renk = hamArg(); dugumler.push({ tur: 'kutu', renk, ic: tekArg() }); continue; }
-          if (ad === 'ustcizgi') { dugumler.push({ tur: 'ustcizgi', ic: tekArg() }); continue; }
+          if (ad === 'ustcizgi' || ad === 'vec') { dugumler.push({ tur: 'ustcizgi', ic: tekArg() }); continue; }
           dugumler.push({ tur: 'sembol', s: ad });
           continue;
         }
@@ -311,7 +312,7 @@
     const hamArg = () => { if (src[i] !== '{') return ''; i++; let d = 1, s = ''; while (i < src.length) { const c = src[i++]; if (c === '{') d++; if (c === '}' && --d === 0) break; s += c; } return s; };
     return grup();
   };
-  const ISLEC = '+−-=<>≤≥≠≈±·×÷∈∉⊂⊆∪∩⇒⇔→∧∨⊻≅∼:|';
+  const ISLEC = '+−-=<>≤≥≠≈±·×÷∈∉⊂⊆∪∩⇒⇔→∧∨⊻≅∼≡:|';
   const fmCache = new Map();
   /** Kutu modeli: {w, a (taban üstü), d (taban altı), ciz(ctx,x,y)} */
   const kutula = (ctx, dugumler, boy, st) => {
@@ -326,7 +327,7 @@
         let w = ctx.measureText(c).width;
         let oi = j - 1; while (oi >= 0 && dugumler[oi].tur === 'bosluk' && dugumler[oi].w === 0) oi--;
         const onceki = dugumler[oi];
-        const tekli = (c === '−' || c === '-' || c === '+') && (!onceki || (onceki.tur === 'k' && '(=<>≤≥+−-·×'.includes(onceki.s)) || onceki.tur === 'bosluk');
+        const tekli = (c === '−' || c === '-' || c === '+') && (!onceki || (onceki.tur === 'k' && '([{,;=<>≤≥+−-·×:'.includes(onceki.s)) || onceki.tur === 'bosluk' || (onceki.tur === 'sembol' && !['R', 'N', 'Z', 'Q', 'pi', 'infty', 'alpha', 'beta', 'gamma', 'theta', 'sigma', 'mu'].includes(onceki.s)));
         const islec = ISLEC.includes(c) && c !== '|' && !tekli && !st.kucuk;
         const pad = islec ? boy * 0.2 : c === ',' ? boy * 0.08 : 0;
         const renk = st.renk;
@@ -336,11 +337,11 @@
         ctx.font = fnt; const w = ctx.measureText(n.s).width; const renk = st.renk;
         parcalar.push({ w, a: boy * 0.74, d: boy * 0.24, ciz: (cx, x, y, al) => { cx.font = fnt; cx.fillStyle = R(renk()); cx.globalAlpha = al; cx.fillText(n.s, x, y); } });
       } else if (n.tur === 'sembol') {
-        const tablo = { cdot: '·', times: '×', le: '≤', ge: '≥', ne: '≠', in: '∈', notin: '∉', cup: '∪', cap: '∩', subset: '⊂', subseteq: '⊆', forall: '∀', exists: '∃', R: 'ℝ', N: 'ℕ', Z: 'ℤ', Q: 'ℚ', pi: 'π', infty: '∞', to: '→', Rightarrow: '⇒', iff: '⇔', and: '∧', or: '∨', xor: '⊻', neg: '¬', pm: '±', approx: '≈', deg: '°', alpha: 'α', beta: 'β', theta: 'θ', sigma: 'σ', mu: 'μ', triangle: '△', angle: '∠', cong: '≅', sim: '∼', emptyset: '∅', setminus: '\\', minus: '−', ldots: '…' };
+        const tablo = { cdot: '·', times: '×', le: '≤', ge: '≥', ne: '≠', in: '∈', notin: '∉', cup: '∪', cap: '∩', subset: '⊂', subseteq: '⊆', forall: '∀', exists: '∃', R: 'ℝ', N: 'ℕ', Z: 'ℤ', Q: 'ℚ', pi: 'π', infty: '∞', to: '→', Rightarrow: '⇒', iff: '⇔', and: '∧', or: '∨', xor: '⊻', neg: '¬', pm: '±', approx: '≈', deg: '°', gamma: 'γ', circ: '∘', parallel: '∥', perp: '⊥', equiv: '≡', lbrace: '{', rbrace: '}', cdots: '⋯', alpha: 'α', beta: 'β', theta: 'θ', sigma: 'σ', mu: 'μ', triangle: '△', angle: '∠', cong: '≅', sim: '∼', emptyset: '∅', setminus: '\\', minus: '−', ldots: '…' };
         const s = tablo[n.s] || n.s;
         const fnt = `500 ${boy}px ${E.FONT.math}`;
         ctx.font = fnt; const w = ctx.measureText(s).width; const renk = st.renk;
-        const pad = '·×≤≥≠∈∉∪∩⊂⊆⇒⇔→∧∨⊻≅∼≈±\\'.includes(s) ? boy * 0.2 : 0;
+        const pad = '·×≤≥≠∈∉∪∩⊂⊆⇒⇔→∧∨⊻≅∼≈±≡⊥∥\\'.includes(s) ? boy * 0.2 : 0;
         parcalar.push({ w: w + 2 * pad, a: boy * 0.74, d: boy * 0.24, ciz: (cx, x, y, al) => { cx.font = fnt; cx.fillStyle = R(renk()); cx.globalAlpha = al; cx.fillText(s, x + pad, y); } });
       } else if (n.tur === 'bosluk') {
         parcalar.push({ w: boy * n.w, a: 0, d: 0, ciz: () => {} });
@@ -788,7 +789,9 @@
     const L = E.L, t = s.t;
     const a1 = E.ara(t, 0.0, 0.8, 'cik3'), a2 = E.ara(t, 0.3, 1.2, 'cik3'), a3 = E.ara(t, 0.7, 1.5, 'cik3');
     const y = L.cy - E.yd(10, 80);
-    E.yazi(ctx, meta.kod + '  ·  ' + meta.tema.toLocaleUpperCase('tr'), L.cx, y - E.yd(92, 120), { boyut: E.yd(24, 24), agirlik: 620, harfAra: 4, renk: 'turkuaz', alfa: a1 });
+    const ust = meta.kod + '  ·  ' + meta.tema.toLocaleUpperCase('tr');
+    const ub = E.sigdir(ctx, ust, { boyut: 24, agirlik: 620, harfAra: 4 }, L.icerik.w - 20, 20);
+    E.yazi(ctx, ust, L.cx, y - E.yd(92, 120), { boyut: ub, agirlik: 620, harfAra: 4, renk: 'turkuaz', alfa: a1 });
     const ad = meta.ad;
     const boy = E.sigdir(ctx, ad, { boyut: E.yd(92, 84), agirlik: 760 }, L.icerik.w - 40, 40);
     const r = E.yazi(ctx, ad, L.cx, y + (1 - a2) * 22, { boyut: boy, agirlik: 760, alfa: a2, maxGen: L.icerik.w - 20, satirAra: 1.05 });
@@ -811,11 +814,14 @@
       const x0 = L.cx - gen / 2;
       E.nokta(ctx, x0 + 14, y - (m.formul ? E.yd(14, 30) : 0), 6, { renk: 'turkuaz', alfa: a });
       if (m.formul && E.yatay) {
-        E.yazi(ctx, m.tr, x0 + 44, y, { boyut: 32, agirlik: 560, hiza: 'left', alfa: a, maxGen: gen * 0.48 });
+        const fw = E.formulOlc(ctx, m.formul, 38).w;
+        E.yazi(ctx, m.tr, x0 + 44, y, { boyut: 32, agirlik: 560, hiza: 'left', alfa: a, maxGen: Math.max(gen * 0.4, gen - fw - 90) });
         E.formul(ctx, m.formul, x0 + gen, y, { boyut: 38, hiza: 'right', renk: 'turkuaz', alfa: a });
       } else if (m.formul) {
-        E.yazi(ctx, m.tr, x0 + 44, y - 30, { boyut: 30, agirlik: 560, hiza: 'left', alfa: a, maxGen: gen - 50 });
-        E.formul(ctx, m.formul, x0 + 44, y + 36, { boyut: 36, hiza: 'left', renk: 'turkuaz', alfa: a });
+        ctx.save(); ctx.font = fontStr({ boyut: 30, agirlik: 560 }); const ns = E.sar(ctx, m.tr, gen - 50).length; ctx.restore();
+        const ek = (ns - 1) * 18;
+        E.yazi(ctx, m.tr, x0 + 44, y - 30 - ek, { boyut: 30, agirlik: 560, hiza: 'left', alfa: a, maxGen: gen - 50 });
+        E.formul(ctx, m.formul, x0 + 44, y + 36 + ek, { boyut: 36, hiza: 'left', renk: 'turkuaz', alfa: a });
       } else {
         E.yazi(ctx, m.tr, x0 + 44, y, { boyut: E.yd(32, 32), agirlik: 560, hiza: 'left', alfa: a, maxGen: gen - 50 });
       }
@@ -830,7 +836,8 @@
     const qx = E.yd(L.cx + 170, L.cx - qrBoy / 2), qy = E.yd(L.cy - qrBoy / 2 - 40, ic.y + 330);
     const tx = E.yd(L.cx - 400, L.cx), hz = E.yd('left', 'center');
     E.yazi(ctx, 'ŞİMDİ SEN DENE', tx, E.yd(qy + 20, ic.y + 40), { boyut: 26, agirlik: 700, harfAra: 6, renk: 'turkuaz', hiza: hz, alfa: a1 });
-    E.yazi(ctx, meta.labAd, tx, E.yd(qy + 82, ic.y + 120), { boyut: E.yd(50, 46), agirlik: 760, hiza: hz, alfa: a1, maxGen: E.yd(520, 600), satirAra: 1.05 });
+    const lb = E.sigdir(ctx, meta.labAd, { boyut: E.yd(50, 46), agirlik: 760 }, E.yd(520, 620), 30);
+    E.yazi(ctx, meta.labAd, tx, E.yd(qy + 82, ic.y + 120), { boyut: lb, agirlik: 760, hiza: hz, alfa: a1 });
     E.yazi(ctx, meta.labAciklama, tx, E.yd(qy + 158, ic.y + 210), { boyut: 26, agirlik: 460, renk: 'gumus', hiza: hz, alfa: a2, maxGen: E.yd(500, 600) });
     if (window.qrcode && meta.labUrl) {
       if (!E._qr || E._qr.url !== meta.labUrl) { const q = window.qrcode(0, 'M'); q.addData(meta.labUrl); q.make(); E._qr = { url: meta.labUrl, q }; }
