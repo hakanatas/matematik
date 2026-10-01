@@ -650,7 +650,7 @@
   const SOKAK_YOL = ['TM', 'TL', 'BL', 'BM', 'TM', 'TR', 'BR', 'BM'];
   const kamyonSahne = (ctx, s) => {
     const t = s.t, H = E.yatay, L = E.L, ic = L.icerik;
-    const g = H ? { x0: ic.x + 150, y0: ic.y + 112, dx: 420, dy: 336 } : { x0: ic.x + 50, y0: ic.y + 160, dx: 270, dy: 540 };
+    const g = H ? { x0: ic.x + 150, y0: ic.y + 100, dx: 420, dy: 310 } : { x0: ic.x + 50, y0: ic.y + 160, dx: 270, dy: 540 };
     const p = (k) => [g.x0 + KAV[k][0] * g.dx, g.y0 + KAV[k][1] * g.dy];
     const a0 = ara(t, 0.0, 0.8);
     // bloklar ve binalar
@@ -702,7 +702,7 @@
     E.yazi(ctx, H ? 'Her sokaktan bir kez: 2 tek kavşak → yol var' : 'Her sokaktan bir kez', kol.x, H ? ic.y + 18 : kol.y, { boyut: E.yd(30, 30), agirlik: 700, alfa: ara(t, 0.4, 1.0) * bs, maxGen: ic.w });
     if (!H) E.yazi(ctx, '2 tek kavşak → yol var', L.cx, ic.y + 72, { boyut: 28, agirlik: 600, renk: 'gumus', alfa: ara(t, 1.2, 1.8) * bs });
     const sA = ara(t, 9.2, 9.7);
-    E.yazi(ctx, '7 sokak · 0 tekrar', kol.x, H ? ic.y1 - 14 : ic.y + 50, { boyut: E.yd(34, 34), agirlik: 760, renk: 'limon', alfa: sA, parilti: 0.4, parRenk: 'limon' });
+    E.yazi(ctx, '7 sokak · 0 tekrar', kol.x, H ? ic.y1 - 2 : ic.y + 50, { boyut: E.yd(34, 34), agirlik: 760, renk: 'limon', alfa: sA, parilti: 0.4, parRenk: 'limon' });
     const [sx, sy] = p('TM'), [ex, ey] = p('BM');
     rozet(ctx, sx - 64, sy - 40, 'başla', { renk: 'limon', alfa: ara(t, 2.2, 2.6) });
     rozet(ctx, ex - 64, ey + E.yd(40, -40), 'bitir', { renk: 'limon', alfa: ara(t, 8.8, 9.2) });
