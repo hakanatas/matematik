@@ -1,0 +1,16 @@
+{
+  "ozet": "Bir kâğıdı 42 kez katlayabilseydin yığın Ay'ı geçerdi. Film bu şaşırtıcı büyümeden yola çıkıp üssü bir \"adım sayacı\" olarak gösterir: çarpmak merdivende adım atmak, bölmek geri adım, bilimsel gösterim atomdan ışık yılına uzanan bir merdiven, kesirli üs ise yarım adımdır; yani köktür. Sonda A4 kâğıdın √2 oranı, açılıştaki katlamaya geri bağlanır.",
+  "fikir": "Üs bir adım sayacıdır; yarım adım karekök demektir.",
+  "sahneler": {
+    "Soğuk açılış: 42 katlama": "Kâğıt ikiye katlandıkça kalınlık 2'nin kuvvetleriyle büyür; kamera geri çekilir, telefon, insan, Galata Kulesi, Everest ve Uzay İstasyonu geçilir; 42. katlamada yığın Ay'ı geçer.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Üs bir adım sayacıdır": "10'un kuvvetleri merdiveninde çarpma art arda adım atmaktır (10²·10³ = 10⁵); farklı tabanlarla örüntü genellenir; bölme geri adımdır, 1'in altında üs eksi olur.",
+    "Kozmik cetvel: bilimsel gösterim": "Merdiven atomdan ışık yılına uzanan bir cetvele dönüşür; a × 10ⁿ gösterimi ve ışık yılı ile Dünya–Güneş uzaklığının karşılaştırılması.",
+    "Yarım adım: kök ve A4 kâğıdı": "1 ile 2 arasındaki yarım adım √2'dir; üçte bir adım ∛2; kesirli üs köktür. A4 kâğıdın kenar oranı √2 olduğu için ikiye katlanınca şekli korunur.",
+    "Köklerle işlem ve eşlenik": "√8 = 2√2 hem cebirle hem merdivenle; eşlenikle çarpmada ortadaki terimlerin yok oluşu; sonucun hesap makinesiyle doğrulanması.",
+    "Problem: tarlanın çiti": "1 dönümlük kare tarlanın çevresi 40√10 ≈ 126,49 m; yaklaşık değer ve yukarı yuvarlama kararı.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Sayılar Laboratuvarı'na karekod ve bağlantı."
+  }
+}

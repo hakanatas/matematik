@@ -1,0 +1,16 @@
+{
+  "name": "eksen-9-1-1-us-ve-kok",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Eksen 9.1.1 — Üssün Merdiveni: Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme yapabilme",
+  "license": "CC-BY-NC-4.0",
+  "author": "Hakan Ataş",
+  "scripts": {
+    "mp4": "node araclar/disa-aktar.mjs",
+    "onizleme": "node araclar/onizleme.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}
