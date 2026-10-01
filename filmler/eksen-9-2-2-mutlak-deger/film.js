@@ -293,7 +293,19 @@
       ['En küçük değer', '\\t{yok}', '0', 1],
       ['Bire bir', '\\t{evet}', '\\t{hayır}', 1],
     ];
-    E.panel(ctx, P.x, P.y, P.w, P.h, { alfa: ara(t, 6.0, 6.6), vurgu: 'mercan' });
+    E.panel(ctx, P.x, P.y, P.w, P.h, { alfa: ara(t, 0.4, 1.0), vurgu: 'mercan' });
+    // giriş: referans doğru ve katlama fikri
+    const iA = pencere(t, 0.6, 1.2, 5.8, 6.3);
+    if (iA > 0) {
+      const cx = P.x + P.w / 2, y = (h2, v) => P.y + yd(h2, v);
+      ctx.save(); ctx.globalAlpha *= iA;
+      E.yazi(ctx, 'REFERANS DOĞRU', P.x + 28, y(34, 32), { boyut: 22, agirlik: 700, harfAra: 4, renk: 'turkuaz', hiza: 'left' });
+      E.formul(ctx, 'f(x) = x', cx, y(140, 92), { boyut: yd(52, 44), renk: 'turkuaz', parilti: 0.3 });
+      E.yazi(ctx, 'x > 0: eksenin üstünde', cx, y(232, 152), { boyut: yd(28, 26), agirlik: 560, renk: 'turkuaz', alfa: ara(t, 2.0, 2.6) });
+      E.yazi(ctx, 'x < 0: eksenin altında', cx, y(282, 192), { boyut: yd(28, 26), agirlik: 560, renk: 'mercan', alfa: ara(t, 2.6, 3.2) });
+      E.formul(ctx, '\\t{alt yarıyı katla} \\Rightarrow n(x) = |x|', cx, y(380, 254), { boyut: yd(34, 30), renk: 'limon', alfa: ara(t, 4.4, 5.0) });
+      ctx.restore();
+    }
     if (tA > 0) {
       ctx.save(); ctx.globalAlpha *= tA;
       const c1 = P.x + yd(300, 340), c2 = P.x + yd(450, 520), hy = P.y + yd(40, 28);
