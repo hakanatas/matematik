@@ -1,0 +1,15 @@
+{
+  "ozet": "n² + n + 41 ifadesi n = 0'dan 39'a kadar kırk kez art arda asal sayı verir; bir algoritma döngüsü her birine ✓ basar. Kırkıncı adımda 40² + 40 + 41 = 1681 çıkar ve 1681 ışık parçacığı 41'e 41'lik bir kareye dizilir: 1681 = 41². Film buradan yola çıkarak test etmenin ispat olmadığını, tek bir karşıt örneğin \"her\" önermesini yıktığını, \"her tek sayının karesi tektir\" önermesinin ise sonsuz bir döngüyle değil tek bir cebirsel hamleyle ispatlandığını gösterir. Aynı önerme sözel, sembolik ve algoritmik dilde yazılır, değili alınır; \"ise\"nin yönü ve günlük dildeki \"veya\"nın belirsizliği sembolik dilin yalınlık ve kesinliğiyle karşılaştırılır.",
+  "fikir": "Binlerce test \"her\" demeye yetmez; tek bir karşıt örnek \"her\"i yıkar.",
+  "sahneler": {
+    "Soğuk açılış: kırk asal": "Sözde kod döngüsü n² + n + 41'i hesaplar; her asal sonuç kod satırından fırlayan ışıkla bir hücreyi yakar. Sayaç 40'a ulaşır: \"Her n için asal mı?\"",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Kırkıncı adım: 1681 = 41²": "n = 40'ta döngü bölen arar ve 41'i bulur; hücre kırmızıya döner ve patlar. 1681 ışık parçacığı 41 × 41'lik bir kareye dizilir: 40² + 40 + 41 = 41². \"Kırk kez doğru olmak, her zaman doğru olmak değildir.\"",
+    "Test ispat değildir": "\"Her tek sayının karesi tektir\" önermesi için tek sayılar bir tünelden sonsuza akar; döngü bitmez. Nokta karesiyle cebirsel ispat: n = 2k + 1 ⇒ n² = 2(2k² + 2k) + 1; noktalar ikişer eşleşir, bir tane artar. ∀ için ispat, ∃ için bir örnek.",
+    "Üç dil ve değil alma": "Aynı önerme sözel, sembolik (∀n ∈ ℕ, n tek ⇒ n² tek) ve sözde kod olarak yazılır. Semboller takla atarak değile dönüşür (∃n ∈ ℕ, n tek ∧ n² çift); döngünün aradığı şeyin değilin örneği olduğu gösterilir: ¬(p ⇒ q) ≡ p ∧ ¬q.",
+    "İSE’nin yönü, VEYA’nın belirsizliği": "Euler diyagramında 4'e bölünenler 2'ye bölünenlerin içindedir: 4 | n ⇒ 2 | n doğru, tersi 6 ile çürür; n tek ⇔ n² tek. Günlük dildeki \"çorba veya salata\" ile matematikteki ∨ ve ⊻ karşılaştırılır.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Algoritma Laboratuvarı'na karekod ve bağlantı."
+  }
+}
