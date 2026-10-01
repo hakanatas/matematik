@@ -1,0 +1,16 @@
+{
+  "ozet": "Bir haber başlığı \"hız ihlalleri patladı\" diyor; grafikteki sütunlardan biri ötekinin üç katı. Kamera geri çekilince eksenin 48'den başladığı, ortalama hızın yalnızca 49'dan 51'e (yaklaşık %4) çıktığı görülür. Film her istatistiksel iddiayı aynı üç adımla sınar: temellendir, hatayı ya da yanlılığı bul, kabul et ya da çürüt. Her iddiada kamera gerçekten geri çekilir: tüm veri (radar ölçümleri), uç değer (yöneticinin maaşı), örneklemin kim olduğu (gece oyun sunucusundaki anket) kadraja girer. Son iddia ise veriyle tutarlı olduğu için kabul edilir.",
+  "fikir": "İstatistiksel bir iddia çoğu zaman bir kadrajdır; kamerayı geri çekince hatası ya da yanlılığı görünür.",
+  "sahneler": {
+    "Soğuk açılış: kesik eksen": "\"Mahallemizde hız ihlalleri patladı!\" başlığı ve 48'den başlayan grafik; kamera hızla geri çekilir, sütunlar neredeyse eşit iki kuleye dönüşür: 49 → 51 km/sa, yaklaşık %4.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Üç adım, üç kadraj": "İç içe genişleyen üç kadraj: temellendir, hata ya da yanlılık ara, kabul et ya da çürüt.",
+    "İddia 1: tüm veri": "48–52 aralığındaki iki ortalamadan geri çekilince 40 aracın tek tek hızları görünür (38–64 km/sa); 2 km/sa'lik fark bu değişkenliğin yanında küçüktür. Çürütüldü.",
+    "İddia 2: ortalama mı, ortanca mı?": "\"Ortalama maaş 100 000 TL\" iki aşamalı geri çekilmeyle açılır: 9 çalışan 25 000 TL, yönetici 775 000 TL. Tipik değeri ortanca (25 000 TL) anlatır. Çürütüldü.",
+    "İddia 3: örneklem kim?": "\"Öğrencilerin %90'ı\" halka grafiğinden geri çekilince anketin gece 23:00'te bir oyun sunucusunda, okulun küçük bir köşesiyle yapıldığı görülür; kurayla seçilen 200 kişi ise okulun her yerine dağılır. Yanlı örneklem: çürütüldü.",
+    "İddia 4: kabul": "\"9. sınıflar tipik olarak 7 saat uyuyor\": tam eksen, kurayla seçilmiş 40 öğrenci, nokta ve kutu grafiği; ortalama ve ortanca 7. İddia kabul edildi.",
+    "Aklında kalsın": "Dört maddelik özet: ekseni kontrol et, uç değerde ortancaya bak, örneklemi sorgula, veriyle karar ver.",
+    "Laboratuvar": "Veri Laboratuvarı'na karekod ve bağlantı."
+  }
+}

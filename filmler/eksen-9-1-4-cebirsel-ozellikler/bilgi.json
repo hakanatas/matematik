@@ -1,0 +1,17 @@
+{
+  "ozet": "51 · 49 bir saniyeden kısa sürede hesaplanır: 2499. Film bu hızın sırrını alanlarda arar. Bir dikdörtgeni döndürmek değişme özelliğini, yüksekliği 1'e ya da 0'a indirmek birim ve yutan elemanı, dört ince şeridi bir kareye dizmek ters elemanı gösterir. Dikdörtgeni bölmek dağılmadır (7 · 98 = 686); kare dört parçaya ayrılınca (a + b)² ve (a − b)² özdeşlikleri çıkar. Sürpriz: a² karesinden b² kesilir, kalan L şekli döndürülüp kaydırılınca (a + b)(a − b) dikdörtgeni olur ve açılıştaki 51 · 49 = 50² − 1² sorusu çözülür. Son bölümde çarpanlara ayırma parçaların dikdörtgene dizilmesi olarak görülür; a · b = 0 ⇔ a = 0 ∨ b = 0 çıkarımı ve niceleyici/bağlaç sembolleri tanıtılır.",
+  "fikir": "Gerçek sayıların işlem özellikleri alanın korunmasıdır: aynı alan, iki farklı cebirsel yazılış.",
+  "sahneler": {
+    "Soğuk açılış: 51 · 49": "51 · 49 bir saniyede hesaplanır (2499 = 50² − 1²); kamera bir kare ızgaraya dalar.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Döndür: değişme ve birleşme": "3 × 5 dikdörtgen 90° döner, alan 15 kalır: ∀a, b ∈ ℝ, a · b = b · a. Üç çubukla (a + b) + c = a + (b + c).",
+    "Bir, sıfır, ters": "Yükseklik 1'e iner (a · 1 = a, birim eleman), 0'a iner ve alan çöker (a · 0 = 0, yutan eleman); 4 × 1/4 şeridi dört parçaya bölünüp birim kareye dizilir: ∀a ≠ 0, ∃b: a · b = 1.",
+    "Böl: dağılma": "a(b + c) dikdörtgeni ab ve ac parçalarına bölünür; 7 · 98 = 7(100 − 2) = 700 − 14 = 686.",
+    "Kare dört parçaya": "(a + b)² karesi a², ab, ab, b² parçalarına ayrılır; (a − b)² için iki şerit çıkarılır, iki kez çıkan köşe b² geri eklenir.",
+    "Sürpriz: kes ve kaydır": "a² karesinden b² kesilir; kalan L şekli ikiye ayrılıp bir parça döndürülerek kaydırılır ve (a + b)(a − b) dikdörtgeni oluşur. 51 · 49 = (50 + 1)(50 − 1) = 2500 − 1 = 2499.",
+    "Çarpanlara ayırma ve sıfır çarpımı": "x² + 5x + 6 karoları (x + 2)(x + 3) dikdörtgenine dizilir; alanı sıfır olan dikdörtgen: a · b = 0 ⇔ a = 0 ∨ b = 0, a · b ≠ 0 ⇔ a ≠ 0 ∧ b ≠ 0; ∀, ∃, ∧, ∨, ⇒, ⇔ sembolleri.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Sayılar Laboratuvarı'na karekod ve bağlantı."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "ozet": "Bir kilim motifi kendini çoğaltır; kamera geri çekilince koca desenin tek bir parçanın kopyaları olduğu anlaşılır: bu desen iki aynanın eseridir. Film yansımanın uzunluk ve açıyı koruyup yönü çevirdiğini gösterir, sonra 3B bir anda yansımayı ayna doğrusu etrafında düzlemden çıkıp 180° dönen bir plaka olarak sunar: motif arka yüzüyle geri iner. Öteleme ve dönmenin yönü koruduğu görülür; paralel iki aynada art arda yansıma 2d'lik bir öteleme, kesişen iki aynada 2θ'lık bir dönme verir. Aynalar 60° açılınca altı kopyalı kilim rozeti doğar. Her üç dönüşümde de görüntü baştaki şekle eştir.",
+  "fikir": "Yansıma uzayda yarım turdur; iki yansıma bir öteleme ya da bir dönme eder.",
+  "sahneler": {
+    "Soğuk açılış: kilim deseni": "Tek bir motif iki aynada katlanıp dönerek altı kopyalı bir rozete, rozet de ötelenerek kilim desenine dönüşür; kamera geri çekilir.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Yansıma: eş ama ters": "A, B, C noktaları aynaya dik inip eşit uzaklıkta karşıya geçer; |AB| = |A'B'| = 3, ∠A = ∠A' = 90°: görüntü eştir. Ama dönüş yönü ↺'den ↻'ye döner (turkuaz → mercan).",
+    "3B: düzlemden çıkan yansıma": "Three.js sahnesi: ayna doğrusu bir menteşedir; motif plakası düzlemden kalkıp 180° döner ve arka yüzüyle (mercan) iner. Yansıma = uzayda yarım tur; yönün ters görünmesinin nedeni.",
+    "Öteleme ve dönme": "v = (6, 2) vektörüyle öteleme: her nokta aynı vektörle kayar. O merkezli 90° dönme: her nokta merkezden aynı uzaklıkta kalır. İkisinde de yön korunur, görüntü eştir.",
+    "Sürpriz: paralel iki ayna": "a₁'de sonra a₂'de yansıtma: sonuç 2d'lik öteleme (d = 4 ⇒ 8, d = 3 ⇒ 6). İki ters dönüş yönü düzeltir.",
+    "Sürpriz: kesişen iki ayna": "Aralarında θ = 45° olan aynalarda art arda yansıma, kesişim noktası merkezli 2θ = 90°'lik dönmedir. θ = 60° olunca altı kopya (üç dönme, üç yansıma) kilim rozetini oluşturur.",
+    "Önerme: görüntü hep eş": "Yansıma yönü çevirir, öteleme ve dönme korur; üçünde de uzunluk, açı, çevre ve alan değişmez.",
+    "Aklında kalsın": "Beş maddelik özet.",
+    "Laboratuvar": "Dönüşüm ve Benzerlik Laboratuvarı'na karekod ve bağlantı."
+  }
+}

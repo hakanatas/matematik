@@ -1,0 +1,15 @@
+{
+  "ozet": "Tavla masasında zarlar 4 ve 3 gelir: yine 7. Neden en çok 7 gelir? Film, iki zarın 36 eş olasılıklı sonucunu bir 6×6 ızgaraya dizer; her köşegen bir toplamdır ve en uzunu 7'nin köşegenidir. Örnek uzay sistematik liste, tablo ve ağaç şemasıyla (üç para atışı) görünür kılınır; P(A) = olaya ait çıktılar / tüm çıktılar ile P(7) = 1/6, P(2) = 1/36 ve tümleyen hesaplanır. Sürpriz dönüşümde ızgara 45° döner ve hücreler çökerek dağılımın üçgenini oluşturur. Ayrık ve ayrık olmayan olaylarda birleşim kuralı ızgarada gösterilir; sonda 36 000 atışlık simülasyonun çubukları teorik basamaklara oturur.",
+  "fikir": "İki zarın 36 sonucu bir 6×6 ızgaradır; toplam 7 en uzun köşegendir (6/36). Teorik olasılık örnek uzayı görünür kılmaktır ve deney uzun vadede ona yaklaşır.",
+  "sahneler": {
+    "Soğuk açılış: tavla ve 36 sonuç": "Tavla masasında zarlar 4 ve 3 gelir. \"Neden en çok 7 gelir?\" sorusuyla 36 zar çifti 6×6 ızgaraya yerleşir; köşegenler sırayla yanar, 7'nin köşegeni en uzunudur.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Örnek uzay: liste, tablo, ağaç": "İki zarın 36 çıktısı sistematik listeyle yazılır, (1, 2) ≠ (2, 1) vurgulanır; liste 6×6 tabloya dönüşür. Üç para atışı için ağaç şeması 8 yaprak verir; tam 2 tura olasılığı 3/8. el-Kindî'ye kısa değinme.",
+    "Yedinin köşegeni ve üçgen": "P(A) = olaya ait çıktılar / tüm çıktılar; P(toplam 7) = 6/36 = 1/6, P(toplam 2) = 1/36, P(7 değil) = 5/6. Izgara 45° döner, hücreler çökerek 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1 basamaklı üçgeni oluşturur.",
+    "Birleşim: ayrık ve ayrık olmayan": "Toplam 7 ve toplam 11 ayrık olaylardır: P(A ∪ B) = 8/36. \"En az bir zar 6\" ile \"toplam ≥ 10\" olaylarının 5 ortak çıktısı iki kez sayılır ve bir kez çıkarılır: 11/36 + 6/36 − 5/36 = 12/36. Kural: P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
+    "Deney teoriye yaklaşır": "Tohumlu simülasyonda 36, 360, 3600 ve 36 000 atışın göreli sıklık çubukları teorik değerlerin kesikli hayaletlerine doğru yükselir ve oturur; deneysel ve teorik P(7) karşılaştırılır.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Olasılık Laboratuvarı'na karekod ve bağlantı."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "ozet": "Bir dik üçgende hipotenüse indirilen yükseklik iki parça doğurur; parçalar dönüp büyüyerek büyük üçgenin üstüne tam oturur. Film, bir üçgene benzer üçgenler oluşturmanın iki çizimini yansıtma tonuyla inceler: bir kenara paralel doğru (içte, dışta ve kelebek durumunda AA ile benzerlik; paralel olmayınca açıların ve oranların tutmaması) ve dik üçgende dik açıdan hipotenüse yükseklik (üç benzer üçgen, oranlar 0,6, 0,8 ve 1). Yükseklik tekrar tekrar indirildiğinde, her iki adımda 0,48 katına küçülüp çeyrek tur dönen sonsuz bir sarmal oluşur. Sonda bir çatı makasında paralel kirişin uzunluğu benzerlikle bulunur.",
+  "fikir": "İki çizim yeter: kenara paralel ya da hipotenüse yükseklik. İkisi de açıları korur, ikisi de benzer üçgen doğurur.",
+  "sahneler": {
+    "Soğuk açılış: Matruşka": "3-4-5 dik üçgende yükseklik iki parçaya ayırır; parçalar dönüp büyüyerek büyük üçgene oturur, sonra bölünme tekrar ederek sarmal oluşturur.",
+    "İmza": "Seri imzası: ışıktan bir eksen çizilir.",
+    "Başlık": "Film adı ve öğrenme çıktısı kodu.",
+    "Elimizdeki araçlar": "Benzerlik koşulları (AA, KKK∼, KAK∼) gözden geçirilir; çizimle en kolayı AA'dır.",
+    "Paralel çizim: içte, dışta, kelebek": "DE ∥ BC çizilince yöndeş açılar eşit olur ve △ADE ∼ △ABC; doğru kaydıkça k değişir, şekil değişmez. Uzantılarda k > 1, tepenin öbür yanında iç ters açılarla ters dönmüş benzer üçgen (kelebek).",
+    "Paralel olmasa?": "Doğru eğilince ∠ADE ≈ 80°, ∠ABC ≈ 68° olur; |AD|/|AB| = 0,5 ve |AE|/|AC| = 0,7 tutmaz. Paralellik geri gelince benzerlik de gelir.",
+    "Dik üçgende yükseklik": "A dik açılı ABC'de AH yüksekliği; açı renkleri her parçada aynı. Üç üçgen döndürülüp yan yana dizilir: kenarlar 3-4-5'in 0,6, 0,8 ve 1 katı; △HBA ∼ △HAC ∼ △ABC.",
+    "Sürpriz: sonsuz sarmal": "Yükseklik sırayla küçük parçalara indirilir; kamera sabit noktaya sonsuz yakınlaşır. Her iki adımda ölçek 0,8 · 0,6 = 0,48 ve çeyrek tur dönme.",
+    "Problem: çatı makası": "Açıklığı 8 m, yüksekliği 3 m olan makasta tabandan 1,2 m yukarıdaki paralel kiriş: x/8 = 1,8/3 ⇒ x = 4,8 m; kontrol 4,8/8 = 0,6.",
+    "Aklında kalsın": "Dört maddelik özet.",
+    "Laboratuvar": "Dönüşüm ve Benzerlik Laboratuvarı'na karekod ve bağlantı."
+  }
+}

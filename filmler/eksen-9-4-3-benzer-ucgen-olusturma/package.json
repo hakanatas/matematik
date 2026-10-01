@@ -1,0 +1,16 @@
+{
+  "name": "eksen-9-4-3-benzer-ucgen-olusturma",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Eksen 9.4.3 — Üçgenin İçindeki Üçgenler: Bir üçgenden hareketle ona benzer üçgenler oluşturma ile ilgili yansıtma yapabilme",
+  "license": "CC-BY-NC-4.0",
+  "author": "Hakan Ataş",
+  "scripts": {
+    "mp4": "node araclar/disa-aktar.mjs",
+    "onizleme": "node araclar/onizleme.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}

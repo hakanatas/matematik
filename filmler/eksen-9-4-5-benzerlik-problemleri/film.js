@@ -489,9 +489,9 @@
       // piramit ikonu ve gölgesi
       const ix = px + 56, iy = py + ph / 2 + 22;
       E.cokgen(ctx, [[ix - 36, iy], [ix, iy - 44], [ix + 36, iy]], { renk: 'limon', alfa: 0.18 * tA, kenar: true, kenarAlfa: tA, kalinlik: 2 });
-      E.cizgi(ctx, [[ix + 36, iy + 3], [ix + 80, iy + 3]], { renk: 'gumus', kalinlik: 4, alfa: 0.7 * tA });
-      E.yazi(ctx, 'Tales, MÖ 6. yüzyıl', px + 120, py + ph * 0.32, { boyut: 26, agirlik: 700, renk: 'limon', hiza: 'left', alfa: tA });
-      E.yazi(ctx, 'Piramidi gölgesiyle ölçtü.', px + 120, py + ph * 0.68, { boyut: 26, agirlik: 520, hiza: 'left', alfa: tA });
+      E.cizgi(ctx, [[ix + 36, iy + 3], [ix + 56, iy + 3]], { renk: 'gumus', kalinlik: 4, alfa: 0.7 * tA });
+      E.yazi(ctx, 'Tales, MÖ 6. yüzyıl', px + 116, py + ph * 0.32, { boyut: 26, agirlik: 700, renk: 'limon', hiza: 'left', alfa: tA });
+      E.yazi(ctx, 'Piramidi gölgesiyle ölçtü.', px + 116, py + ph * 0.68, { boyut: 24, agirlik: 520, hiza: 'left', alfa: tA });
     }
   };
 
@@ -542,8 +542,8 @@
       const xA = ara(t, 11.6, 12.2);
       E.yazi(ctx, 'Saatler karışırsa:', kx, yk, { boyut: E.yd(28, 28), agirlik: 640, renk: 'mercan', alfa: xA });
       const fr = E.formul(ctx, '50 · 1{,}7 : 3{,}4 = 25\\t{ m}', kx, yk + E.yd(56, 54), { boyut: E.yd(32, 32), renk: 'mercan', alfa: xA * ara(t, 12.0, 12.5) });
-      const ci = ara(t, 12.7, 13.3);
-      if (ci > 0 && fr.w) E.cizgi(ctx, [[kx - fr.w / 2 - 8, yk + E.yd(56, 54)], [kx - fr.w / 2 - 8 + (fr.w + 16) * ci, yk + E.yd(56, 54)]], { renk: 'mercan', kalinlik: 3, parilti: 0.6 });
+      const ci = ara(t, 12.7, 13.2);
+      if (ci > 0 && fr.w) E.cizgi(ctx, [[kx - fr.w / 2 - 8, yk + E.yd(56, 54) + 14], [kx + fr.w / 2 + 8, yk + E.yd(56, 54) - 14]], { renk: 'mercan', kalinlik: 3.5, parilti: 0.6, alfa: ci });
       // hangi hücreler karışık: vurgula
       if (xA > 0) {
         const hY1 = y0 + sat * 1, hY2 = y0 + sat * 2;
@@ -649,7 +649,7 @@
     serit(ctx, aktif, ara(t, 0.1, 0.8));
     // geçiş: yan görünüş (0) → kuşbakışı (1)
     const tilt = ara(t, 4.2, 6.6, 'io3');
-    const zeminY = g.Y0 + 4 * g.s;
+    const zeminY = g.Y0 + E.yd(4, 5.5) * g.s;
     const xA = ust(0, 0)[0], xT = ust(0, 15)[0];
     // ---- Yan görünüş ----
     const yanA = 1 - ara(t, 4.6, 5.8);
@@ -658,9 +658,11 @@
       ctx.translate(0, zeminY); ctx.scale(1, lerp(1, 0.12, tilt)); ctx.translate(0, -zeminY);
       const derinlik = 70;
       // kıyılar
-      ctx.fillStyle = E.karistir('lacivert', 'derin', 0.5);
-      ctx.fillRect(ic.x - 40, zeminY, xA - ic.x + 40, 120);
-      ctx.fillRect(xT, zeminY, ic.x1 - xT + 40, 120);
+      const kg = ctx.createLinearGradient(0, zeminY, 0, zeminY + 150);
+      kg.addColorStop(0, E.karistir('lacivert', 'derin', 0.7, 1)); kg.addColorStop(1, E.rgba('gece', 0));
+      ctx.fillStyle = kg;
+      ctx.fillRect(-40, zeminY, xA + 40, 150);
+      ctx.fillRect(xT, zeminY, E.W - xT + 40, 150);
       // su
       const sg = ctx.createLinearGradient(0, zeminY + 10, 0, zeminY + derinlik + 40);
       sg.addColorStop(0, E.rgba('gok', 0.55)); sg.addColorStop(1, E.rgba('derin', 0.9));
@@ -671,10 +673,10 @@
         E.cizgi(ctx, [[xA + 20 + ofs, yy], [xA + 60 + ofs, yy]], { renk: 'gok', kalinlik: 1.5, alfa: 0.5 });
         E.cizgi(ctx, [[xT - 120 + ofs, yy + 3], [xT - 80 + ofs, yy + 3]], { renk: 'gok', kalinlik: 1.5, alfa: 0.4 });
       }
-      E.cizgi(ctx, [[ic.x - 40, zeminY], [xA, zeminY]], { renk: 'cizgi', kalinlik: 2 });
-      E.cizgi(ctx, [[xT, zeminY], [ic.x1 + 40, zeminY]], { renk: 'cizgi', kalinlik: 2 });
-      agac(ctx, xT + 22, zeminY, E.yd(150, 140), { kenar: 'menekse' });
-      insan(ctx, xA - 22, zeminY, E.yd(56, 52), { renk: 'tebesir' });
+      E.cizgi(ctx, [[-40, zeminY], [xA, zeminY]], { renk: 'cizgi', kalinlik: 2 });
+      E.cizgi(ctx, [[xT, zeminY], [E.W + 40, zeminY]], { renk: 'cizgi', kalinlik: 2 });
+      agac(ctx, xT + E.yd(22, 4), zeminY, E.yd(150, 190), { kenar: 'menekse' });
+      insan(ctx, xA - 22, zeminY, E.yd(56, 66), { renk: 'tebesir' });
       ctx.restore();
       const okA = ara(t, 1.2, 2.0) * yanA * (1 - tilt);
       E.ok(ctx, xA + 10, zeminY - 34, xT - 10, zeminY - 34, { renk: 'limon', kalinlik: 2.5, alfa: okA, okBoy: 14 });
@@ -707,8 +709,8 @@
       ctx.restore();
       // su
       const sg = ctx.createLinearGradient(xA, 0, xT, 0);
-      sg.addColorStop(0, E.karistir('derin', 'gok', 0.45, 0.95)); sg.addColorStop(0.15, E.karistir('derin', 'gok', 0.25, 0.95));
-      sg.addColorStop(0.85, E.karistir('derin', 'gok', 0.25, 0.95)); sg.addColorStop(1, E.karistir('derin', 'gok', 0.45, 0.95));
+      sg.addColorStop(0, E.karistir('derin', 'gok', 0.32, 0.95)); sg.addColorStop(0.18, E.karistir('derin', 'gok', 0.14, 0.95));
+      sg.addColorStop(0.82, E.karistir('derin', 'gok', 0.14, 0.95)); sg.addColorStop(1, E.karistir('derin', 'gok', 0.32, 0.95));
       ctx.fillStyle = sg; ctx.fillRect(xA, yU0, xT - xA, yU1 - yU0);
       // akıntı pırıltıları (tohumlu, t ile akar)
       const r = E.rng(808);
@@ -726,7 +728,30 @@
       ctx.save(); ctx.fillStyle = E.karistir('derin', 'turkuaz', 0.4);
       ctx.beginPath(); for (let i = 0; i < 6; i++) { const a = (i / 6) * TAU; ctx.moveTo(tx + 20 + Math.cos(a) * 9 + 11, ty + Math.sin(a) * 9); ctx.arc(tx + 20 + Math.cos(a) * 9, ty + Math.sin(a) * 9, 11, 0, TAU); }
       ctx.fill(); ctx.restore();
+      // harita kenarlarını yumuşat (zemin rengine karışsın)
+      const kenar = (x0, y0, x1, y1) => {
+        const gr = ctx.createLinearGradient(x0, y0, x1, y1); gr.addColorStop(0, E.rgba('gece', 1)); gr.addColorStop(1, E.rgba('gece', 0)); ctx.fillStyle = gr;
+        if (x0 === x1) ctx.fillRect(sol0 - 2, Math.min(y0, y1), sag1 - sol0 + 4, Math.abs(y1 - y0));
+        else ctx.fillRect(Math.min(x0, x1), yU0, Math.abs(x1 - x0), yU1 - yU0);
+      };
+      kenar(0, yU0, 0, yU0 + 50); kenar(0, yU1, 0, yU1 - 50);
+      kenar(sol0, 0, sol0 + 70, 0);
+      if (H) kenar(sag1, 0, sag1 - 30, 0);
       ctx.restore();
+    }
+    {
+      const p = panelYer();
+      const y0 = p.y0 + E.yd(30, 14);
+      const vA = ara(t, 1.6, 2.2) * (1 - ara(t, 12.0, 12.5));
+      if (vA > 0) {
+        const sa = E.yd(48, 44);
+        E.yazi(ctx, 'VERİLEN', p.x + 10, y0 - E.yd(10, 0), { boyut: 22, agirlik: 700, harfAra: 4, renk: 'turkuaz', hiza: 'left', alfa: vA });
+        satir(ctx, 'Kıyı boyunca', 'AC = 6\\t{ m}', y0 + sa, { alfa: vA * ara(t, 7.8, 8.4) });
+        satir(ctx, 'Sonra', 'CD = 4\\t{ m}', y0 + sa * 2, { alfa: vA * ara(t, 9.4, 10.0) });
+        satir(ctx, 'Dik yönde', 'DE = 10\\t{ m}', y0 + sa * 3, { alfa: vA * ara(t, 11.0, 11.5) });
+        E.yazi(ctx, 'İSTENEN', p.x + 10, y0 + sa * 4.1, { boyut: 22, agirlik: 700, harfAra: 4, renk: 'limon', hiza: 'left', alfa: vA });
+        satir(ctx, 'Nehrin genişliği', ara(t, 6.6, 7.2) > 0.5 ? 'x = AT' : 'x', y0 + sa * 5, { alfa: vA, renk: 'limon' });
+      }
     }
     const kur = tilt >= 0.999;
     if (!kur) return;
@@ -771,7 +796,7 @@
       E.nokta(ctx, x, y, 6, { renk, parilti: 0.8, alfa: a });
       E.yazi(ctx, ad, x + dx, y + dy, { boyut: 26, agirlik: 700, renk, alfa: a });
     };
-    kazik('T', NOK.T, ara(t, 6.4, 7.0), 30, -26, 'mercan');
+    kazik('T', NOK.T, ara(t, 6.4, 7.0), E.yd(30, -22), E.yd(-26, 30), 'mercan');
     kazik('A', NOK.A, ara(t, 6.6, 7.2), -24, -24);
     kazik('C', NOK.C, ara(t, 7.8, 8.2), -26, 0, 'limon');
     kazik('D', NOK.D, ara(t, 9.4, 9.8) * (1 - buy), 22, 22);
@@ -797,16 +822,6 @@
     const p = panelYer();
     const y0 = p.y0 + E.yd(30, 14), sat = E.yd(86, 68);
     const cx = p.cx;
-    const vA = ara(t, 7.6, 8.2) * (1 - ara(t, 12.0, 12.5));
-    if (vA > 0) {
-      const sa = E.yd(48, 44);
-      E.yazi(ctx, 'VERİLEN', p.x + 10, y0 - E.yd(10, 0), { boyut: 22, agirlik: 700, harfAra: 4, renk: 'turkuaz', hiza: 'left', alfa: vA });
-      satir(ctx, 'Kıyı boyunca', 'AC = 6\\t{ m}', y0 + sa, { alfa: vA * ara(t, 7.8, 8.4) });
-      satir(ctx, 'Sonra', 'CD = 4\\t{ m}', y0 + sa * 2, { alfa: vA * ara(t, 9.4, 10.0) });
-      satir(ctx, 'Dik yönde', 'DE = 10\\t{ m}', y0 + sa * 3, { alfa: vA * ara(t, 11.0, 11.5) });
-      E.yazi(ctx, 'İSTENEN', p.x + 10, y0 + sa * 4.1, { boyut: 22, agirlik: 700, harfAra: 4, renk: 'limon', hiza: 'left', alfa: vA * ara(t, 7.0, 7.6) });
-      satir(ctx, 'Nehrin genişliği', 'x = AT', y0 + sa * 5, { alfa: vA * ara(t, 7.0, 7.6), renk: 'limon' });
-    }
     E.formul(ctx, '\\triangle EDC \\sim \\triangle TAC', cx, y0, { boyut: E.yd(32, 30), renk: 'gumus', alfa: ara(t, 12.6, 13.2) });
     E.formul(ctx, '\\frac{\\c{mercan}{x}}{\\c{turkuaz}{10}} = \\frac{\\c{mercan}{6}}{\\c{turkuaz}{4}}', cx, y0 + sat, { boyut: E.yd(46, 42), alfa: ara(t, 16.2, 16.9), aciga: ara(t, 16.2, 17.4, 'lin') });
     E.formul(ctx, 'x = 10 · 1{,}5 = \\c{limon}{15\\t{ m}}', cx, y0 + sat * 2, { boyut: E.yd(38, 34), alfa: ara(t, 17.0, 17.6) });
@@ -874,8 +889,8 @@
   const bitis = (ctx, s) => {
     const L = E.L, t = s.t, ic = L.icerik, H = E.yatay;
     const a1 = ara(t, 0, 0.9, 'cik3'), a2 = ara(t, 0.5, 1.4, 'cik3'), a3 = ara(t, 1.0, 1.9, 'cik3');
-    const qrBoy = H ? 220 : 260;
-    const qx = H ? L.cx + 190 : L.cx - qrBoy / 2, qy = H ? L.cy - qrBoy / 2 - 40 : ic.y + 380;
+    const qrBoy = H ? 220 : 280;
+    const qx = H ? L.cx + 190 : L.cx - qrBoy / 2, qy = H ? L.cy - qrBoy / 2 - 40 : ic.y + 320;
     const tx = H ? L.cx - 440 : L.cx, hz = H ? 'left' : 'center';
     const yb = H ? qy - 6 : ic.y + 30;
     E.yazi(ctx, 'ŞİMDİ SEN DENE', tx, yb, { boyut: 26, agirlik: 700, harfAra: 6, renk: 'turkuaz', hiza: hz, alfa: a1 });

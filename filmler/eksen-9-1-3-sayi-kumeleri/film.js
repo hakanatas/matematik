@@ -82,6 +82,8 @@
       E.nokta(ctx, x, y, 7 * (1 - i / n), { renk, parilti: i === 0 ? 1.5 : 0.4, alfa: al * (1 - i / n) * (p >= 1 && i > 0 ? 0 : 1) });
     }
   };
+  /** Halka kamerası: halka merkezini (ox, oy) noktasına getir, z kat yakınlaştır */
+  const halkaKam = (ctx, g, z, ox = g.cx, oy = g.cy) => { ctx.translate(ox, oy); ctx.scale(z, z); ctx.translate(-g.cx, -g.cy); };
   /** Halkalar sahnesi: durum = { r:[..], al:[..], flas:[..], elemanAl(i) } */
   const halkalarCiz = (ctx, g, d) => {
     for (let k = 3; k >= 0; k--) halka(ctx, g, k, d.r[k], d.al[k], { flas: d.flas ? d.flas[k] : 0, p: d.p ? d.p[k] : 1, etAl: d.et ? d.et[k] : 1 });
@@ -97,11 +99,10 @@
   const acilis = (ctx, s) => {
     const t = s.t, L = E.L, ic = L.icerik, H = E.yatay;
     const g = geo();
-    const z = kf(t, [[0, H ? 2.0 : 1.7], [3.0, H ? 2.0 : 1.7], [6.0, 1.0, 'io3']]);
-    const kx = kf(t, [[0, g.cx], [3.0, g.cx], [6.0, H ? L.cx : g.cx, 'io3']]);
-    const ky = kf(t, [[0, g.cy], [3.0, g.cy], [6.0, H ? L.cy : L.cy, 'io3']]);
+    const q = ara(t, 3.0, 6.0, 'io3');
+    const zZ = 0.95 * g.r[3] / g.r[1];
     ctx.save();
-    E.kamera(ctx, { x: kx + (H ? 0 : 0), y: ky, z });
+    halkaKam(ctx, g, lerp(2.3, zZ, q), lerp(L.cx, g.cx, q), lerp(H ? L.cy : ic.y + 250, g.cy, q));
     const rZ = kf(t, [[4.4, g.r[0]], [5.8, g.r[1], 'geri']]);
     const hedef = elemanXY(g, ELEMAN[5]);
     const p = ara(t, 3.0, 4.4, 'gir2');
@@ -140,6 +141,10 @@
     const hR = elemanXY(g, ELEMAN[10]);
     const pR = ara(t, 9.6, 10.8, 'gir2');
     const rR = kf(t, [[10.8, g.r[2]], [12.1, g.r[3], 'geri']]);
+    const rDis = t < 10.8 ? Math.max(g.r[1], rQ) : rR;
+    const zH = clamp(0.95 * g.r[3] / rDis, 1, 0.95 * g.r[3] / g.r[1]);
+    ctx.save();
+    halkaKam(ctx, g, zH);
     halkalarCiz(ctx, g, {
       r: [g.r[0], g.r[1], rQ, rR], al: [1, 1, ara(t, 2.9, 3.2), ara(t, 10.7, 11.0)], et: [1, 1, ara(t, 4.1, 4.5), ara(t, 11.9, 12.3)],
       flas: [0, E.nabiz(t, 2.4, 0.8), E.nabiz(t, 3.6, 1.2) + E.nabiz(t, 10.2, 0.8), E.nabiz(t, 11.4, 1.2)],
@@ -155,6 +160,7 @@
     kacan(ctx, g.cx, g.cy, hR[0], hR[1], pR, 'limon', 1 - ara(t, 10.8, 11.2));
     const aR = Math.atan2(hR[1] - g.cy, hR[0] - g.cx);
     catlak(ctx, g.cx + Math.cos(aR) * g.r[2], g.cy + Math.sin(aR) * g.r[2], aR, ara(t, 10.25, 10.7), 1 - ara(t, 11.4, 12.2), 59);
+    ctx.restore();
 
     // Sağ sütun (yatay) / alt bölge (dikey)
     const fx = H ? g.sx : L.cx;
@@ -162,7 +168,7 @@
     const y1 = H ? ic.y + 80 : ic.y + 620, y2 = H ? ic.y + 170 : ic.y + 700;
     E.formul(ctx, t < 3.0 ? '1 : 2 = \\c{limon}{?}' : '1 : 2 = \\c{limon}{\\frac{1}{2}} \\notin \\c{gok}{\\Z}', fx, y1, { boyut: H ? 54 : 48, alfa: A1 });
     // ℚ tanımı (kesir biçimi) — yerel küme parantezleri yerine sözel
-    E.formul(ctx, '\\c{menekse}{\\Q}:\\; \\frac{a}{b},\\;\\; a, b \\in \\Z,\\; b \\ne 0', fx, y2 + (H ? 10 : 0), { boyut: H ? 40 : 36, alfa: ara(t, 3.8, 4.4) * (1 - ara(t, 5.6, 6.1)) });
+    E.formul(ctx, '\\c{menekse}{\\Q}:\\; \\frac{a}{b},\\;\\; a,\\, b \\in \\Z,\\; b \\ne 0', fx, y2 + (H ? 10 : 0), { boyut: H ? 40 : 36, alfa: ara(t, 3.8, 4.4) * (1 - ara(t, 5.6, 6.1)) });
     // Birim kare
     const kA = ara(t, 6.0, 6.7) * (1 - ara(t, 13.0, 13.6));
     if (kA > 0) {
@@ -233,7 +239,7 @@
     E.yazi(ctx, 'KAPALILIK', fx, fy, { boyut: 24, agirlik: 700, harfAra: 6, renk: 'turkuaz', alfa: ara(t, 0.6, 1.2) });
     E.yazi(ctx, 'İşlemin sonucu kümeden kaçmıyorsa, küme o işleme göre kapalıdır.', fx, fy + (H ? 76 : 64), { boyut: H ? 30 : 28, agirlik: 560, alfa: ara(t, 1.0, 1.6), maxGen: H ? 440 : ic.w - 20 });
     const sA = ara(t, 11.0, 11.8, 'cik3');
-    E.formul(ctx, '\\forall a, b \\in \\R:\\;\\; a · b \\in \\R', fx, fy + (H ? 220 : 160), { boyut: H ? 40 : 38, renk: 'limon', alfa: sA, parilti: 0.3 * sA });
+    E.formul(ctx, '\\forall a,\\, b \\in \\R:\\;\\; a · b \\in \\R', fx, fy + (H ? 220 : 160), { boyut: H ? 40 : 38, renk: 'limon', alfa: sA, parilti: 0.3 * sA });
     E.yazi(ctx, 'ℝ çarpmaya göre kapalıdır.', fx, fy + (H ? 284 : 218), { boyut: H ? 28 : 26, agirlik: 560, renk: 'gumus', alfa: ara(t, 11.8, 12.4) });
   };
 
@@ -305,7 +311,7 @@
       const cx = px0 + pw / 2;
       const sat = H ? 58 : 82;
       const fb = H ? 34 : 32;
-      E.formul(ctx, '\\t{Hipotez: }\\; a, b \\in \\Q,\\;\\; a < b', cx, py0 + (H ? 66 : 100), { boyut: fb, renk: 'gumus', alfa: ara(t, 7.0, 7.6) });
+      E.formul(ctx, '\\t{Hipotez: }\\; a,\\, b \\in \\Q,\\;\\; a < b', cx, py0 + (H ? 66 : 100), { boyut: fb, renk: 'gumus', alfa: ara(t, 7.0, 7.6) });
       E.formul(ctx, 'a = \\frac{a + a}{2} < \\c{limon}{\\frac{a + b}{2}} < \\frac{b + b}{2} = b', cx, py0 + (H ? 140 : 207), { boyut: fb, alfa: ara(t, 8.4, 9.0), aciga: ara(t, 8.4, 10.0, 'lin') });
       const y3 = py0 + (H ? 220 : 313);
       E.formul(ctx, '\\frac{a + b}{2} \\in \\Q', H ? cx - 130 : cx, y3, { boyut: fb, alfa: ara(t, 10.4, 11.0), renk: 'tebesir' });
@@ -347,7 +353,7 @@
         const x = px(j * adim);
         E.cizgi(ctx, [[x, ly - 6 - 8 * gor], [x, ly + 6 + 8 * gor]], { renk: 'menekse', kalinlik: 1.6 + gor, alfa: gor * 0.9 });
         E.nokta(ctx, x, ly, 2.5 + 2.5 * gor, { renk: 'menekse', parilti: 0.6, alfa: gor });
-        if (ar >= (H ? 150 : 130) && x > lx + 50 && x < lx + lw - 50) etiketler.push([x, ondalikYaz(j * adim, m), clamp((ar - (H ? 150 : 130)) / 60) * gor]);
+        if (ar >= (H ? 150 : 105) && x > lx + 50 && x < lx + lw - 50) etiketler.push([x, ondalikYaz(j * adim, m), clamp((ar - (H ? 150 : 105)) / 50) * gor]);
       }
     }
     for (const [x, f, a] of etiketler) E.yazi(ctx, f, x, ly + 46, { boyut: 24, agirlik: 520, renk: 'gumus', alfa: a });
@@ -374,11 +380,11 @@
     // Yaklaşım sayacı
     const m = clamp(Math.floor(z + 0.75) + 1, 1, 6);
     const yak = ondalikYaz(Math.floor(KOK2 * Math.pow(10, m)) / Math.pow(10, m), m);
-    const ky = H ? ic.y + 400 : ic.y + 500;
+    const ky = H ? ic.y + 420 : ic.y + 500;
     const sA = ara(t, 2.6, 3.2) * (1 - ara(t, 10.2, 10.8));
     E.formul(ctx, `\\sqrt{2} ≈ ${yak.replace(',', '{,}')}…`, L.cx, ky, { boyut: H ? 46 : 42, renk: 'tebesir', alfa: sA });
     E.formul(ctx, `${yak.replace(',', '{,}')} = \\frac{${Math.floor(KOK2 * Math.pow(10, m))}}{${'1' + '0'.repeat(m)}} \\in \\Q`, L.cx, ky + (H ? 76 : 80), { boyut: H ? 32 : 28, renk: 'menekse', alfa: sA * ara(t, 4.0, 4.6) });
-    E.yazi(ctx, 'Her yaklaşım rasyonel. Ama √2’nin kendisi hiçbir kesre eşit değil.', L.cx, H ? ky - 76 : ky + 170, { boyut: H ? 28 : 26, agirlik: 560, renk: 'gumus', alfa: ara(t, 6.0, 6.6) * (1 - ara(t, 10.2, 10.8)), maxGen: ic.w - 30 });
+    E.yazi(ctx, 'Her yaklaşım rasyonel. Ama √2’nin kendisi hiçbir kesre eşit değil.', L.cx, H ? ky - 62 : ky + 170, { boyut: H ? 28 : 26, agirlik: 560, renk: 'gumus', alfa: ara(t, 6.0, 6.6) * (1 - ara(t, 10.2, 10.8)), maxGen: ic.w - 30 });
     E.yazi(ctx, 'ℚ + irrasyoneller = ℝ', L.cx, ky + (H ? 30 : 40), { boyut: H ? 40 : 36, agirlik: 700, renk: 'tebesir', alfa: ara(t, 12.2, 12.9) });
   };
 
